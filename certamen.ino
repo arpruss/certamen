@@ -25,16 +25,15 @@ const uint8 playerPins[numTeams][playersPerTeam] = {
 {34,35,36,37},
 {38,39,40,41}
 };
-const int clearPin = 42;
-
-const int certamenModePin = 3;
+const uint clearPin = 42;
+const uint certamenModePin = 3;
 
 // variables will change:
-int buttonState = 0;         // variable for reading the pushbutton status
-int ledState = 0;
+char buttonState = 0;         // variable for reading the pushbutton status
+char ledState = 0;
 long lastButtonDownTime = -1;
 long toneOffTime = -1;
-int pressOrder[numTeams*playersPerTeam];
+uint8 pressOrder[numTeams*playersPerTeam];
 char buttonDown[numTeams*playersPerTeam];
 char teamButtonDown[numTeams];
 uint8 numPressed = 0;
