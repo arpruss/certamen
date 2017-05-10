@@ -24,6 +24,12 @@
  http://www.arduino.cc/en/Tutorial/Button
  */
 
+#define TEST_MODE 
+
+#define BUTTON_MODE INPUT_PULLUP // TODO: change for final version
+
+const int testPin = 53;
+
 const int debounceTime = 50;
 // constants won't change. They're used here to
 // set pin numbers:
@@ -66,31 +72,45 @@ void clearState(char force) {
     numPressed = 0;
     for (int i=0; i<numTeams*playersPerTeam; i++) buttonDown[i] = 0;
     for (int i=0; i<numTeams; i++) teamButtonDown[i] = 0;
-    /* TODO: screen */
+#ifdef TEST_MODE
+    Serial.println("Clear");
+#endif
   }
+#ifdef TEST_MODE
+  digitalWrite(testPin, LOW);
+#endif
 }
 
 void setup() {
   pinMode(ledPin, OUTPUT);
   pinMode(buttonPin, INPUT);
-  pinMode(clearPin, INPUT);
+  pinMode(clearPin, INPUT_PULLUP);
   pinMode(certamenModePin, INPUT);
   pinMode(buzzerPin, OUTPUT);
+  pinMode(testPin, OUTPUT);
   digitalWrite(ledPin, LOW);
-  for (int i=0; i<numTeams; i++) for (int j=0; j<playersPerTeam; j++) pinMode(playerPins[i][j], INPUT);
+  for (int i=0; i<numTeams; i++) for (int j=0; j<playersPerTeam; j++) {
+    pinMode(playerPins[i][j], BUTTON_MODE); // for testing
+    //TODO: disable failed?
+  }
   clearState(1);
+#ifdef TEST_MODE
+  Serial.begin(9600);
+  Serial.println("Certamen test mode\r\n");
+#endif
 }
 
 void scan() {
   int toAdd = 0;
   int previousNumPressed = numPressed;
+  if (previousNumPressed>1) Serial.println("Error");
   
   for (int i=0; i<numTeams; i++) {
     if (!certamenMode || !teamButtonDown[i])
       for (int j=0; j<playersPerTeam; j++) {
         int id = getPlayerID(i,j);
         if (!buttonDown[id]) {
-          char down = HIGH == digitalRead(buttonPin);
+          char down = LOW == digitalRead(playerPins[i][j]);
           if (down) {
             buttonDown[id] = 1;
             add[toAdd] = id;
@@ -124,10 +144,23 @@ void scan() {
       }
     }
 
+#ifdef TEST_MODE
+    digitalWrite(testPin, HIGH);
+#endif
+
     if (previousNumPressed == 0) {
         tone(buzzerPin, 800);
         toneOffTime = millis() + 500;
+#ifdef TEST_MODE
+        Serial.println("buzz");
+#endif
     }
+#ifdef TEST_MODE
+    Serial.println("pressed: ");
+    for (int i=0; i<numPressed;i++) {
+      Serial.println(""+String(pressOrder[i]));
+    }
+#endif
     /* TODO: display */
   }
 }
@@ -141,7 +174,7 @@ void loop() {
   
   // check if the pushbutton is pressed.
   // if it is, the buttonState is HIGH:
-  if (currentButton == HIGH) {
+  if (currentButton == LOW) {
       if (!buttonState) {
         buttonState = 1;
         ledState = ! ledState;
@@ -163,9 +196,9 @@ void loop() {
   if (certamenModeSwitch != certamenMode) {
     clearState(0);
     certamenMode = certamenModeSwitch;
-  }
+  } 
 
-  if (HIGH == digitalRead(clearPin)) {
+  if (LOW == digitalRead(clearPin)) {
     clearState(0);
   }
   else {
