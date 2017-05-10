@@ -7,17 +7,20 @@
 
 #define BUTTON_MODE INPUT_PULLUP // TODO: change for final version
 
-const int testPin = 53;
+typedef unsigned char uint8;
+typedef signed char sint8;
 
-const int debounceTime = 50;
+const uint8 testPin = 53;
+
+const uint8 debounceTime = 50;
 // constants won't change. They're used here to
 // set pin numbers:
-const int buttonPin = 2;     // the number of the pushbutton pin
-const int ledPin =  13;      // the number of the LED pin
-const int buzzerPin = 9;
-const int numTeams = 3;
-const int playersPerTeam = 4;
-const int playerPins[numTeams][playersPerTeam] = {
+const uint8 buttonPin = 2;     // the number of the pushbutton pin
+const uint8 ledPin =  13;      // the number of the LED pin
+const uint8 buzzerPin = 9;
+const uint8 numTeams = 3;
+const uint8 playersPerTeam = 4;
+const uint8 playerPins[numTeams][playersPerTeam] = {
 {30,31,32,33},
 {34,35,36,37},
 {38,39,40,41}
@@ -34,15 +37,15 @@ long toneOffTime = -1;
 int pressOrder[numTeams*playersPerTeam];
 char buttonDown[numTeams*playersPerTeam];
 char teamButtonDown[numTeams];
-int numPressed = 0;
-int certamenMode = 1;
-char add[numTeams*playersPerTeam];
+uint8 numPressed = 0;
+char certamenMode = 1;
+sint8 add[numTeams*playersPerTeam]; // maximum of 128 players
 
-inline int getPlayerID(int team, int player) {
+inline uint8 getPlayerID(uint8 team, uint8 player) {
   return team*playersPerTeam + player;
 }
 
-inline int getTeamFromID(int id) {
+inline int getTeamFromID(uint8 id) {
   return id/playersPerTeam;
 }
 
@@ -80,21 +83,17 @@ void setup() {
 }
 
 void scan() {
-  int toAdd = 0;
-  int previousNumPressed = numPressed;
-  if (previousNumPressed>1) Serial.println("Error");
+  uint8 toAdd = 0;
+  uint8 previousNumPressed = numPressed;
   
-  for (int i=0; i<numTeams; i++) {
+  for (uint8 i=0; i<numTeams; i++) {
     if (!certamenMode || !teamButtonDown[i])
-      for (int j=0; j<playersPerTeam; j++) {
-        int id = getPlayerID(i,j);
-        if (!buttonDown[id]) {
-          char down = LOW == digitalRead(playerPins[i][j]);
-          if (down) {
-            buttonDown[id] = 1;
-            add[toAdd] = id;
-            toAdd++;
-          }
+      for (uint8 j=0; j<playersPerTeam; j++) {
+        uint8 id = getPlayerID(i,j);
+        if (!buttonDown[id] && LOW == digitalRead(playerPins[i][j])) {
+          buttonDown[id] = 1;
+          add[toAdd] = id;
+          toAdd++;
         }
       }
   }
@@ -106,12 +105,13 @@ void scan() {
     }
     else {
       /* randomize simultaneous presses */
-      for (int i=0; i<toAdd; i++) {
-        int n = random() % (toAdd-i);
-        for (int j=0; j<toAdd; j++) {
-          if (add[j] >= -1) {
+      /* TODO: test this in software, as it so rarely triggers */
+      for (uint8 i=0; i<toAdd; i++) {
+        uint8 n = random() % (toAdd-i);
+        for (uint8 j=0; j<toAdd; j++) {
+          if (add[j] > -1) {
             if (n==0) {
-              int id = add[j];
+              uint8 id = add[j];
               teamButtonDown[getTeamFromID(id)] = 1;
               pressOrder[numPressed++] = id;
               add[j] = -1;
@@ -136,7 +136,7 @@ void scan() {
     }
 #ifdef TEST_MODE
     Serial.println("pressed: ");
-    for (int i=0; i<numPressed;i++) {
+    for (uint8 i=0; i<numPressed;i++) {
       Serial.println(""+String(pressOrder[i]));
     }
 #endif
@@ -145,12 +145,15 @@ void scan() {
 }
 
 void loop() {
-  // read the state of the pushbutton value:
-  int currentButton = digitalRead(buttonPin);
-
-  if (toneOffTime != -1 && millis() >= toneOffTime)
+  if (toneOffTime != -1 && millis() >= toneOffTime) {
     noTone(buzzerPin);
+    toneOffTime = -1;
+  }
   
+#ifdef TEST_MODE
+  // read the state of the pushbutton value
+  uint8 currentButton = digitalRead(buttonPin);
+
   // check if the pushbutton is pressed.
   // if it is, the buttonState is HIGH:
   if (currentButton == LOW) {
@@ -169,6 +172,7 @@ void loop() {
       }
     }
   }
+#endif
 
   char certamenModeSwitch = HIGH == digitalRead(certamenModePin);
 
