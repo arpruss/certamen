@@ -10,12 +10,20 @@
  */
 
 #define TEST_MODE 
-#define RANDOM_PRESS_FREQUENCY 10000
+#define RANDOM_PRESS_FREQUENCY 0
 #define CLEAR_FREQUENCY 0
 #define NUMBER_OF_RANDOM_PRESSES 2
 #define BUTTON_MODE INPUT_PULLUP // TODO: change for final version
-#define OSCILLATION_TEST 1
+#define OSCILLATION_TEST 
 #undef TEST_MODE_PUSHBUTTON
+#undef SERIAL_ECHO
+
+#ifndef TEST_MODE
+#define RANDOM_PRESS_FREQUENCY 0
+#define CLEAR_FREQUENCY 0
+#undef OSCILLATION_TEST
+#undef SERIAL_ECHO
+#endif
 
 typedef unsigned char uint8;
 typedef signed char sint8;
@@ -98,7 +106,7 @@ void clearState(char force) {
     numPressed = 0;
     for (int i=0; i<maxPlayers; i++) buttonDown[i] = 0;
     for (int i=0; i<numTeams; i++) teamButtonDown[i] = 0;
-#ifdef TEST_MODE
+#ifdef SERIAL_ECHO
     Serial.println("Clear");
 #endif
     updateScreen();
@@ -198,7 +206,7 @@ void setup() {
     pinMode(playerPins[id], BUTTON_MODE); 
     //TODO: disable failed?
   }
-#ifdef TEST_MODE
+#ifdef SERIAL_ECHO
   Serial.begin(9600);
   Serial.println("Certamen test mode\r\n");
 #endif
@@ -222,10 +230,8 @@ void scan() {
       }
   }
 
-#if defined(TEST_MODE) && RANDOM_PRESS_FREQUENCY>0
+#if RANDOM_PRESS_FREQUENCY
   if (toAdd == 0 && random(RANDOM_PRESS_FREQUENCY) == 0) {
-//    Serial.println("Random presses");
-//    Serial.println(String("Teams ") + (teamButtonDown[0]?"yes ":"no ") +(teamButtonDown[1]?"yes ":"no ")+(teamButtonDown[2]?"yes":"no"));
     for (uint8 i = 0; i < NUMBER_OF_RANDOM_PRESSES ; i++) {
       uint8 id = random(numTeams*playersPerTeam);
       if (!buttonDown[id] && (!certamenMode || !teamButtonDown[getTeamFromID(id)] ) ) {
@@ -284,12 +290,12 @@ void scan() {
         tone(buzzerPin, 800);
         toneOffTime = millis() + 500;
         tonePlaying = 1;
-#ifdef TEST_MODE
+#ifdef SERIAL_ECHO
         Serial.println("buzz");
 #endif
     }
     updateScreen();
-#ifdef TEST_MODE
+#ifdef SERIAL_ECHO
     Serial.println(certamenMode ? "pressed in certamen mode:" : "pressed in non-certamen mode:");
     for (uint8 i=0; i<numPressed;i++) {
       Serial.println(describePlayerID(pressOrder[i]));
@@ -339,7 +345,7 @@ void loop() {
     certamenMode = certamenModeSwitch;
   } 
 
-#if defined(TEST_MODE) && CLEAR_FREQUENCY
+#if CLEAR_FREQUENCY
   if (random(CLEAR_FREQUENCY)) clearState(0);
 #endif
   if (LOW == digitalRead(clearPin)) {
