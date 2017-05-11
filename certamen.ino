@@ -1,10 +1,17 @@
+#define USE_TFT
+
+#ifdef USE_TFT
+#include <TFT.h>
+#include <SPI.h>
+#endif
+
 /* Code (c) 2017 Alexander Pruss. Licensed under the Gnu Public License 3.0 or higher.
  *  See COPYING
  */
 
 #define TEST_MODE 
 #define RANDOM_PRESS_FREQUENCY 10000
-#define CLEAR_FREQUENCY 10000
+#define CLEAR_FREQUENCY 0
 #define NUMBER_OF_RANDOM_PRESSES 2
 #define BUTTON_MODE INPUT_PULLUP // TODO: change for final version
 #define OSCILLATION_TEST 1
@@ -20,6 +27,29 @@ uint8 testPinState = 0;
 #endif
 #endif
 
+#ifdef USE_TFT
+// for ST7735S from Aliexpress
+// Connections: 
+// SCK (CLK): Digital 52
+// SDA (MOSI): Digital 51
+// A0 (DC): Digital 8
+// RESET: Digital 10
+
+const uint8 CS=7;
+const uint8 DC=8;
+const uint8 RESET=10;
+TFT screen = TFT(CS,DC,RESET);
+
+const uint8 backgroundRGB[] = {0,255,255};
+const uint8 textRGB[] = {0,0,0};
+const uint8 lineHeight = 16;
+const uint8 fontSize = 2;
+uint8 height;
+uint8 width;
+uint8 textLines;
+const char* certamenModeText[2] = {"Quiz/Test","Certamen"};
+#endif
+
 const uint8 unconnectedAnalogPin = 5;
 const uint8 debounceTime = 50;
 // constants won't change. They're used here to
@@ -29,7 +59,8 @@ const uint8 ledPin =  13;      // the number of the LED pin
 const uint8 buzzerPin = 9;
 const uint8 numTeams = 3;
 const uint8 playersPerTeam = 4;
-const uint8 playerPins[numTeams*playersPerTeam] = {
+const uint8 maxPlayers = numTeams * playersPerTeam;
+const uint8 playerPins[maxPlayers] = {
 30,31,32,33,
 34,35,36,37,
 38,39,40,41
@@ -42,12 +73,12 @@ char buttonState = 0;         // variable for reading the pushbutton status
 char ledState = 0;
 long lastButtonDownTime = -1;
 long toneOffTime = 0;
-uint8 pressOrder[numTeams*playersPerTeam];
-char buttonDown[numTeams*playersPerTeam];
+uint8 pressOrder[maxPlayers];
+char buttonDown[maxPlayers];
 char teamButtonDown[numTeams];
 uint8 numPressed = 0;
-char certamenMode = 1;
-sint8 add[numTeams*playersPerTeam]; // maximum of 128 players
+uint8 certamenMode = 1;
+sint8 add[maxPlayers]; // maximum of 128 players
 char stringBuffer[128];
 
 inline uint8 getPlayerID(uint8 team, uint8 player) {
@@ -65,11 +96,12 @@ inline int getPlayerFromID(uint8 id) {
 void clearState(char force) {
   if (numPressed > 0 || force) {
     numPressed = 0;
-    for (int i=0; i<numTeams*playersPerTeam; i++) buttonDown[i] = 0;
+    for (int i=0; i<maxPlayers; i++) buttonDown[i] = 0;
     for (int i=0; i<numTeams; i++) teamButtonDown[i] = 0;
 #ifdef TEST_MODE
     Serial.println("Clear");
 #endif
+    updateScreen();
   }
 #if defined(TEST_MODE) && !defined(OSCILLATION_TEST)
   digitalWrite(testPin, LOW);
@@ -82,6 +114,76 @@ char* describePlayerID(uint8 id) {
   sprintf(stringBuffer, "%c%d", 'A'+team,player+1);
   return stringBuffer;
 }
+
+#ifdef USE_TFT
+void draw() {
+  screen.stroke(textRGB[0],textRGB[1],textRGB[2]);
+}
+
+void setupScreen() {
+  screen.begin();
+  screen.background(backgroundRGB[0],backgroundRGB[1],backgroundRGB[2]);
+  draw();
+  screen.text("Pruss's Certamen Machine", 1,1);
+  screen.text("GPL3 licensed firmware", 1,1+10);
+  delay(1500);
+  screen.background(backgroundRGB[0],backgroundRGB[1],backgroundRGB[2]);
+  height = screen.height();
+  width = screen.width();
+  screen.setTextSize(fontSize);
+  textLines = (height-2) / lineHeight;
+}
+
+void erase() {
+  screen.stroke(backgroundRGB[0],backgroundRGB[1],backgroundRGB[2]);
+}
+
+void updateScreen() {
+  static uint8 currentCertamenMode = 255;
+  static uint8 currentPlayersShown[maxPlayers];
+  static uint8 numCurrentPlayersShown = 0;
+  
+  if (certamenMode != currentCertamenMode) {
+
+    if (currentCertamenMode != 255) {
+      erase();
+      screen.text(certamenModeText[currentCertamenMode],1,1);
+    }
+    draw();
+    screen.text(certamenModeText[certamenMode],1,1);
+    currentCertamenMode = certamenMode;
+  }
+  
+  if (numCurrentPlayersShown != numPressed || memcmp(currentPlayersShown, pressOrder, numPressed) != 0) {
+    int numToUpdate = numPressed > numCurrentPlayersShown ? numPressed : numCurrentPlayersShown;
+    uint8 numColumns = (maxPlayers+textLines-2) / (textLines-1);
+    uint8 columnWidth = (width-2) / numColumns;
+    for (int i=0; i<numToUpdate; i++) {
+      if ((i>=numPressed != i>=numCurrentPlayersShown) || (i<numPressed && currentPlayersShown[i] != pressOrder[i])) {
+        uint8 y = 1 + (1 + ( i % (textLines-1) )) * lineHeight;
+        uint8 x = 1 + ( i / (textLines-1) ) * columnWidth;
+        if (i < numCurrentPlayersShown) {
+          erase();
+          screen.text( describePlayerID(currentPlayersShown[i]), x, y);
+        }
+        if ( i < numPressed ) {
+          uint8 id = pressOrder[i];
+          draw();
+          screen.text( describePlayerID(id), x, y );
+          currentPlayersShown[i] = id;
+        }
+      }
+    }
+    numCurrentPlayersShown = numPressed;
+  }
+}
+
+#else
+void setupScreen() {
+}
+void updateScreen() {
+}
+#endif
 
 void setup() {
   randomSeed(analogRead(unconnectedAnalogPin));
@@ -96,11 +198,12 @@ void setup() {
     pinMode(playerPins[id], BUTTON_MODE); 
     //TODO: disable failed?
   }
-  clearState(1);
 #ifdef TEST_MODE
   Serial.begin(9600);
   Serial.println("Certamen test mode\r\n");
 #endif
+  setupScreen();
+  clearState(1);
 }
 
 void scan() {
@@ -185,6 +288,7 @@ void scan() {
         Serial.println("buzz");
 #endif
     }
+    updateScreen();
 #ifdef TEST_MODE
     Serial.println(certamenMode ? "pressed in certamen mode:" : "pressed in non-certamen mode:");
     for (uint8 i=0; i<numPressed;i++) {
@@ -226,7 +330,7 @@ void loop() {
   }
 #endif
 
-  char certamenModeSwitch = HIGH == digitalRead(certamenModePin);
+  char certamenModeSwitch =  HIGH == digitalRead(certamenModePin);
 
   if (certamenModeSwitch != certamenMode) {
     // TODO: might want to debounce this a little to avoid too many calls to clearState(),
