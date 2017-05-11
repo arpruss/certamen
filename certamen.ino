@@ -28,12 +28,12 @@ uint8 testPinState = 0;
 #endif
 
 #ifdef USE_TFT
-// for ST7735S from Aliexpress
-// Connections: 
+// ST7735S TFT 160x128
+// Pin connections: 
 // SCK (CLK): Digital 52
 // SDA (MOSI): Digital 51
-// A0 (DC): Digital 8
-// RESET: Digital 10
+// A0 (D/C): Digital 8
+// RESET (RST): Digital 10
 
 const uint8 CS=7;
 const uint8 DC=8;
