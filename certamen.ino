@@ -1,10 +1,10 @@
-/* Code (c) 2017 Alexander Pruss.
- *  
- *  Uses some public domain stuff from http://www.arduino.cc/en/Tutorial/Button
+/* Code (c) 2017 Alexander Pruss. Licensed under the Gnu Public License 3.0 or higher.
+ *  See COPYING
  */
 
 #define TEST_MODE 
-#define RANDOM_PRESS_FREQUENCY 0
+#define RANDOM_PRESS_FREQUENCY 10000
+#define CLEAR_FREQUENCY 10000
 #define NUMBER_OF_RANDOM_PRESSES 2
 #define BUTTON_MODE INPUT_PULLUP // TODO: change for final version
 #define OSCILLATION_TEST 1
@@ -235,6 +235,9 @@ void loop() {
     certamenMode = certamenModeSwitch;
   } 
 
+#if defined(TEST_MODE) && CLEAR_FREQUENCY
+  if (random(CLEAR_FREQUENCY)) clearState(0);
+#endif
   if (LOW == digitalRead(clearPin)) {
     clearState(0);
   }
