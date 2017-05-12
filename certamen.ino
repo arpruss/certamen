@@ -184,7 +184,7 @@ void updateScreen() {
         if ( i < numPressed ) {
           uint8 id = pressOrder[i];
           draw();
-          screen.text( describePlayerID(id), x, y );
+          //screen.text( describePlayerID(id), x, y );
           currentPlayersShown[i] = id;
         }
       }
