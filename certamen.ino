@@ -306,7 +306,7 @@ void scan() {
 #ifdef SERIAL_ECHO
     Serial.println(certamenMode ? "pressed in certamen mode:" : "pressed in non-certamen mode:");
     for (uint8 i=0; i<numPressed;i++) {
-      Serial.println(describePlayerID(pressOrder[i]));
+      Serial.println(playerName[pressOrder[i]]);
     }
 #endif
     /* TODO: display */
