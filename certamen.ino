@@ -74,7 +74,14 @@ const uint8 playerPins[maxPlayers] = {
 38,39,40,41
 };
 const uint8 clearPin = 42;
+volatile uint8* clearPort;
+uint8 clearMask;
 const uint8 certamenModePin = 3;
+volatile uint8* certamenModePort;
+uint8 certamenModeMask;
+
+volatile uint8* playerPorts[maxPlayers];
+uint8 playerMasks[maxPlayers];
 
 char tonePlaying = 0;
 char buttonState = 0;         // variable for reading the pushbutton status
@@ -204,8 +211,14 @@ void setup() {
   digitalWrite(ledPin, LOW);
   for (int id=0; id<numTeams*playersPerTeam; id++) {
     pinMode(playerPins[id], BUTTON_MODE); 
+    playerPorts[id] = portInputRegister(digitalPinToPort(playerPins[id]));
+    playerMasks[id] = digitalPinToBitMask(playerPins[id]);
     //TODO: disable failed?
   }
+  clearPort = portInputRegister(digitalPinToPort(clearPin));
+  clearMask = digitalPinToBitMask(clearPin);
+  certamenModePort = portInputRegister(digitalPinToPort(certamenModePin));
+  certamenModeMask = digitalPinToBitMask(certamenModePin);
 #ifdef SERIAL_ECHO
   Serial.begin(9600);
   Serial.println("Certamen test mode\r\n");
@@ -224,7 +237,7 @@ void scan() {
   uint8 previousNumPressed = numPressed;
 
   for (int id=numTeams*playersPerTeam-1; id>=0; id--) {
-      if (LOW == digitalRead(playerPins[id]) && !buttonDown[id] && (!certamenMode || !teamButtonDown[getTeamFromID(id)])) {
+      if (!(*(playerPorts[id]) & playerMasks[id]) && !buttonDown[id] && (!certamenMode || !teamButtonDown[getTeamFromID(id)])) {
           buttonDown[id] = 1;
           add[toAdd++] = id;
       }
@@ -336,7 +349,7 @@ void loop() {
   }
 #endif
 
-  char certamenModeSwitch =  HIGH == digitalRead(certamenModePin);
+  char certamenModeSwitch = 0 != (*certamenModePort & certamenModeMask);
 
   if (certamenModeSwitch != certamenMode) {
     // TODO: might want to debounce this a little to avoid too many calls to clearState(),
@@ -348,7 +361,7 @@ void loop() {
 #if CLEAR_FREQUENCY
   if (random(CLEAR_FREQUENCY)) clearState(0);
 #endif
-  if (LOW == digitalRead(clearPin)) {
+  if (! (*clearPort & clearMask) ) {
     clearState(0);
   }
   else {
