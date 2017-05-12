@@ -73,6 +73,7 @@ const uint8 playerPins[maxPlayers] = {
 34,35,36,37,
 38,39,40,41
 };
+const char playerName[maxPlayers][3] = { "A1", "A2", "A3", "A4", "B1", "B2", "B3", "B4", "C1", "C2", "C3", "C4" };
 const uint8 clearPin = 42;
 volatile uint8* clearPort;
 uint8 clearMask;
@@ -123,12 +124,6 @@ void clearState(char force) {
 #endif
 }
 
-char* describePlayerID(uint8 id) {
-  uint8 team = getTeamFromID(id);
-  uint8 player = getPlayerFromID(id);
-  sprintf(stringBuffer, "%c%d", 'A'+team,player+1);
-  return stringBuffer;
-}
 
 #ifdef USE_TFT
 void draw() {
@@ -179,12 +174,12 @@ void updateScreen() {
         uint8 x = 1 + ( i / (textLines-1) ) * columnWidth;
         if (i < numCurrentPlayersShown) {
           erase();
-          screen.text( describePlayerID(currentPlayersShown[i]), x, y);
+          screen.text(playerName[currentPlayersShown[i]], x, y);
         }
         if ( i < numPressed ) {
           uint8 id = pressOrder[i];
           draw();
-          //screen.text( describePlayerID(id), x, y );
+          screen.text( playerName[id], x, y );
           currentPlayersShown[i] = id;
         }
       }
