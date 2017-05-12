@@ -43,7 +43,7 @@ charSet = sorted(charSet)
 print("""// Font by Ron Buelow
 // "use the fonts any way you wish, as always credit the source as applicable"
 
-template<typename T> void draw_%s(T tft, char* text, int x, int y, unsigned int color) {
+template<typename T> void draw_%s(T tft, const char* text, int x, int y, unsigned int color) {
   while(*text) {
     switch(*text) {
 %s

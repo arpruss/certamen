@@ -145,12 +145,13 @@ void setupScreen() {
   screen.setRotation(1);
   screen.fillScreen(backgroundColor);
   draw();
-  draw_mactall(screen,(char*)"Pruss's Certamen Machine",1,1,textColor);
+  draw_nicefont(screen,"Pruss's Certamen Machine",1,1,textColor);
 //  screen.setCursor(1,1);
 //  screen.print("Pruss's Certamen Machine");
-  screen.setCursor(1,1+10);
-  screen.print("GPL3 licensed firmware");
-  delay(1500);
+//  screen.setCursor(1,1+10);
+//  screen.print("GPL3 licensed firmware");
+  draw_nicefont(screen,"GPL3 licensed firmware",1,21,textColor);
+  delay(2500);
   screen.fillScreen(backgroundColor);
   height = screen.height();
   width = screen.width();
