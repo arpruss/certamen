@@ -145,8 +145,9 @@ void setupScreen() {
   screen.setRotation(1);
   screen.fillScreen(backgroundColor);
   draw();
-  screen.setCursor(1,1);
-  screen.print("Pruss's Certamen Machine");
+  draw_mactall(screen,(char*)"Pruss's Certamen Machine",1,1,textColor);
+//  screen.setCursor(1,1);
+//  screen.print("Pruss's Certamen Machine");
   screen.setCursor(1,1+10);
   screen.print("GPL3 licensed firmware");
   delay(1500);
