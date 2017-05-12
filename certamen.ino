@@ -1,8 +1,21 @@
 #define USE_TFT
 
 #ifdef USE_TFT
-#include <TFT.h>
+// ST7735S TFT 160x128
+// Pin connections: 
+// SCK (CLK): Digital 52
+// SDA (MOSI): Digital 51
+// A0 (D/C): Digital 8
+// RESET (RST): Digital 10
+
 #include <SPI.h>
+#include <PDQ_GFX.h>        // PDQ: Core graphics library
+#include "PDQ_ST7735_config.h"
+#define ST7735_CS_PIN   7      // <= /CS pin (chip-select, LOW to get attention of ST7735, HIGH and it ignores SPI bus)
+#define ST7735_DC_PIN   8      // <= DC pin (1=data or 0=command indicator line) also called RS
+#define ST7735_RST_PIN  10
+#define ST7735_CHIPSET    ST7735_INITR_BLACKTAB
+#include <PDQ_ST7735.h>     // PDQ: Hardware-specific driver library
 #endif
 
 /* Code (c) 2017 Alexander Pruss. Licensed under the Gnu Public License 3.0 or higher.
@@ -36,20 +49,10 @@ uint8 testPinState = 0;
 #endif
 
 #ifdef USE_TFT
-// ST7735S TFT 160x128
-// Pin connections: 
-// SCK (CLK): Digital 52
-// SDA (MOSI): Digital 51
-// A0 (D/C): Digital 8
-// RESET (RST): Digital 10
+PDQ_ST7735 screen = PDQ_ST7735();
 
-const uint8 CS=7;
-const uint8 DC=8;
-const uint8 RESET=10;
-TFT screen = TFT(CS,DC,RESET);
-
-const uint8 backgroundRGB[] = {0,255,255};
-const uint8 textRGB[] = {0,0,0};
+const unsigned int backgroundColor = ST7735_YELLOW;
+const unsigned int textColor = ST7735_BLACK;
 const uint8 lineHeight = 16;
 const uint8 fontSize = 2;
 uint8 height;
@@ -126,26 +129,36 @@ void clearState(char force) {
 
 
 #ifdef USE_TFT
-void draw() {
-  screen.stroke(textRGB[0],textRGB[1],textRGB[2]);
+inline void draw() {
+  screen.setTextColor(textColor);
 }
 
 void setupScreen() {
-  screen.begin();
-  screen.background(backgroundRGB[0],backgroundRGB[1],backgroundRGB[2]);
+#if defined(ST7735_RST_PIN)  // reset like Adafruit does
+  FastPin<ST7735_RST_PIN>::setOutput();
+  FastPin<ST7735_RST_PIN>::hi();
+  FastPin<ST7735_RST_PIN>::lo();
+  delay(1);
+  FastPin<ST7735_RST_PIN>::hi();
+#endif
+  screen.begin(); // initR(tftVersion);
+  screen.setRotation(1);
+  screen.fillScreen(backgroundColor);
   draw();
-  screen.text("Pruss's Certamen Machine", 1,1);
-  screen.text("GPL3 licensed firmware", 1,1+10);
+  screen.setCursor(1,1);
+  screen.print("Pruss's Certamen Machine");
+  screen.setCursor(1,1+10);
+  screen.print("GPL3 licensed firmware");
   delay(1500);
-  screen.background(backgroundRGB[0],backgroundRGB[1],backgroundRGB[2]);
+  screen.fillScreen(backgroundColor);
   height = screen.height();
   width = screen.width();
   screen.setTextSize(fontSize);
   textLines = (height-2) / lineHeight;
 }
 
-void erase() {
-  screen.stroke(backgroundRGB[0],backgroundRGB[1],backgroundRGB[2]);
+inline void erase() {
+  screen.setTextColor(backgroundColor);
 }
 
 void updateScreen() {
@@ -157,10 +170,12 @@ void updateScreen() {
 
     if (currentCertamenMode != 255) {
       erase();
-      screen.text(certamenModeText[currentCertamenMode],1,1);
+      screen.setCursor(1,1);
+      screen.print(certamenModeText[currentCertamenMode]);
     }
     draw();
-    screen.text(certamenModeText[certamenMode],1,1);
+    screen.setCursor(1,1);
+    screen.print(certamenModeText[certamenMode]);
     currentCertamenMode = certamenMode;
   }
   
@@ -174,12 +189,14 @@ void updateScreen() {
         uint8 x = 1 + ( i / (textLines-1) ) * columnWidth;
         if (i < numCurrentPlayersShown) {
           erase();
-          screen.text(playerName[currentPlayersShown[i]], x, y);
+          screen.setCursor(x, y);
+          screen.print(playerName[currentPlayersShown[i]]);
         }
         if ( i < numPressed ) {
           uint8 id = pressOrder[i];
           draw();
-          screen.text( playerName[id], x, y );
+          screen.setCursor(x, y);
+          screen.print( playerName[id] );
           currentPlayersShown[i] = id;
         }
       }
@@ -356,6 +373,7 @@ void loop() {
 #if CLEAR_FREQUENCY
   if (random(CLEAR_FREQUENCY)) clearState(0);
 #endif
+
   if (! (*clearPort & clearMask) ) {
     clearState(0);
   }
