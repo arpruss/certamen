@@ -1,33 +1,41 @@
-height = 50;
-innerDiameter = 59.44;
-label = "C4";
+// print at 0.20 mm layers, PLA, 25% infill
+includeBase = 0; // [1:yes, 0:no]
+includeMain = 1; // [1:yes, 0:no]
+height = 40; 
+innerDiameter = 59.65;
+label = "A1";
+numberOfCablePorts = -1; // [-1:automatic, 0:none, 1:1, 2:2]
 font = "Arial Black:style=Bold";
 labelSize = 9;
 textPositionAdjustment = 1;
-baseThickness = 8.5; // leave clearance for screw heads 5.32 
+baseThickness = 5.8;
 screwHoleSize = 2.6;
 screwPillarDiameter = 12;
-cablePortThickness = 3;
+cablePortThickness = 3; 
 
-holeDiameterMain = 28.88;
-tolerance = 0.25;
-snapThickness = 1.5;
+holeDiameterMain = 28.88; 
+tolerance = 0.125;
+snapThickness = 0.25;
 snapWidth = 7.25;
-antiRotation = 2.3;
+snapThickening = 0.5;
+antiRotation = 2.3; 
 
-wallThickness = 2.5;
-topThickness = 3;
-textDepth = 2;
+wallThickness = 1.25;
+topThickness = 3.2; 
+textDepth = 2; 
 chamfer = 3;
 cableHoleDiameter = 4.9; 
 cableHoleBottomSquish = 1;
 screwCountersinkDepth = 2;
 screwCountersinkDiameter = 5;
+screwDepth = 15;
 
-includeBase = 0; // [1:yes, 0:no]
-includeMain = 1; // [1:yes, 0:no]
 
 module dummy() {}
+
+cablePorts = numberOfCablePorts < 0 ? 
+                (label[1] == "4" ? 1 : 2) : 
+                numberOfCablePorts;
 
 baseThicknessAdj = baseThickness + tolerance;
 
@@ -47,22 +55,32 @@ module screws() {
 }
 
 module screwPillar() {
-    difference() {
-        cylinder(d=screwPillarDiameter, h=height-baseThicknessAdj,$fn=12);
-        translate([0,0,height-baseThicknessAdj-15+nudge])
-        cylinder(d=screwHoleSize+2*tolerance, h=15, $fn=12);
+    intersection() {
+        difference() {
+            cylinder(d=screwPillarDiameter, h=height-baseThicknessAdj,$fn=12);
+            translate([0,0,-nudge]) cylinder(d=screwHoleSize+2*tolerance, h=height-baseThicknessAdj+2*nudge, $fn=12);
+        }
+        rotate([0,0,180])
+        translate([0,screwPillarDiameter/2,0])
+        rotate([90,0,0])
+        linear_extrude(height=screwPillarDiameter)
+        polygon([[screwPillarDiameter/2, height-baseThicknessAdj-screwDepth-screwPillarDiameter], [-screwPillarDiameter/2, height-baseThicknessAdj-screwDepth], [-screwPillarDiameter/2, height], [screwPillarDiameter/2,height] ]);
     }
 }
 
 module cable() {
-    translate([0,0,height-cableHoleDiameter/2-tolerance-baseThicknessAdj+cableHoleBottomSquish])
-rotate([0,90,0]) {
-    translate([-cableHoleDiameter/2-tolerance-baseThicknessAdj/2,0,0])
-    cube([cableHoleDiameter+2*tolerance+baseThicknessAdj,cableHoleDiameter+2*tolerance,1.5*outerDiameter+2*cablePortThickness], center=true);
-    translate([0,0,-0.75*outerDiameter-cablePortThickness]) 
-    cylinder(h=1.5*outerDiameter,d=cableHoleDiameter+2*tolerance);
+    if (cablePorts) {
+        translate([cablePorts==1 ? -(1.5*outerDiameter+2*cablePortThickness)/2 : 0,0,height-cableHoleDiameter/2-tolerance-baseThicknessAdj+cableHoleBottomSquish])
+        rotate([0,90,0]) {
+            translate([-cableHoleDiameter/2-tolerance-baseThicknessAdj/2,0,0])
+            cube([cableHoleDiameter+2*tolerance+baseThicknessAdj,cableHoleDiameter+2*tolerance,1.5*outerDiameter+2*cablePortThickness], center=true);
+            translate([0,0,-0.75*outerDiameter-cablePortThickness]) 
+            cylinder(h=1.5*outerDiameter+2*cablePortThickness,d=cableHoleDiameter+2*tolerance);
+    }
 }
 }
+
+
 
 module portCover() {
     translate([0,cableHoleDiameter/2+tolerance+cablePortThickness,height])
@@ -81,25 +99,30 @@ module mainCylinder() {
                 union() {
                     difference() {
                         chamferedCylinder();
-                        translate([0,0,topThickness]) chamferedCylinder(h=height-topThickness+nudge, d=outerDiameter-wallThickness);
+                        translate([0,0,topThickness]) chamferedCylinder(h=height-topThickness+nudge, d=outerDiameter-2*wallThickness);
                     }
                     screws() screwPillar();
+                for (angle=[90:180:270]) 
+                rotate([0,0,angle]) translate([0,-snapWidth/2,-nudge])
+cube([holeDiameterMain/2+tolerance+snapThickness+2,snapWidth,topThickness+snapThickening]);
                 }
             }
-            for(angle=[0:180:180]) rotate([0,0,angle]) translate([-outerDiameter/2+wallThickness/2,0,0])  portCover();
+            if (cablePorts)
+            for(angle=[0:180:cablePorts==1?0:180]) rotate([0,0,angle]) translate([-outerDiameter/2+wallThickness/2,0,0]) portCover();
         }
         cable();
         rotate([0,0,90]) {
-            translate([0,0,-nudge]) cylinder(h=2*nudge+topThickness, d=holeDiameterMain+2*tolerance);
+            translate([0,0,-nudge]) cylinder(h=height, d=holeDiameterMain+2*tolerance);
             for (angle=[0:180:180]) 
                 rotate([0,0,angle]) 
                     translate([0,-snapWidth/2,-nudge])
-                    cube([holeDiameterMain/2+tolerance+snapThickness,snapWidth,2*nudge+topThickness]);
-            for (angle=[45:90:360-45]) rotate([0,0,angle]) translate([holeDiameterMain/2+tolerance,0,-nudge]) cylinder(d=antiRotation+2*tolerance,h=topThickness+2*nudge);
+                    cube([holeDiameterMain/2+tolerance+snapThickness,snapWidth,2*nudge+topThickness+snapThickening]);
+            for (angle=[45:90:360-45]) rotate([0,0,angle]) translate([holeDiameterMain/2+tolerance,0,-nudge]) cylinder(d=antiRotation+2*tolerance,h=topThickness+2*nudge,$fn=12);
         }
         translate([0,holeDiameterMain/4+(outerDiameter/4-chamfer/2)-.08*labelSize+textPositionAdjustment,textDepth-nudge]) rotate([180,0,0]) linear_extrude(height=textDepth) text(label, font=font, size=labelSize, halign="center", valign="center");
     }
 }
+
 
 $fn = 72;
 if (includeMain)
@@ -115,6 +138,9 @@ if (includeBase)
                 translate([0,0,baseThickness-screwCountersinkDepth-tolerance])
                 cylinder(d=screwCountersinkDiameter+2*tolerance,h=screwCountersinkDepth+tolerance+nudge,$fn=12);
             }
+
         }
+        if (cablePorts)
+        for(angle=[0:180:cablePorts==1?0:180]) rotate([0,0,angle]) translate([-innerDiameter/2+tolerance-(cablePortThickness+wallThickness-2*tolerance),-cableHoleDiameter/2-tolerance,0]) cube([cablePortThickness+wallThickness+nudge+innerDiameter/4,cableHoleDiameter-2*tolerance, baseThickness]);
     }
 }
