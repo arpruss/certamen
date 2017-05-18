@@ -1,28 +1,3 @@
-//#define USE_TFT
-#define USE_LIQUID_CRYSTAL
-
-#ifdef USE_TFT
-// ST7735S TFT 160x128
-// Pin connections: 
-// SCK (CLK): Digital 52
-// SDA (MOSI): Digital 51
-// A0 (D/C): Digital 8
-// RESET (RST): Digital 10
-
-#include <SPI.h>
-#include <PDQ_GFX.h>        // PDQ: Core graphics library
-#include "PDQ_ST7735_config.h"
-#define ST7735_CS_PIN   7      // <= /CS pin (chip-select, LOW to get attention of ST7735, HIGH and it ignores SPI bus)
-#define ST7735_DC_PIN   8      // <= DC pin (1=data or 0=command indicator line) also called RS
-#define ST7735_RST_PIN  10
-#define ST7735_CHIPSET    ST7735_INITR_BLACKTAB
-#include <PDQ_ST7735.h>     // PDQ: Hardware-specific driver library
-#endif
-
-#ifdef USE_LIQUID_CRYSTAL
-#include <Wire.h>
-#endif
-
 /* Code (c) 2017 Alexander Pruss. Licensed under the Gnu Public License 3.0 or higher.
  *  See COPYING
  */
@@ -35,6 +10,64 @@
 #define OSCILLATION_TEST 
 #undef TEST_MODE_PUSHBUTTON
 #undef SERIAL_ECHO
+#undef USE_TFT
+#define USE_LIQUID_CRYSTAL
+
+#ifdef USE_TFT
+// ST7735S TFT 160x128
+// Pin connections: 
+// SCK (CLK): Digital 52
+// SDA (MOSI): Digital 51
+// A0 (D/C): Digital 8
+// RESET (RST): Digital 10
+#include <SPI.h>
+#include <PDQ_GFX.h>        // PDQ: Core graphics library
+#include "PDQ_ST7735_config.h"
+#define ST7735_CS_PIN   7      // <= /CS pin (chip-select, LOW to get attention of ST7735, HIGH and it ignores SPI bus)
+#define ST7735_DC_PIN   8      // <= DC pin (1=data or 0=command indicator line) also called RS
+#define ST7735_RST_PIN  10
+#define ST7735_CHIPSET    ST7735_INITR_BLACKTAB
+#include <PDQ_ST7735.h>     // PDQ: Hardware-specific driver library
+#endif
+
+#ifdef USE_LIQUID_CRYSTAL
+#include <LiquidCrystal.h>
+#define BACKLIGHT_PIN 7
+#define CONTRAST_PIN 8
+#define RS 43
+#define ENABLE 44
+#define D0 45
+#define D1 46
+#define D2 47
+#define D3 48
+#define D4 49
+#define D5 50
+#define D6 51
+#define D7 52
+
+#define CONTRAST 125
+
+#define SCREEN_LINES 2
+#define SCREEN_COLUMNS 16
+
+LiquidCrystal lcd(RS,ENABLE,D0,D1,D2,D3,D4,D5,D6,D7);
+#endif
+
+const uint8_t buttonPin = 2;     // the number of the pushbutton pin
+const uint8_t ledPin =  13;      // the number of the LED pin
+const uint8_t buzzerPin = 9;
+const uint8_t clearPin = 42;
+const uint8_t certamenModePin = 3;
+const uint8_t unconnectedAnalogPin = 5;
+#ifdef TEST_MODE
+const uint8_t testPin = 53;
+#endif
+const uint8_t playerPins[] = {
+30,31,32,33,
+34,35,36,37,
+38,39,40,41
+};
+
 
 #ifndef TEST_MODE
 #define RANDOM_PRESS_FREQUENCY 0
@@ -43,13 +76,9 @@
 #undef SERIAL_ECHO
 #endif
 
-typedef unsigned char uint8;
-typedef signed char sint8;
-
 #ifdef TEST_MODE
-const uint8 testPin = 53;
 #ifdef OSCILLATION_TEST
-uint8 testPinState = 0;
+uint8_t testPinState = 0;
 #endif
 #endif
 
@@ -58,62 +87,56 @@ PDQ_ST7735 screen = PDQ_ST7735();
 
 const unsigned int backgroundColor = ST7735_YELLOW;
 const unsigned int textColor = ST7735_BLACK;
-const uint8 lineHeight = 16;
-const uint8 fontSize = 2;
-uint8 height;
-uint8 width;
-uint8 textLines;
+const uint8_t lineHeight = 16;
+const uint8_t fontSize = 2;
+uint8_t height;
+uint8_t width;
+uint8_t textLines;
 const char* certamenModeText[2] = {"Quiz/Test","Certamen"};
 #endif
 
-const uint8 unconnectedAnalogPin = 5;
-const uint8 debounceTime = 50;
-// constants won't change. They're used here to
-// set pin numbers:
-const uint8 buttonPin = 2;     // the number of the pushbutton pin
-const uint8 ledPin =  13;      // the number of the LED pin
-const uint8 buzzerPin = 9;
-const uint8 numTeams = 3;
-const uint8 playersPerTeam = 4;
-const uint8 maxPlayers = numTeams * playersPerTeam;
-const uint8 playerPins[maxPlayers] = {
-30,31,32,33,
-34,35,36,37,
-38,39,40,41
-};
-const char playerName[maxPlayers][3] = { "A1", "A2", "A3", "A4", "B1", "B2", "B3", "B4", "C1", "C2", "C3", "C4" };
-const uint8 clearPin = 42;
-volatile uint8* clearPort;
-uint8 clearMask;
-const uint8 certamenModePin = 3;
-volatile uint8* certamenModePort;
-uint8 certamenModeMask;
+#ifdef USE_LIQUID_CRYSTAL
+const char* certamenModeText[2] = {"Quiz ","Cert."};
+#endif
 
-volatile uint8* playerPorts[maxPlayers];
-uint8 playerMasks[maxPlayers];
+
+const uint8_t debounceTime = 50;
+
+
+const uint8_t numTeams = 3;
+const uint8_t playersPerTeam = 4;
+const uint8_t maxPlayers = numTeams * playersPerTeam;
+const char playerName[maxPlayers][3] = { "A1", "A2", "A3", "A4", "B1", "B2", "B3", "B4", "C1", "C2", "C3", "C4" };
+volatile uint8_t* clearPort;
+uint8_t clearMask;
+volatile uint8_t* certamenModePort;
+uint8_t certamenModeMask;
+
+volatile uint8_t* playerPorts[maxPlayers];
+uint8_t playerMasks[maxPlayers];
 
 char tonePlaying = 0;
 char buttonState = 0;         // variable for reading the pushbutton status
 char ledState = 0;
 long lastButtonDownTime = -1;
 long toneOffTime = 0;
-uint8 pressOrder[maxPlayers];
+uint8_t pressOrder[maxPlayers];
 char buttonDown[maxPlayers];
 char teamButtonDown[numTeams];
-uint8 numPressed = 0;
-uint8 certamenMode = 1;
-sint8 add[maxPlayers]; // maximum of 128 players
+uint8_t numPressed = 0;
+uint8_t certamenMode = 1;
+int8_t add[maxPlayers]; // maximum of 128 players
 char stringBuffer[128];
 
-inline uint8 getPlayerID(uint8 team, uint8 player) {
+inline uint8_t getPlayerID(uint8_t team, uint8_t player) {
   return team*playersPerTeam + player;
 }
 
-inline int getTeamFromID(uint8 id) {
+inline int getTeamFromID(uint8_t id) {
   return id/playersPerTeam;
 }
 
-inline int getPlayerFromID(uint8 id) {
+inline int getPlayerFromID(uint8_t id) {
   return id % playersPerTeam;
 }
 
@@ -169,9 +192,9 @@ inline void erase() {
 }
 
 void updateScreen() {
-  static uint8 currentCertamenMode = 255;
-  static uint8 currentPlayersShown[maxPlayers];
-  static uint8 numCurrentPlayersShown = 0;
+  static uint8_t currentCertamenMode = 255;
+  static uint8_t currentPlayersShown[maxPlayers];
+  static uint8_t numCurrentPlayersShown = 0;
   
   if (certamenMode != currentCertamenMode) {
 
@@ -188,23 +211,75 @@ void updateScreen() {
   
   if (numCurrentPlayersShown != numPressed || memcmp(currentPlayersShown, pressOrder, numPressed) != 0) {
     int numToUpdate = numPressed > numCurrentPlayersShown ? numPressed : numCurrentPlayersShown;
-    uint8 numColumns = (maxPlayers+textLines-2) / (textLines-1);
-    uint8 columnWidth = (width-2) / numColumns;
+    uint8_t numColumns = (maxPlayers+textLines-2) / (textLines-1);
+    uint8_t columnWidth = (width-2) / numColumns;
     for (int i=0; i<numToUpdate; i++) {
       if ((i>=numPressed != i>=numCurrentPlayersShown) || (i<numPressed && currentPlayersShown[i] != pressOrder[i])) {
-        uint8 y = 1 + (1 + ( i % (textLines-1) )) * lineHeight;
-        uint8 x = 1 + ( i / (textLines-1) ) * columnWidth;
+        uint8_t y = 1 + (1 + ( i % (textLines-1) )) * lineHeight;
+        uint8_t x = 1 + ( i / (textLines-1) ) * columnWidth;
         if (i < numCurrentPlayersShown) {
           erase();
           screen.setCursor(x, y);
           screen.print(playerName[currentPlayersShown[i]]);
         }
         if ( i < numPressed ) {
-          uint8 id = pressOrder[i];
+          uint8_t id = pressOrder[i];
           draw();
           screen.setCursor(x, y);
           screen.print( playerName[id] );
           currentPlayersShown[i] = id;
+        }
+      }
+    }
+    numCurrentPlayersShown = numPressed;
+  }
+}
+
+#elif defined(USE_LIQUID_CRYSTAL)
+void setupScreen() {
+  pinMode(BACKLIGHT_PIN, HIGH);
+  digitalWrite(BACKLIGHT_PIN, HIGH);
+  analogWrite(CONTRAST_PIN, 125);
+  lcd.begin(SCREEN_COLUMNS, SCREEN_LINES);
+  lcd.setCursor(0,0);
+  lcd.print("Pruss's Certamen");
+  lcd.setCursor(0,1);
+  lcd.print("GPLv3 license");
+  delay(2500);
+  lcd.clear();
+}
+
+inline uint8_t lineNumber(uint8_t pos) {
+  return pos<5 ? 0 : 1;
+}
+
+inline uint8_t columnNumber(uint8_t pos) {
+  return pos<5 ? 6+pos*2 : (pos-5)*2;
+}
+
+void updateScreen() {
+  static uint8_t currentCertamenMode = 255;
+  static uint8_t currentPlayersShown[maxPlayers];
+  static uint8_t numCurrentPlayersShown = 0;
+  
+  if (certamenMode != currentCertamenMode) {
+    lcd.setCursor(0,0);
+    lcd.print(certamenModeText[certamenMode]);
+    currentCertamenMode = certamenMode;
+  }
+
+  if (numCurrentPlayersShown != numPressed || memcmp(currentPlayersShown, pressOrder, numPressed) != 0) {
+    int numToUpdate = numPressed > numCurrentPlayersShown ? numPressed : numCurrentPlayersShown;
+    for (int i=0; i<numToUpdate; i++) {
+      if ((i>=numPressed != i>=numCurrentPlayersShown) || (i<numPressed && currentPlayersShown[i] != pressOrder[i])) {
+        lcd.setCursor(columnNumber(i), lineNumber(i));
+        if ( i < numPressed ) {
+          uint8_t id = pressOrder[i];
+          lcd.print( playerName[id] );
+          currentPlayersShown[i] = id;
+        }
+        else {
+          lcd.print( "  " );
         }
       }
     }
@@ -252,8 +327,8 @@ void scan() {
   digitalWrite(testPin, testPinState);
 #endif
 
-  uint8 toAdd = 0;
-  uint8 previousNumPressed = numPressed;
+  uint8_t toAdd = 0;
+  uint8_t previousNumPressed = numPressed;
 
   for (int id=numTeams*playersPerTeam-1; id>=0; id--) {
       if (!(*(playerPorts[id]) & playerMasks[id]) && !buttonDown[id] && (!certamenMode || !teamButtonDown[getTeamFromID(id)])) {
@@ -264,8 +339,8 @@ void scan() {
 
 #if RANDOM_PRESS_FREQUENCY
   if (toAdd == 0 && random(RANDOM_PRESS_FREQUENCY) == 0) {
-    for (uint8 i = 0; i < NUMBER_OF_RANDOM_PRESSES ; i++) {
-      uint8 id = random(numTeams*playersPerTeam);
+    for (uint8_t i = 0; i < NUMBER_OF_RANDOM_PRESSES ; i++) {
+      uint8_t id = random(numTeams*playersPerTeam);
       if (!buttonDown[id] && (!certamenMode || !teamButtonDown[getTeamFromID(id)] ) ) {
         buttonDown[id] = 1;
         add[toAdd++] = id;
@@ -282,19 +357,19 @@ void scan() {
     else {
       /* randomize simultaneous presses */
       /* TODO: test this in software, as it so rarely triggers */
-      sint8 leftToAdd = toAdd;
-      uint8 j;
+      int8_t leftToAdd = toAdd;
+      uint8_t j;
       do {
-        uint8 n = random() % leftToAdd;
+        uint8_t n = random() % leftToAdd;
         for (j=0; j<toAdd; j++) {
           if (add[j] > -1) {
             if (n==0) {
-              uint8 id = add[j];
-              uint8 team = getTeamFromID(id);
+              uint8_t id = add[j];
+              uint8_t team = getTeamFromID(id);
               teamButtonDown[team] = 1;
               pressOrder[numPressed++] = id;
               if (certamenMode) {
-                for (uint8 k=0; k<toAdd; k++) {
+                for (uint8_t k=0; k<toAdd; k++) {
                   id = add[k];
                   if (id > -1 && getTeamFromID(id) == team) {
                     add[k] = -1;
@@ -329,7 +404,7 @@ void scan() {
     updateScreen();
 #ifdef SERIAL_ECHO
     Serial.println(certamenMode ? "pressed in certamen mode:" : "pressed in non-certamen mode:");
-    for (uint8 i=0; i<numPressed;i++) {
+    for (uint8_t i=0; i<numPressed;i++) {
       Serial.println(playerName[pressOrder[i]]);
     }
 #endif
@@ -345,7 +420,7 @@ void loop() {
   
 #ifdef TEST_MODE_PUSHBUTTON
   // read the state of the pushbutton value
-  uint8 currentButton = digitalRead(buttonPin);
+  uint8_t currentButton = digitalRead(buttonPin);
 
   // check if the pushbutton is pressed.
   // if it is, the buttonState is HIGH:
