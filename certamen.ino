@@ -1,4 +1,5 @@
-#define USE_TFT
+//#define USE_TFT
+#define USE_LIQUID_CRYSTAL
 
 #ifdef USE_TFT
 // ST7735S TFT 160x128
@@ -16,6 +17,10 @@
 #define ST7735_RST_PIN  10
 #define ST7735_CHIPSET    ST7735_INITR_BLACKTAB
 #include <PDQ_ST7735.h>     // PDQ: Hardware-specific driver library
+#endif
+
+#ifdef USE_LIQUID_CRYSTAL
+#include <Wire.h>
 #endif
 
 /* Code (c) 2017 Alexander Pruss. Licensed under the Gnu Public License 3.0 or higher.
