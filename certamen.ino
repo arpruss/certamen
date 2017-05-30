@@ -2,15 +2,16 @@
     See COPYING
 */
 
-#define TEST_MODE
+//#define TEST_MODE
 #define RANDOM_PRESS_FREQUENCY 0
 #define CLEAR_FREQUENCY 0
 #define NUMBER_OF_RANDOM_PRESSES 0
 #define BUTTON_MODE INPUT_PULLUP // TODO: change for final version
 #define OSCILLATION_TEST
 #undef TEST_MODE_PUSHBUTTON
-//#define SERIAL_ECHO
+#undef SERIAL_ECHO
 #undef USE_TFT
+
 #define USE_LIQUID_CRYSTAL
 
 #ifdef USE_TFT
@@ -123,7 +124,7 @@ uint8_t playerMasks[maxPlayers];
 char tonePlaying = 0;
 char buttonState = 0;         // variable for reading the pushbutton status
 char ledState = 0;
-long lastButtonDownTime = -1;
+uint32_t lastButtonDownTime = UNDEF_TIME;
 long toneOffTime = 0;
 uint8_t pressOrder[maxPlayers];
 char buttonDown[maxPlayers];

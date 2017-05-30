@@ -1,3 +1,5 @@
+#ifdef USE_TFT
+
 // Font by Ron Buelow
 // "use the fonts any way you wish, as always credit the source as applicable"
 
@@ -318,4 +320,4 @@ template<typename T> void draw_nicefont(T tft, const char* text, int x, int y, u
     text++;
   }
 }
-
+#endif
