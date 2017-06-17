@@ -3,7 +3,7 @@ includeBase = 0; // [1:yes, 0:no]
 includeMain = 1; // [1:yes, 0:no]
 height = 40; 
 innerDiameter = 59.65;
-label = "A1";
+label = "C3";
 numberOfCablePorts = -1; // [-1:automatic, 0:none, 1:1, 2:2]
 font = "Arial Black:style=Bold";
 labelSize = 9;
@@ -30,6 +30,10 @@ screwCountersinkDepth = 2;
 screwCountersinkDiameter = 5;
 screwDepth = 15;
 
+// The cable hole cover is usually not needed, but if you
+// printed a two-hole version when you needed a one-hole
+// one, this will save you a reprint.
+includeCableHoleCover = 0; // [1:yes, 0:no]
 
 module dummy() {}
 
@@ -68,7 +72,7 @@ module screwPillar() {
     }
 }
 
-module cable() {
+module cable(tolerance) {
     if (cablePorts) {
         translate([cablePorts==1 ? -(1.5*outerDiameter+2*cablePortThickness)/2 : 0,0,height-cableHoleDiameter/2-tolerance-baseThicknessAdj+cableHoleBottomSquish])
         rotate([0,90,0]) {
@@ -110,7 +114,7 @@ cube([holeDiameterMain/2+tolerance+snapThickness+2,snapWidth,topThickness+snapTh
             if (cablePorts)
             for(angle=[0:180:cablePorts==1?0:180]) rotate([0,0,angle]) translate([-outerDiameter/2+wallThickness/2,0,0]) portCover();
         }
-        cable();
+        cable(tolerance);
         rotate([0,0,90]) {
             translate([0,0,-nudge]) cylinder(h=height, d=holeDiameterMain+2*tolerance);
             for (angle=[0:180:180]) 
@@ -122,6 +126,11 @@ cube([holeDiameterMain/2+tolerance+snapThickness+2,snapWidth,topThickness+snapTh
         translate([0,holeDiameterMain/4+(outerDiameter/4-chamfer/2)-.08*labelSize+textPositionAdjustment,textDepth-nudge]) rotate([180,0,0]) linear_extrude(height=textDepth) text(label, font=font, size=labelSize, halign="center", valign="center");
     }
 }
+
+module cableHoleCover() {
+    cable(0);
+}
+
 
 
 $fn = 72;
@@ -142,5 +151,14 @@ if (includeBase)
         }
         if (cablePorts)
         for(angle=[0:180:cablePorts==1?0:180]) rotate([0,0,angle]) translate([-innerDiameter/2+tolerance-(cablePortThickness+wallThickness-2*tolerance),-cableHoleDiameter/2-tolerance,0]) cube([cablePortThickness+wallThickness+nudge+innerDiameter/4,cableHoleDiameter-2*tolerance, baseThickness]);
+    }
+}
+
+if (includeCableHoleCover) {
+    render(convexity=0)
+    rotate([0,-90,0])
+    intersection() {
+        cableHoleCover();
+        translate([0,-20,0]) cube([cablePortThickness,40,height]);
     }
 }

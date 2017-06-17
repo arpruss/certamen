@@ -88,6 +88,8 @@ uint8_t testPinState = 0;
 #endif
 #endif
 
+#define UNDEF_TIME ((uint32_t)-1)
+
 #ifdef USE_TFT
 PDQ_ST7735 screen = PDQ_ST7735();
 
@@ -312,7 +314,9 @@ void setup() {
   pinMode(clearPin, INPUT_PULLUP);
   pinMode(certamenModePin, INPUT);
   pinMode(buzzerPin, OUTPUT);
+#ifdef TEST_MODE  
   pinMode(testPin, OUTPUT);
+#endif
   digitalWrite(ledPin, LOW);
   for (int id = 0; id < numTeams * playersPerTeam; id++) {
     pinMode(playerPins[id], BUTTON_MODE);
