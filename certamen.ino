@@ -2,14 +2,14 @@
     See COPYING
 */
 
-//#define TEST_MODE
+#define TEST_MODE
 #define RANDOM_PRESS_FREQUENCY 0
 #define CLEAR_FREQUENCY 0
 #define NUMBER_OF_RANDOM_PRESSES 0
-#define BUTTON_MODE INPUT_PULLUP // TODO: change for final version
+#define BUTTON_MODE INPUT_PULLUP 
 #define OSCILLATION_TEST
 #undef TEST_MODE_PUSHBUTTON
-#undef SERIAL_ECHO
+#define SERIAL_ECHO
 #undef USE_TFT
 
 #define USE_LIQUID_CRYSTAL
@@ -59,7 +59,6 @@ LiquidCrystal lcd(RS, ENABLE,
   D4, D5, D6, D7);
 #endif
 
-const uint8_t buttonPin = 2;     // the number of the pushbutton pin
 const uint8_t ledPin =  13;      // the number of the LED pin
 const uint8_t buzzerPin = 9;
 const uint8_t clearPin = 28;
@@ -310,9 +309,8 @@ void updateScreen() {
 void setup() {
   randomSeed(analogRead(unconnectedAnalogPin));
   pinMode(ledPin, OUTPUT);
-  pinMode(buttonPin, INPUT);
   pinMode(clearPin, INPUT_PULLUP);
-  pinMode(certamenModePin, INPUT);
+  pinMode(certamenModePin, INPUT_PULLUP);
   pinMode(buzzerPin, OUTPUT);
 #ifdef TEST_MODE  
   pinMode(testPin, OUTPUT);
@@ -329,7 +327,7 @@ void setup() {
   certamenModePort = portInputRegister(digitalPinToPort(certamenModePin));
   certamenModeMask = digitalPinToBitMask(certamenModePin);
 #ifdef SERIAL_ECHO
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.println("Certamen test mode\r\n");
 #endif
   setupScreen();
@@ -436,39 +434,17 @@ void loop() {
     tonePlaying = 0;
   }
 
-#ifdef TEST_MODE_PUSHBUTTON
-  // read the state of the pushbutton value
-  uint8_t currentButton = digitalRead(buttonPin);
-
-  // check if the pushbutton is pressed.
-  // if it is, the buttonState is HIGH:
-  if (currentButton == LOW) {
-    if (!buttonState) {
-      buttonState = 1;
-      ledState = ! ledState;
-      digitalWrite(ledPin, ledState ? HIGH : LOW); // LED state
-      analogWrite(buzzerPin, 125);
-      toneOffTime = millis() + 500;
-      tonePlaying = 1;
-    }
-    
-    lastButtonDownTime = millis();
-  } else {
-    if (buttonState) {
-      if (millis() >= lastButtonDownTime + debounceTime) {
-        buttonState = 0;
-      }
-    }
-  }
-#endif
-
   char certamenModeSwitch = 0 != (*certamenModePort & certamenModeMask);
 
   if (certamenModeSwitch != certamenMode) {
+#ifdef SERIAL_ECHO
+    Serial.println(certamenModeSwitch ? "certamen mode" : "quiz mode");
+#endif
     // TODO: might want to debounce this a little to avoid too many calls to clearState(),
     // but is it worth the bother? Well, it might depend on how the display works.
     clearState(0);
     certamenMode = certamenModeSwitch;
+    updateScreen();
   }
 
 #if CLEAR_FREQUENCY
