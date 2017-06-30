@@ -1,6 +1,7 @@
 // print at 0.20 mm layers, PLA, 25% infill
-includeBase = 0; // [1:yes, 0:no]
+includeBase = 1; // [1:yes, 0:no]
 includeMain = 1; // [1:yes, 0:no]
+includeScrewTemplate = 0; // [1:yes, 0:no]
 height = 40; 
 innerDiameter = 59.65;
 label = "C3";
@@ -131,7 +132,21 @@ module cableHoleCover() {
     cable(0);
 }
 
+module base(template=false) {
+    difference() {
+            cylinder(d=innerDiameter-2*tolerance, h=template?0.8:baseThickness);
+            screws() {
+                cylinder(d=screwHoleSize+2*tolerance,h=baseThicknessAdj+2*nudge,$fn=12);
+                if (!template) {
+                    translate([0,0,baseThickness-screwCountersinkDepth-tolerance])
+                    cylinder(d=screwCountersinkDiameter+2*tolerance,h=screwCountersinkDepth+tolerance+nudge,$fn=12);
+                }
+            }
 
+        }
+        if (!template && cablePorts)
+        for(angle=[0:180:cablePorts==1?0:180]) rotate([0,0,angle]) translate([-innerDiameter/2+tolerance-(cablePortThickness+wallThickness-2*tolerance),-cableHoleDiameter/2-tolerance,0]) cube([cablePortThickness+wallThickness+nudge+innerDiameter/4,cableHoleDiameter-2*tolerance, baseThickness]);
+}
 
 $fn = 72;
 if (includeMain)
@@ -139,19 +154,16 @@ if (includeMain)
 
 if (includeBase) 
 {
-    render(convexity=3)
-    translate([outerDiameter+cablePortThickness,0,0]) {    difference() {
-            cylinder(d=innerDiameter-2*tolerance, h=baseThickness);
-            screws() {
-                cylinder(d=screwHoleSize+2*tolerance,h=baseThicknessAdj+2*nudge,$fn=12);
-                translate([0,0,baseThickness-screwCountersinkDepth-tolerance])
-                cylinder(d=screwCountersinkDiameter+2*tolerance,h=screwCountersinkDepth+tolerance+nudge,$fn=12);
-            }
+render(convexity=3)
+    translate([outerDiameter+cablePortThickness+10,0,0]) 
+    base();
+}
 
-        }
-        if (cablePorts)
-        for(angle=[0:180:cablePorts==1?0:180]) rotate([0,0,angle]) translate([-innerDiameter/2+tolerance-(cablePortThickness+wallThickness-2*tolerance),-cableHoleDiameter/2-tolerance,0]) cube([cablePortThickness+wallThickness+nudge+innerDiameter/4,cableHoleDiameter-2*tolerance, baseThickness]);
-    }
+if (includeScrewTemplate) 
+{
+render(convexity=3)
+    translate(2*[outerDiameter+cablePortThickness+10,0,0]) 
+    base(template=true);
 }
 
 if (includeCableHoleCover) {
