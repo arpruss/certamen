@@ -1,7 +1,7 @@
 // print at 0.20 mm layers, PLA, 25% infill
-includeBase = 1; // [1:yes, 0:no]
-includeMain = 1; // [1:yes, 0:no]
-includeScrewTemplate = 0; // [1:yes, 0:no]
+includeBase = 0; // [1:yes, 0:no]
+includeMain = 0; // [1:yes, 0:no]
+includeScrewTemplate = 1; // [1:yes, 0:no]
 height = 40; 
 innerDiameter = 59.65;
 label = "C3";
@@ -142,6 +142,8 @@ module base(template=false) {
                     cylinder(d=screwCountersinkDiameter+2*tolerance,h=screwCountersinkDepth+tolerance+nudge,$fn=12);
                 }
             }
+            if (template)
+                translate([0,0,-nudge]) cylinder(d=0.7*innerDiameter-2*tolerance, h=0.9);
 
         }
         if (!template && cablePorts)
