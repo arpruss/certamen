@@ -51,7 +51,7 @@ module boards() {
     }
 }
 
-module bottom() {
+module boardMounts() {
     module diagonalSlideLeft() {
         leftPointsAndFaces = 
             pointsAndFaces([ [ [0,0,0], [topSlideWidth,0,topSlideWidth], [0,0,topSlideWidth] ], 
@@ -76,5 +76,8 @@ module bottom() {
     translate([megaX+fitTolerance+megaWidth,0,underPCBs+fitTolerance+megaPCBThickness]) diagonalSlideRight();
 }
 
-bottom();
+module mainSquare() {
+}
+
+boardMounts();
 boards();
