@@ -1,7 +1,14 @@
 use <roundedsquare.scad>;
 use <tubemesh.scad>;
+use <certamenbutton.scad>;
 
-includeBoards = true;
+// TODO: 
+//  speaker rails
+//  cut up
+//  screw wells for screen
+//  screw wells for joining halves
+
+includeBoards = false;
 megaWidth = 53.34;
 megaLength = 101.6;
 megaPCBThickness = 1.66;
@@ -30,20 +37,48 @@ topSlideWidth = 1.75;
 
 sideWallThickness = 1.25;
 bottomThickness = 1.5;
-topThickness = 1.5;
+topThickness = 3.2; // match Certamen button
 
-boxHeight = 40; // TODO
+screenScrewHorizontalSpacing = 74.8;
+screenScrewVerticalSpacing = 31.2;
+screenWidth = 71.21;
+screenHeight = 24.04; 
+// make sure screendepth fits well 
+
+screenScrewWellDepth = 7.97;
+speakerDiameter = 39.2;
+speakerMountYStickout = 1.86; 
+speakerMountXStickout = 5; 
+speakerMountThickness = 1.5;
+grilleSolidWidth = 2;
+grilleHoleWidth = 2.5;
 
 corner = 9;
 
-module dummy() {}
+boxHeight = speakerDiameter+underPCBs+2+maxPCBThickness+topThickness+bottomThickness;
 
 nudge = 0.001;
 insideWidth = boardDivider+4*fitTolerance+megaWidth+cbWidth;
 insideLength = max(megaLength,cbLength) + 2*fitTolerance;
+boxWidth = insideWidth+2*corner+2*sideWallThickness;
+boxLength = insideLength+2*sideWallThickness;
+
+screenX = insideWidth/4;
+screenY = insideLength/2;
+clearX = 0.75*insideWidth;
+clearY = insideLength/4;
+modeDiameter = 5.8;
+modeX = 0.75*insideWidth;
+modeY = 0.75*insideLength;
 
 cbX = fitTolerance;
 megaX = 3*fitTolerance+cbWidth+boardDivider;
+topZ = boxHeight-topThickness-bottomThickness;
+speakerDiameter1 = speakerDiameter + 2 * fitTolerance;
+
+speakerY = 0.5*insideLength;
+speakerX = boxWidth-corner-2*sideWallThickness;
+speakerZ = (topZ + maxPCBThickness+underPCBs)/2;
 
 module cutouts(cutouts, length, extra) {
     for (c=cutouts) {
@@ -55,7 +90,17 @@ module cutouts(cutouts, length, extra) {
     }
 }
 
-module boards(visualize=true) {
+module speakerGrille() {
+    r = speakerDiameter/2-speakerMountYStickout;
+    for (y=[-r:grilleSolidWidth+grilleHoleWidth:r]) {
+        y1 = y+grilleHoleWidth/2;
+        h = sqrt(r*r-y1*y1);
+        translate([0, y, -h])
+        cube([sideWallThickness+2*nudge, grilleHoleWidth, 2*h]);
+    }
+}
+
+module contents(visualize=true) {
     cutoutLength = visualize?10:100;
     extraCutout = visualize?0:cutoutTolerance;
     color("blue") {
@@ -67,6 +112,16 @@ module boards(visualize=true) {
         cube([cbWidth, cbLength, cbPCBThickness]);
         translate([cbX,fitTolerance+nudge-cutoutLength,underPCBs-nudge]) cutouts(cbFrontCutouts, cutoutLength,extraCutout);
         translate([cbX,fitTolerance+cbLength-nudge,underPCBs-nudge]) cutouts(cbBackCutouts, cutoutLength,extraCutout);
+    }
+    color([0,.4,0]) {
+        translate([screenX-screenHeight/2-extraCutout,screenY-screenWidth/2-extraCutout,topZ-1]) cube([screenHeight+2*extraCutout,screenWidth+2*extraCutout,cutoutLength]);
+    }
+    color([0,.8,0]) 
+        translate([clearX,clearY,topZ-nudge]) arcadeButtonCylinder();
+    color([0,0,0.5])
+        translate([modeX,modeY,topZ-nudge]) cylinder(d=modeDiameter+2*extraCutout,h=topThickness+1);
+    if (!visualize) {
+        translate([speakerX,speakerY-nudge,speakerZ]) speakerGrille();
     }
 }
 
@@ -112,21 +167,25 @@ module boardMounts() {
 }
 
 module box(height=boxHeight,inset=0) {
-    linear_extrude(height=height) translate([-corner-sideWallThickness+inset,-sideWallThickness+inset]) roundedSquare([insideWidth+2*corner+2*sideWallThickness-2*inset, insideLength+2*sideWallThickness-2*inset], radius=corner-inset);
+    linear_extrude(height=height) translate([-corner-sideWallThickness+inset,-sideWallThickness+inset]) roundedSquare([boxWidth-2*inset, boxLength-2*inset], radius=corner-inset);
 }
 
-module bottomWall() {
-    translate([0,0,-bottomThickness]) box(height=bottomThickness+nudge,inset=0);
-}
-
-module bottom() {
-    translate([0,0,bottomThickness]) {
-        boardMounts();
-        bottomWall();
-        if (includeBoards) boards(visualize=true);
+module shell() {
+    render(convexity=6)
+    difference() {
+        translate([0,0,-bottomThickness]) box();
+        box(height=boxHeight-bottomThickness-topThickness,inset=sideWallThickness);
+        contents(visualize=false);
     }
 }
 
+module bottom() {
+    boardMounts();
+    %shell();
+    if (includeBoards) contents(visualize=true);
+}
+
+%shell();
 bottom();
 
 // todo: screws; front empty, back full

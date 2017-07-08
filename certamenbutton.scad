@@ -1,7 +1,7 @@
 // print at 0.20 mm layers, PLA, 25% infill
 includeBase = 0; // [1:yes, 0:no]
-includeMain = 0; // [1:yes, 0:no]
-includeScrewTemplate = 1; // [1:yes, 0:no]
+includeMain = 1; // [1:yes, 0:no]
+includeScrewTemplate = 0; // [1:yes, 0:no]
 height = 40; 
 innerDiameter = 59.65;
 label = "C3";
@@ -94,6 +94,16 @@ module portCover() {
     polygon([[-cablePortThickness,0],[0,0],[0,-baseThicknessAdj-cableHoleDiameter+cableHoleBottomSquish-2*tolerance-cablePortThickness*2],[-cablePortThickness,-baseThicknessAdj-cableHoleDiameter-cablePortThickness+cableHoleBottomSquish-2*tolerance]]);
 }
 
+module arcadeButtonCylinder() {
+    rotate([0,0,90]) {
+        translate([0,0,-nudge]) cylinder(h=topThickness+2*nudge+snapThickening, d=holeDiameterMain+2*tolerance);
+        for (angle=[0:180:180]) 
+            rotate([0,0,angle]) 
+                translate([0,-snapWidth/2,-nudge])
+                cube([holeDiameterMain/2+tolerance+snapThickness,snapWidth,2*nudge+topThickness+snapThickening]);
+        for (angle=[45:90:360-45]) rotate([0,0,angle]) translate([holeDiameterMain/2+tolerance,0,-nudge]) cylinder(d=antiRotation+2*tolerance,h=topThickness+2*nudge,$fn=12);
+    }
+}
 
 module mainCylinder() {
     render(convexity=4)
@@ -116,14 +126,7 @@ cube([holeDiameterMain/2+tolerance+snapThickness+2,snapWidth,topThickness+snapTh
             for(angle=[0:180:cablePorts==1?0:180]) rotate([0,0,angle]) translate([-outerDiameter/2+wallThickness/2,0,0]) portCover();
         }
         cable(tolerance);
-        rotate([0,0,90]) {
-            translate([0,0,-nudge]) cylinder(h=height, d=holeDiameterMain+2*tolerance);
-            for (angle=[0:180:180]) 
-                rotate([0,0,angle]) 
-                    translate([0,-snapWidth/2,-nudge])
-                    cube([holeDiameterMain/2+tolerance+snapThickness,snapWidth,2*nudge+topThickness+snapThickening]);
-            for (angle=[45:90:360-45]) rotate([0,0,angle]) translate([holeDiameterMain/2+tolerance,0,-nudge]) cylinder(d=antiRotation+2*tolerance,h=topThickness+2*nudge,$fn=12);
-        }
+        arcadeButtonCylinder();
         translate([0,holeDiameterMain/4+(outerDiameter/4-chamfer/2)-.08*labelSize+textPositionAdjustment,textDepth-nudge]) rotate([180,0,0]) linear_extrude(height=textDepth) text(label, font=font, size=labelSize, halign="center", valign="center");
     }
 }
@@ -151,8 +154,9 @@ module base(template=false) {
 }
 
 $fn = 72;
-if (includeMain)
- mainCylinder();
+if (includeMain) {
+    mainCylinder();
+}
 
 if (includeBase) 
 {
