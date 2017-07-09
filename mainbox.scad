@@ -1,21 +1,19 @@
-
 use <roundedsquare.scad>;
-use <tubemesh.scad>;
 use <certamenbutton.scad>;
 
 DEMO = 0;
 TOP = 1;
 BOTTOM = 2;
 
-mode = BOTTOM;
+mode = DEMO;
 
-// TODO: 
-//  cut up
-//  screw wells for joining halves
+font = "Arial Black";
+labelSize = 9;
+label = "CERTAMEN";
 
 visualizeBoards = mode == DEMO;
 megaWidth = 53.34;
-megaLength = 101.6;
+megaLength = 102.33;
 megaHoles = [
 		[  2.54, 15.24 ],
 		[  50.8, 13.97 ],
@@ -25,7 +23,7 @@ megaHoles = [
 /* [[x,z,width,height],...] */
 megaPCBThickness = 1.66;
 megaFrontCutouts = [ [7, megaPCBThickness, 12.23, 10.82],
-    [ megaWidth-9.04-6.7, megaPCBThickness, 9.04, 11.08 ] ];
+    [ 37.78, megaPCBThickness, 9.04, 11 ] ];
 cbWidth = 54.9;
 cbLength = 99.06; // between edges of RJ-45 breakout board
 cbPCBThickness = 1.7;
@@ -48,6 +46,7 @@ boardDivider = 2;
 sideWallThickness = 1.25;
 bottomThickness = 1.5;
 topThickness = 3.2; // match Certamen button
+textDepth = 2; 
 
 screenScrewHorizontalSpacing = 74.8;
 screenScrewVerticalSpacing = 31.2;
@@ -89,6 +88,8 @@ clearY = insideLength/4;
 modeDiameter = 5.8;
 modeX = 0.75*insideWidth;
 modeY = 0.75*insideLength;
+labelX = (screenX - screenHeight/2)*0.5-labelSize/2;
+labelY = insideLength/2;
 
 cbX = fitTolerance;
 cbY = fitTolerance;
@@ -214,10 +215,17 @@ module screenScrews(holeOnly=false) {
     translate([screenX+dx,screenY+dy]) screenScrew(holeOnly=holeOnly);
 }
 
+module labels() {
+    translate([labelX,labelY,topZ+topThickness+nudge-textDepth]) linear_extrude(height=textDepth) rotate([0,0,-90]) text(label, font=font, size=labelSize, halign="center", valign="center");
+}
+
 module shell() {
     render(convexity=6)
     difference() {
-        translate([0,0,-bottomThickness+nudge]) box();
+        union() {
+            translate([0,0,-bottomThickness+nudge]) box();
+            screenScrews();
+        }
         box(height=boxHeight-bottomThickness-topThickness,inset=sideWallThickness);
         contents(visualize=false);
         screenScrews(holeOnly=true);
@@ -226,6 +234,7 @@ module shell() {
         joinScrewPillars(holeOnly=true);
         pcbScrews(megaX,megaY,megaHoles,holeOnly=true);
         pcbScrews(cbX,cbY,cbHoles,holeOnly=true);
+        labels();
     }
 }
 
@@ -281,7 +290,6 @@ module joinScrewPillars(holeOnly=false) {
 
 module whole() {
     boardMounts();
-    screenScrews();
     shell();
     if (visualizeBoards) contents(visualize=true);
     speakerMount();
