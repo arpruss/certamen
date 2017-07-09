@@ -3,18 +3,20 @@ use <tubemesh.scad>;
 use <certamenbutton.scad>;
 
 // TODO: 
-//  speaker rails
 //  cut up
-//  screw wells for screen
 //  screw wells for joining halves
 
-includeBoards = false;
+includeBoards = true;
 megaWidth = 53.34;
 megaLength = 101.6;
-megaPCBThickness = 1.66;
-megaHoles = [ //[  50.8, 13.97 ],
-		[  50.8, 96.52 ]];
+megaHoles = [
+		[  2.54, 15.24 ],
+		[  50.8, 13.97 ],
+		[  2.54, 90.17 ],
+		[  50.8, 96.52 ]
+		]; // from Kelly Egan's Arduino library
 /* [[x,z,width,height],...] */
+megaPCBThickness = 1.66;
 megaFrontCutouts = [ [7, megaPCBThickness, 12.23, 10.82],
     [ megaWidth-9.04-6.7, megaPCBThickness, 9.04, 11.08 ] ];
 cbWidth = 54.9;
@@ -22,19 +24,20 @@ cbLength = 99.06; // between edges of RJ-45 breakout board
 cbPCBThickness = 1.7;
 cbFrontCutouts = [[5.88,5.45,15.15,11.56],[cbWidth-5.58-15.15,5.45,15.15,11.56]];
 cbBackCutouts = [[cbWidth-5.58-15.15,5.45,15.15,11.56]];
-cbHoles = [[4.04,cbLength-7.5]];
-maxPCBThickness = max(megaPCBThickness, cbPCBThickness);
+cbHoles = [[4.04,7.5],[cbWidth-4.04,7.5],[4.04,cbLength-7.5],[cbWidth-4.04,cbLength-7.5]];
+
+pcbThickness = max(cbPCBThickness,megaPCBThickness);
+
 mountExtra = 2;
 
-boardDivider = 3;
-slideBackbone = 3;
 underPCBs = 5;
+
+cutLine = underPCBs + 0.5*( cbFrontCutouts[0][1] + megaPCBThickness + max([for(c=megaFrontCutouts) c[3]]) );
 
 fitTolerance = 0.4;
 cutoutTolerance = 1;
-bottomSlideWidth = 1.82;
-topSlideWidth = 1.75;
 
+boardDivider = 2;
 sideWallThickness = 1.25;
 bottomThickness = 1.5;
 topThickness = 3.2; // match Certamen button
@@ -43,7 +46,7 @@ screenScrewHorizontalSpacing = 74.8;
 screenScrewVerticalSpacing = 31.2;
 screenWidth = 71.21;
 screenHeight = 24.04; 
-// make sure screendepth fits well 
+screenDepth = 7; 
 
 screenScrewWellDepth = 7.97;
 speakerDiameter = 39.2;
@@ -53,9 +56,12 @@ speakerMountThickness = 1.5;
 grilleSolidWidth = 2;
 grilleHoleWidth = 2.5;
 
-corner = 9;
+corner = 9; // corner-boardDivider must allow room for the speaker
 
-boxHeight = speakerDiameter+underPCBs+2+maxPCBThickness+topThickness+bottomThickness;
+pcbHolderThickness = 2;
+pcbHolderHeight = underPCBs+pcbThickness+2;
+
+boxHeight = speakerDiameter+underPCBs+2+pcbThickness+topThickness+bottomThickness;
 
 nudge = 0.001;
 insideWidth = boardDivider+4*fitTolerance+megaWidth+cbWidth;
@@ -72,13 +78,27 @@ modeX = 0.75*insideWidth;
 modeY = 0.75*insideLength;
 
 cbX = fitTolerance;
+cbY = fitTolerance;
 megaX = 3*fitTolerance+cbWidth+boardDivider;
+megaY = fitTolerance;
 topZ = boxHeight-topThickness-bottomThickness;
 speakerDiameter1 = speakerDiameter + 2 * fitTolerance;
 
+screwTolerance = 0.125;
+screwHoleSize = 2.6;
+screwHoleSize1 = screwHoleSize + 2*screwTolerance;
+screwPillarSize = 12;
+
 speakerY = 0.5*insideLength;
 speakerX = boxWidth-corner-2*sideWallThickness;
-speakerZ = (topZ + maxPCBThickness+underPCBs)/2;
+speakerZ = speakerDiameter1/2;
+
+ventHeight=18;
+ventWidth=insideWidth*0.75;
+ventSpacing=2;
+
+ventX=insideWidth/2;
+ventZ=topZ-10;
 
 module cutouts(cutouts, length, extra) {
     for (c=cutouts) {
@@ -105,13 +125,13 @@ module contents(visualize=true) {
     extraCutout = visualize?0:cutoutTolerance;
     color("blue") {
         translate( [megaX,fitTolerance,underPCBs] ) cube([megaWidth, megaLength, megaPCBThickness]);
-        translate([megaX,fitTolerance+nudge-cutoutLength,underPCBs-nudge]) cutouts(megaFrontCutouts, cutoutLength,extraCutout);
+        translate([megaX,fitTolerance-cutoutLength,underPCBs]) cutouts(megaFrontCutouts, cutoutLength,extraCutout);
     }
     color("red") {
         translate( [cbX,fitTolerance,underPCBs])
         cube([cbWidth, cbLength, cbPCBThickness]);
-        translate([cbX,fitTolerance+nudge-cutoutLength,underPCBs-nudge]) cutouts(cbFrontCutouts, cutoutLength,extraCutout);
-        translate([cbX,fitTolerance+cbLength-nudge,underPCBs-nudge]) cutouts(cbBackCutouts, cutoutLength,extraCutout);
+        translate([cbX,fitTolerance-cutoutLength,underPCBs]) cutouts(cbFrontCutouts, cutoutLength,extraCutout);
+        translate([cbX,fitTolerance+cbLength,underPCBs]) cutouts(cbBackCutouts, cutoutLength,extraCutout);
     }
     color([0,.4,0]) {
         translate([screenX-screenHeight/2-extraCutout,screenY-screenWidth/2-extraCutout,topZ-1]) cube([screenHeight+2*extraCutout,screenWidth+2*extraCutout,cutoutLength]);
@@ -125,44 +145,32 @@ module contents(visualize=true) {
     }
 }
 
-mountHeight = underPCBs+maxPCBThickness+topSlideWidth+mountExtra;
-
 module boardMounts() {
-    module diagonalSlideLeft() {
-        section1 = [ [0,0,0], [topSlideWidth,0,topSlideWidth], [topSlideWidth,0,topSlideWidth+mountExtra],[0,0,topSlideWidth+mountExtra] ];
-        section2 = [for (v=section1) v+[0,insideLength,0]];
-        
-        leftPointsAndFaces = 
-            pointsAndFaces([ section1, section2]);
-        polyhedron(points=leftPointsAndFaces[0], faces=leftPointsAndFaces[1]);
-    }
-    
-    module diagonalSlideRight() {
-        mirror([1,0,0]) diagonalSlideLeft();
-    }
-    
-    render(convexity=2)
+    render(convexity=2) {
     intersection() {
         union() {
-        translate([nudge-slideBackbone,0,0])
-            cube([slideBackbone,insideLength,mountHeight]);
-        translate([insideWidth-nudge,0,0])
-            cube([slideBackbone,insideLength,mountHeight]);
+            translate([cbX-fitTolerance-pcbHolderThickness,0,0]) cube([pcbHolderThickness,insideLength,pcbHolderHeight]);
+            translate([cbX+cbWidth+fitTolerance,0,0]) cube([pcbHolderThickness,insideLength,pcbHolderHeight]);
+            translate([megaX+megaWidth+fitTolerance,0,0]) cube([pcbHolderThickness,insideLength,pcbHolderHeight]);
+        translate([0,insideLength-(megaLength-cbLength),0]) cube([2*fitTolerance+cbWidth, megaLength-cbLength, pcbHolderHeight]);
+        }        
+        box();
+    }    
+    pcbScrews(megaX,megaY,megaHoles);
+    pcbScrews(cbX,cbY,cbHoles);
+}
+}
 
-        cube([bottomSlideWidth, insideLength, underPCBs]);
-        translate([2*fitTolerance+cbWidth-bottomSlideWidth,0,0]) 
-            cube([bottomSlideWidth*2+boardDivider, insideLength, underPCBs]);
-        translate([insideWidth-bottomSlideWidth, 0,0])
-            cube([bottomSlideWidth+nudge, insideLength, underPCBs]);
-        translate([2*fitTolerance+cbWidth-nudge,0,0])
-            cube([boardDivider+2*nudge,insideLength,mountHeight]);
-        translate([0,0,underPCBs+cbPCBThickness]) diagonalSlideLeft();
-        translate([2*fitTolerance+cbWidth,0,underPCBs+cbPCBThickness]) diagonalSlideRight();
-        translate([megaX-fitTolerance,0,underPCBs+megaPCBThickness]) diagonalSlideLeft();
-        translate([megaX+fitTolerance+megaWidth,0,underPCBs+megaPCBThickness]) diagonalSlideRight();
-        translate([0,insideLength-(megaLength-cbLength),0]) cube([2*fitTolerance+cbWidth, megaLength-cbLength, underPCBs+cbPCBThickness+topSlideWidth]);
-        }
-        box(inset=sideWallThickness+fitTolerance);
+module screwPillar(height, taper=true) {
+    difference() {
+        cylinder(d1=screwPillarSize, d2=taper ? screwHoleSize1+4 : screwPillarSize, h=height, $fn=16);
+        cylinder(d=screwHoleSize1, h=height+nudge, $fn=16);
+    }
+}
+
+module pcbScrews(x,y,positions) {
+    for(pos=positions) {
+        translate([x+pos[0],y+pos[1],0]) screwPillar(underPCBs, taper=true);
     }
 }
 
@@ -170,22 +178,73 @@ module box(height=boxHeight,inset=0) {
     linear_extrude(height=height) translate([-corner-sideWallThickness+inset,-sideWallThickness+inset]) roundedSquare([boxWidth-2*inset, boxLength-2*inset], radius=corner-inset);
 }
 
-module shell() {
-    render(convexity=6)
+module screenScrew(holeOnly=false) {
+    pillarSize = screwHoleSize1+4;
+    render(convexity=2)
+    translate([0,0,topZ-(screenDepth-topThickness)-nudge])
     difference() {
-        translate([0,0,-bottomThickness]) box();
-        box(height=boxHeight-bottomThickness-topThickness,inset=sideWallThickness);
-        contents(visualize=false);
+        if (!holeOnly) cylinder(d=pillarSize, h=screenDepth, $fn=16);
+        translate([0,0,-nudge]) cylinder(d=screwHoleSize1, h=screenDepth-1, $fn=16);
     }
 }
 
-module bottom() {
+module screenScrews(holeOnly=false) {
+    dx = screenScrewVerticalSpacing / 2;
+    dy = screenScrewHorizontalSpacing / 2;
+
+    translate([screenX-dx,screenY-dy]) screenScrew(holeOnly=holeOnly);
+    translate([screenX+dx,screenY-dy]) screenScrew(holeOnly=holeOnly);
+    translate([screenX-dx,screenY+dy]) screenScrew(holeOnly=holeOnly);
+    translate([screenX+dx,screenY+dy]) screenScrew(holeOnly=holeOnly);
+}
+
+module shell() {
+    render(convexity=6)
+    difference() {
+        translate([0,0,-bottomThickness+nudge]) box();
+        box(height=boxHeight-bottomThickness-topThickness,inset=sideWallThickness);
+        contents(visualize=false);
+        screenScrews(holeOnly=true);
+        translate([0,-sideWallThickness-nudge,0]) vent();
+        translate([0,insideLength-nudge,0]) vent();
+    }
+}
+
+module speakerMount() {
+    height = nudge+topZ-speakerZ+10;
+    module strip() {
+        cube([speakerMountXStickout+speakerMountThickness,speakerMountThickness,height]);
+        translate([speakerMountXStickout,0,0])
+        cube([speakerMountThickness,speakerMountYStickout+speakerMountThickness,height]);
+    }
+    translate([speakerX+nudge,speakerY,0])
+    rotate([0,0,180]) {
+        translate([0,0,topZ-height]) {
+        translate([0,-speakerDiameter1/2-speakerMountThickness,0]) strip();
+        translate([0,speakerDiameter1/2+speakerMountThickness,0]) mirror(v=[0,1,0]) strip();
+        }
+        topHolderHeight = (topZ-speakerZ)-speakerDiameter1/2;
+        translate([0,-5, topZ-topHolderHeight])
+        cube([speakerMountXStickout, 10, topHolderHeight+nudge]);
+    }
+}
+
+module vent() {
+    translate([ventX-ventWidth/2,-nudge,ventZ-ventHeight/2])
+    for (x=[0:2*ventSpacing:ventWidth]) {
+        translate([x,0,0])
+        cube([ventSpacing,2*nudge+sideWallThickness,ventHeight]);
+    }
+}
+
+
+module inside() {
     boardMounts();
+    screenScrews();
     %shell();
     if (includeBoards) contents(visualize=true);
 }
 
 %shell();
-bottom();
-
-// todo: screws; front empty, back full
+inside();
+speakerMount();
