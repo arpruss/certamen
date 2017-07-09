@@ -71,7 +71,10 @@ corner = 9; // must allow room for the speaker, as well as for the screw wells
 pcbHolderThickness = 2;
 pcbHolderHeight = underPCBs+pcbThickness+2;
 
-boxHeight = speakerDiameter+underPCBs+2+pcbThickness+topThickness+bottomThickness;
+spaceNeededForWires = 40;
+
+boxHeight = underPCBs+max(spaceNeededForWires,speakerDiameter+2)+pcbThickness+topThickness+bottomThickness;
+echo(boxHeight-underPCBs-topThickness-bottomThickness);
 
 nudge = 0.001;
 insideWidth = boardDivider+4*fitTolerance+megaWidth+cbWidth;
