@@ -95,7 +95,9 @@ screenX = insideWidth/4;
 screenY = insideLength/2;
 clearX = 0.75*insideWidth;
 clearY = insideLength/4;
-modeDiameter = 5.8;
+modeSwitchNeckDiameter = 5.8;
+modeSwitchOuterDiameter = 11.12;
+modeSwitchNeck = 1.5;
 modeX = 0.75*insideWidth;
 modeY = 0.75*insideLength;
 labelX = (screenX - screenHeight/2)*0.5-labelSize/2;
@@ -165,7 +167,9 @@ module contents(visualize=true) {
     color([0,.8,0]) 
         translate([clearX,clearY,topZ-nudge]) arcadeButtonCylinder();
     color([0,0,0.5])
-        translate([modeX,modeY,topZ-nudge]) cylinder(d=modeDiameter+2*extraCutout,h=topThickness+1);
+        translate([modeX,modeY,topZ-nudge]) { cylinder(d=modeSwitchNeckDiameter+2*extraCutout,h=topThickness+1);
+    cylinder(d=modeSwitchOuterDiameter+2*extraCutout,h=modeSwitchNeck);
+        }
     if (!visualize) {
         translate([speakerX,speakerY-nudge,speakerZ]) speakerGrille();
     }
