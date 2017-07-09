@@ -73,7 +73,6 @@ pcbHolderHeight = underPCBs+pcbThickness+2;
 spaceNeededForWires = 40;
 
 boxHeight = underPCBs+max(spaceNeededForWires,speakerDiameter+2)+pcbThickness+topThickness+bottomThickness;
-echo(boxHeight-underPCBs-topThickness-bottomThickness);
 
 nudge = 0.001;
 insideWidth = boardDivider+4*fitTolerance+megaWidth+cbWidth;
