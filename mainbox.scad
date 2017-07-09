@@ -1,12 +1,21 @@
+// TODO: speaker holders should end at cutLine
+// increase underPCBs by 2.5
+
 use <roundedsquare.scad>;
 use <certamenbutton.scad>;
+use <hershey.scad>;
 
 DEMO = 0;
 TOP = 1;
 BOTTOM = 2;
 
-mode = DEMO;
+mode = TOP;
 
+// side labels
+sideFont = "rowmans";
+sideLabelSize = 12;
+
+// main label
 font = "Arial Black";
 labelSize = 9;
 label = "CERTAMEN";
@@ -27,9 +36,11 @@ megaFrontCutouts = [ [7, megaPCBThickness, 12.23, 10.82],
 cbWidth = 54.9;
 cbLength = 99.06; // between edges of RJ-45 breakout board
 cbPCBThickness = 1.7;
-cbFrontCutouts = [[5.88,5.45,15.15,11.56],[cbWidth-5.58-15.15,5.45,15.15,11.56]];
-cbBackCutouts = [[cbWidth-5.58-15.15,5.45,15.15,11.56]];
-cbHoles = [[4.04,7.5],[cbWidth-4.04,7.5],[4.04,cbLength-7.5],[cbWidth-4.04,cbLength-7.5]];
+cbFrontCutouts = [
+        [5.88,5.45,15.15,11.56] /* B */,
+        [cbWidth-5.58-15.15,5.45,15.15,11.56] /* A */];
+cbBackCutouts = [[cbWidth-5.58-15.15,5.45,15.15,11.56] /* C */];
+cbHoles = [[4.04,7.5],[cbWidth-4.04,7.5],[4.04,84.6+7.5],[cbWidth-4.04,84.6+7.5]];
 
 pcbThickness = max(cbPCBThickness,megaPCBThickness);
 
@@ -108,12 +119,12 @@ speakerY = 0.5*insideLength;
 speakerX = boxWidth-corner-2*sideWallThickness;
 speakerZ = speakerDiameter1/2;
 
-ventHeight=18;
-ventWidth=insideWidth*0.75;
+ventHeight=24;
+ventWidth=insideWidth*0.4;
 ventSpacing=2;
 
-ventX=insideWidth/2;
-ventZ=topZ-10;
+ventX=insideWidth*0.75;
+ventZ=topZ-ventHeight/2-1;
 
 module cutouts(cutouts, length, extra) {
     for (c=cutouts) {
@@ -293,6 +304,7 @@ module whole() {
     if (visualizeBoards) contents(visualize=true);
     speakerMount();
     joinScrewPillars();
+    portLabels();
 }
 
 module alignerPillar() {
@@ -302,9 +314,9 @@ module alignerPillar() {
         difference() {
             union() {
                 translate([0,0,cutLine]) cylinder(r=corner, h=topZ-cutLine+nudge);
-                translate([0,0,cutLine-alignerHeight]) cylinder(r=corner-sideWallThickness-fitTolerance, h=alignerHeight+topZ-cutLine+nudge);
+                translate([0,0,cutLine-alignerHeight]) cylinder(r=corner-sideWallThickness-2*fitTolerance, h=alignerHeight+topZ-cutLine+nudge);
             }
-            translate([0,0,cutLine-alignerHeight-nudge]) cylinder(r=corner-sideWallThickness-fitTolerance-alignerThickness, h=alignerHeight+topZ-cutLine+nudge);
+            translate([0,0,cutLine-alignerHeight-nudge]) cylinder(r=corner-sideWallThickness-2*fitTolerance-alignerThickness, h=alignerHeight+topZ-cutLine+nudge);
         }
        translate([-corner, -corner, cutLine-alignerHeight-nudge]) 
             cube([corner,corner,alignerHeight+topZ-cutLine+nudge]);
@@ -323,6 +335,30 @@ module alignerPillars() {
     translate([insideWidth+sideWallThickness,insideLength-corner+sideWallThickness,0])
     rotate([0,0,180])
     alignerPillar();
+}
+
+module portLabel(s) {
+    drawHersheyText(s, font=sideFont, valign="bottom", halign="center", size=sideLabelSize) cylinder(r1=sideLabelSize/5,r2=sideLabelSize/10,h=sideLabelSize/10);
+}
+
+cbFrontCutouts = [
+        [5.88,5.45,15.15,11.56] /* B */,
+        [cbWidth-5.58-15.15,5.45,15.15,11.56] /* A */];
+cbBackCutouts = [[cbWidth-5.58-15.15,5.45,15.15,11.56] /* C */];
+
+module portLabels() {
+    z = underPCBs+3+cutoutTolerance+cbFrontCutouts[0][1]+cbFrontCutouts[0][3];
+    translate([1+cbX+cbFrontCutouts[0][0]+0.5*cbFrontCutouts[0][2],-sideWallThickness+nudge,z])
+    rotate([90,0,0]) {
+        portLabel("B");
+        translate([cbFrontCutouts[1][0]-cbFrontCutouts[0][0],0,0]) portLabel("A");
+    }
+    
+    translate([cbX-1+cbBackCutouts[0][0]+0.5*cbBackCutouts[0][2],insideLength+sideWallThickness-nudge,z])
+    rotate([0,0,180])
+    rotate([90,0,0]) {
+        portLabel("C");
+    }
 }
 
 module lowerHalf() {
