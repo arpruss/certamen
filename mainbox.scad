@@ -162,7 +162,7 @@ module contents(visualize=true) {
         translate([cbX,fitTolerance+cbLength,underPCBs]) cutouts(cbBackCutouts, cutoutLength,extraCutout);
     }
     color([0,.4,0]) {
-        translate([screenX-screenHeight/2-extraCutout,screenY-screenWidth/2-extraCutout,topZ-1]) cube([screenHeight+2*extraCutout,screenWidth+2*extraCutout,cutoutLength]);
+        translate([screenX-screenHeight/2-extraCutout,screenY-screenWidth/2-extraCutout,topZ-5]) cube([screenHeight+2*extraCutout,screenWidth+2*extraCutout,cutoutLength+5]);
     }
     color([0,.8,0]) 
         translate([clearX,clearY,topZ-nudge]) arcadeButtonCylinder();
@@ -237,10 +237,12 @@ module shell() {
     render(convexity=6)
     difference() {
         union() {
-            translate([0,0,-bottomThickness+nudge]) box();
+            difference() {
+                translate([0,0,-bottomThickness+nudge]) box();
+                box(height=boxHeight-bottomThickness-topThickness,inset=sideWallThickness);
+            }
             screenScrews();
         }
-        box(height=boxHeight-bottomThickness-topThickness,inset=sideWallThickness);
         contents(visualize=false);
         screenScrews(holeOnly=true);
         translate([0,-sideWallThickness-nudge,0]) vent();
