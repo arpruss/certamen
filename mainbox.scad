@@ -2,11 +2,17 @@ use <roundedsquare.scad>;
 use <tubemesh.scad>;
 use <certamenbutton.scad>;
 
+DEMO = 0;
+TOP = 1;
+BOTTOM = 2;
+
+mode = TOP;
+
 // TODO: 
 //  cut up
 //  screw wells for joining halves
 
-includeBoards = true;
+visualizeBoards = mode == DEMO;
 megaWidth = 53.34;
 megaLength = 101.6;
 megaHoles = [
@@ -56,7 +62,10 @@ speakerMountThickness = 1.5;
 grilleSolidWidth = 2;
 grilleHoleWidth = 2.5;
 
-corner = 9; // corner-boardDivider must allow room for the speaker
+alignerThickness = 1+fitTolerance;
+alignerHeight = 4;
+
+corner = 9; // must allow room for the speaker, as well as for the screw wells
 
 pcbHolderThickness = 2;
 pcbHolderHeight = underPCBs+pcbThickness+2;
@@ -86,8 +95,10 @@ speakerDiameter1 = speakerDiameter + 2 * fitTolerance;
 
 screwTolerance = 0.125;
 screwHoleSize = 2.6;
+maxScrewLength = 10;
 screwHoleSize1 = screwHoleSize + 2*screwTolerance;
 screwPillarSize = 12;
+screwHeadSize = 6; // TODO
 
 speakerY = 0.5*insideLength;
 speakerX = boxWidth-corner-2*sideWallThickness;
@@ -115,7 +126,7 @@ module speakerGrille() {
     for (y=[-r:grilleSolidWidth+grilleHoleWidth:r]) {
         y1 = y+grilleHoleWidth/2;
         h = sqrt(r*r-y1*y1);
-        translate([0, y, -h])
+        translate([-nudge, y, -h])
         cube([sideWallThickness+2*nudge, grilleHoleWidth, 2*h]);
     }
 }
@@ -175,7 +186,7 @@ module pcbScrews(x,y,positions) {
 }
 
 module box(height=boxHeight,inset=0) {
-    linear_extrude(height=height) translate([-corner-sideWallThickness+inset,-sideWallThickness+inset]) roundedSquare([boxWidth-2*inset, boxLength-2*inset], radius=corner-inset);
+    linear_extrude(height=height) translate([-corner-sideWallThickness+inset,-sideWallThickness+inset]) roundedSquare([boxWidth-2*inset, boxLength-2*inset], radius=corner-inset,$fn=36);
 }
 
 module screenScrew(holeOnly=false) {
@@ -207,6 +218,7 @@ module shell() {
         screenScrews(holeOnly=true);
         translate([0,-sideWallThickness-nudge,0]) vent();
         translate([0,insideLength-nudge,0]) vent();
+        joinScrewPillars(holeOnly=true);
     }
 }
 
@@ -233,18 +245,96 @@ module vent() {
     translate([ventX-ventWidth/2,-nudge,ventZ-ventHeight/2])
     for (x=[0:2*ventSpacing:ventWidth]) {
         translate([x,0,0])
-        cube([ventSpacing,2*nudge+sideWallThickness,ventHeight]);
+        cube([ventSpacing,4*nudge+sideWallThickness,ventHeight]);
     }
 }
 
-
-module inside() {
-    boardMounts();
-    screenScrews();
-    %shell();
-    if (includeBoards) contents(visualize=true);
+module joinScrewPillar(holeOnly=false) {
+    $fn = 16;
+    render(convexity=2)
+    difference() {
+        if(!holeOnly) translate([0,0,-bottomThickness]) cylinder(d=corner,h=bottomThickness+2*nudge+topZ);
+        union() {
+            cylinder(d=screwHoleSize1,h=maxScrewLength+cutLine);
+            cylinder(d=screwHoleSize1+1,h=cutLine);
+            translate([0,0,-bottomThickness-nudge])
+            cylinder(d=screwHeadSize+2*fitTolerance,h=cutLine-2+bottomThickness);
+        }
+    }
 }
 
-%shell();
-inside();
-speakerMount();
+module joinScrewPillars(holeOnly=false) {
+    module pair() {
+    translate([-corner/2-sideWallThickness,0,0]) joinScrewPillar(holeOnly=holeOnly);
+    translate([insideWidth+corner/2+sideWallThickness,0,0]) joinScrewPillar(holeOnly=holeOnly);
+    }
+    translate([0,corner*2,0]) pair();
+    translate([0,insideLength-corner*2,0]) pair();
+}
+
+module whole() {
+    boardMounts();
+    screenScrews();
+    shell();
+    if (visualizeBoards) contents(visualize=true);
+    speakerMount();
+    joinScrewPillars();
+}
+
+module alignerPillar() {
+    $fn=36;
+    render(convexity=4)
+    intersection() {
+        difference() {
+            union() {
+                translate([0,0,cutLine]) cylinder(r=corner, h=topZ-cutLine+nudge);
+                translate([0,0,cutLine-alignerHeight]) cylinder(r=corner-sideWallThickness-fitTolerance, h=alignerHeight+topZ-cutLine+nudge);
+            }
+            translate([0,0,cutLine-alignerHeight-nudge]) cylinder(r=corner-sideWallThickness-fitTolerance-alignerThickness, h=alignerHeight+topZ-cutLine+nudge);
+        }
+       translate([-corner, -corner, cutLine-alignerHeight-nudge]) 
+            cube([corner,corner,alignerHeight+topZ-cutLine+nudge]);
+    }
+}
+
+module alignerPillars() {
+    translate([-sideWallThickness,corner-sideWallThickness,0])
+    alignerPillar();
+    translate([insideWidth+sideWallThickness,corner-sideWallThickness,0])
+    rotate([0,0,90])
+    alignerPillar();
+    translate([-sideWallThickness,insideLength-corner+sideWallThickness,0])
+    rotate([0,0,-90])
+    alignerPillar();
+    translate([insideWidth+sideWallThickness,insideLength-corner+sideWallThickness,0])
+    rotate([0,0,180])
+    alignerPillar();
+}
+
+module lowerHalf() {
+    render(convexity=5)
+    intersection() {
+        whole();
+        translate([-20,-20,-20]) cube([boxWidth+40,boxLength+40,cutLine+20]);
+    }
+}
+
+module upperHalf() {
+    rotate([180,0,0]) 
+    render(convexity=5) {
+        intersection() {
+            whole();
+            translate([-20,-20,cutLine]) cube([boxWidth+40,boxLength+40,topThickness+topZ-cutLine+20]);
+        }
+        alignerPillars();
+    }
+}
+
+module demo() {
+    whole();
+    alignerPillars();
+}
+
+if (mode == TOP) upperHalf();
+else if (mode == BOTTOM) lowerHalf();
+else demo();
