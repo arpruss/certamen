@@ -1,3 +1,4 @@
+
 use <roundedsquare.scad>;
 use <tubemesh.scad>;
 use <certamenbutton.scad>;
@@ -6,7 +7,7 @@ DEMO = 0;
 TOP = 1;
 BOTTOM = 2;
 
-mode = TOP;
+mode = BOTTOM;
 
 // TODO: 
 //  cut up
@@ -98,7 +99,7 @@ screwHoleSize = 2.6;
 maxScrewLength = 10;
 screwHoleSize1 = screwHoleSize + 2*screwTolerance;
 screwPillarSize = 12;
-screwHeadSize = 6; // TODO
+screwHeadSize = 5.35;
 
 speakerY = 0.5*insideLength;
 speakerX = boxWidth-corner-2*sideWallThickness;
@@ -172,16 +173,17 @@ module boardMounts() {
 }
 }
 
-module screwPillar(height, taper=true) {
+module screwPillar(height, taper=true, holeOnly=false) {
     difference() {
-        cylinder(d1=screwPillarSize, d2=taper ? screwHoleSize1+4 : screwPillarSize, h=height, $fn=16);
-        cylinder(d=screwHoleSize1, h=height+nudge, $fn=16);
+        if (!holeOnly) cylinder(d1=screwPillarSize, d2=taper ? screwHoleSize1+4 : screwPillarSize, h=height, $fn=16);
+        translate([0,0,-bottomThickness-nudge])
+        cylinder(d=screwHoleSize1, h=height+bottomThickness+2*nudge, $fn=16);
     }
 }
 
-module pcbScrews(x,y,positions) {
+module pcbScrews(x,y,positions,holeOnly=false) {
     for(pos=positions) {
-        translate([x+pos[0],y+pos[1],0]) screwPillar(underPCBs, taper=true);
+        translate([x+pos[0],y+pos[1],0]) screwPillar(underPCBs, taper=true,holeOnly=holeOnly);
     }
 }
 
@@ -219,6 +221,8 @@ module shell() {
         translate([0,-sideWallThickness-nudge,0]) vent();
         translate([0,insideLength-nudge,0]) vent();
         joinScrewPillars(holeOnly=true);
+        pcbScrews(megaX,megaY,megaHoles,holeOnly=true);
+        pcbScrews(cbX,cbY,cbHoles,holeOnly=true);
     }
 }
 
@@ -258,7 +262,7 @@ module joinScrewPillar(holeOnly=false) {
             cylinder(d=screwHoleSize1,h=maxScrewLength+cutLine);
             cylinder(d=screwHoleSize1+1,h=cutLine);
             translate([0,0,-bottomThickness-nudge])
-            cylinder(d=screwHeadSize+2*fitTolerance,h=cutLine-2+bottomThickness);
+            cylinder(d=screwHeadSize+2*fitTolerance,h=cutLine-3+bottomThickness);
         }
     }
 }
