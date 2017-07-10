@@ -8,8 +8,11 @@ use <hershey.scad>;
 DEMO = 0;
 TOP = 1;
 BOTTOM = 2;
+WASHERS = 3;
 
-mode = TOP;
+mode = DEMO;
+
+screwLength = 9.61;
 
 // side labels
 sideFont = "rowmans";
@@ -115,7 +118,7 @@ screwHoleSize = 2.6;
 maxScrewLength = 10;
 screwHoleSize1 = screwHoleSize + 2*screwTolerance;
 screwPillarSize = 12;
-screwHeadSize = 5.35;
+screwHeadSize = 5.8;
 
 speakerY = 0.5*insideLength;
 speakerX = boxWidth-corner-2*sideWallThickness;
@@ -386,6 +389,20 @@ module upperHalf() {
     }
 }
 
+module screenWasher() {
+    pillarSize = screwHoleSize1+5;
+    length = screwLength+0.75-(pcbThickness+(screenDepth-1));
+    render(convexity=2)
+    difference() {
+        cylinder(d=pillarSize, h=length, $fn=16);
+        translate([0,0,-nudge]) cylinder(d=screwHoleSize1+1, h=length+2*nudge, $fn=16); 
+    }
+}
+
+module washers() {
+    for(i=[0:3]) translate([15*i,0,0]) screenWasher();
+}
+
 module demo() {
     whole();
     alignerPillars();
@@ -393,4 +410,5 @@ module demo() {
 
 if (mode == TOP) upperHalf();
 else if (mode == BOTTOM) lowerHalf();
-else demo();
+else if (mode == DEMO) demo();
+else if (mode == WASHERS) washers();
