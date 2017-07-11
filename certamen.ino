@@ -2,7 +2,7 @@
     See COPYING
 */
 
-//#define EASTER_EGGS
+#undef EASTER_EGGS
 #undef TEST_MODE
 #define RANDOM_PRESS_FREQUENCY 0
 #define CLEAR_FREQUENCY 0
