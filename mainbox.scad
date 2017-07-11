@@ -1,5 +1,3 @@
-// TODO: speaker holders should end at cutLine
-// increase underPCBs by 2.5
 
 use <roundedsquare.scad>;
 use <certamenbutton.scad>;
@@ -10,7 +8,7 @@ TOP = 1;
 BOTTOM = 2;
 WASHERS = 3;
 
-mode = DEMO;
+mode = WASHERS;
 
 screwLength = 9.61;
 
@@ -37,13 +35,13 @@ megaPCBThickness = 1.66;
 megaFrontCutouts = [ [7, megaPCBThickness, 12.23, 10.82],
     [ 37.78, megaPCBThickness, 9.04, 11 ] ];
 cbWidth = 54.9;
-cbLength = 99.06; // between edges of RJ-45 breakout board
+cbLength = 93; // 99.06 between edges of RJ-45 breakout board
 cbPCBThickness = 1.7;
 cbFrontCutouts = [
         [5.88,5.45,15.15,11.56] /* B */,
         [cbWidth-5.58-15.15,5.45,15.15,11.56] /* A */];
 cbBackCutouts = [[cbWidth-5.58-15.15,5.45,15.15,11.56] /* C */];
-cbHoles = [[4.04,7.5],[cbWidth-4.04,7.5],[4.04,84.6+7.5],[cbWidth-4.04,84.6+7.5]];
+cbHoles = [[4.04,4.19],[cbWidth-4.04,4.19],[4.04,84.6+4.19],[cbWidth-4.04,84.6+4.19]];
 
 pcbThickness = max(cbPCBThickness,megaPCBThickness);
 
@@ -107,7 +105,7 @@ labelX = (screenX - screenHeight/2)*0.5-labelSize/2;
 labelY = insideLength/2;
 
 cbX = fitTolerance;
-cbY = fitTolerance;
+cbY = insideLength/2-cbLength/2;
 megaX = 3*fitTolerance+cbWidth+boardDivider;
 megaY = fitTolerance;
 topZ = boxHeight-topThickness-bottomThickness;
@@ -155,14 +153,14 @@ module contents(visualize=true) {
     cutoutLength = visualize?10:100;
     extraCutout = visualize?0:cutoutTolerance;
     color("blue") {
-        translate( [megaX,fitTolerance,underPCBs] ) cube([megaWidth, megaLength, megaPCBThickness]);
-        translate([megaX,fitTolerance-cutoutLength,underPCBs]) cutouts(megaFrontCutouts, cutoutLength,extraCutout);
+        translate( [megaX,megaY,underPCBs] ) cube([megaWidth, megaLength, megaPCBThickness]);
+        translate([megaX,megaY-cutoutLength,underPCBs]) cutouts(megaFrontCutouts, cutoutLength,extraCutout);
     }
     color("red") {
-        translate( [cbX,fitTolerance,underPCBs])
+        translate( [cbX,cbY,underPCBs])
         cube([cbWidth, cbLength, cbPCBThickness]);
-        translate([cbX,fitTolerance-cutoutLength,underPCBs]) cutouts(cbFrontCutouts, cutoutLength,extraCutout);
-        translate([cbX,fitTolerance+cbLength,underPCBs]) cutouts(cbBackCutouts, cutoutLength,extraCutout);
+        translate([cbX,cbY-cutoutLength,underPCBs]) cutouts(cbFrontCutouts, cutoutLength,extraCutout);
+        translate([cbX,cbY+cbLength,underPCBs]) cutouts(cbBackCutouts, cutoutLength,extraCutout);
     }
     color([0,.4,0]) {
         translate([screenX-screenHeight/2-extraCutout,screenY-screenWidth/2-extraCutout,topZ-5]) cube([screenHeight+2*extraCutout,screenWidth+2*extraCutout,cutoutLength+5]);
@@ -185,7 +183,8 @@ module boardMounts() {
             translate([cbX-fitTolerance-pcbHolderThickness,0,0]) cube([pcbHolderThickness,insideLength,pcbHolderHeight]);
             translate([cbX+cbWidth+fitTolerance,0,0]) cube([pcbHolderThickness,insideLength,pcbHolderHeight]);
             translate([megaX+megaWidth+fitTolerance,0,0]) cube([pcbHolderThickness,insideLength,pcbHolderHeight]);
-        translate([0,insideLength-(megaLength-cbLength),0]) cube([2*fitTolerance+cbWidth, megaLength-cbLength, pcbHolderHeight]);
+        translate([0,insideLength-(megaLength-cbLength)/2,0]) cube([2*fitTolerance+cbWidth, pcbHolderThickness, underPCBs+pcbThickness+1]);
+        translate([0,(megaLength-cbLength)/2-pcbHolderThickness,0]) cube([2*fitTolerance+cbWidth, pcbHolderThickness, underPCBs+pcbThickness+1]);
         }        
         box();
     }    
@@ -258,13 +257,13 @@ module shell() {
 }
 
 module speakerMount() {
-    height = nudge+topZ-speakerZ+10;
+    height = topZ-cutLine;
     module strip() {
         cube([speakerMountXStickout+speakerMountThickness,speakerMountThickness,height]);
         translate([speakerMountXStickout,0,0])
         cube([speakerMountThickness,speakerMountYStickout+speakerMountThickness,height]);
     }
-    translate([speakerX+nudge,speakerY,0])
+    translate([speakerX+nudge,speakerY,nudge])
     rotate([0,0,180]) {
         translate([0,0,topZ-height]) {
         translate([0,-speakerDiameter1/2-speakerMountThickness,0]) strip();
@@ -399,8 +398,19 @@ module screenWasher() {
     }
 }
 
+module pcbWasher() {
+    pillarSize=screwHeadSize+2*fitTolerance;
+    length = 2;
+    render(convexity=2)
+    difference() {
+        cylinder(d=pillarSize, h=length, $fn=16);
+        translate([0,0,-nudge]) cylinder(d=screwHoleSize1+1, h=length+2*nudge, $fn=16); 
+    }
+}
+
 module washers() {
-    for(i=[0:3]) translate([15*i,0,0]) screenWasher();
+    //for(i=[0:3]) translate([15*i,0,0]) screenWasher();
+    for(i=[0:3]) translate([15*i,15,0]) pcbWasher();
 }
 
 module demo() {

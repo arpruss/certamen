@@ -2,6 +2,7 @@
     See COPYING
 */
 
+//#define EASTER_EGGS
 #undef TEST_MODE
 #define RANDOM_PRESS_FREQUENCY 0
 #define CLEAR_FREQUENCY 0
@@ -184,7 +185,7 @@ void setupScreen() {
   //  screen.print("Pruss's Certamen Machine");
   //  screen.setCursor(1,1+10);
   //  screen.print("GPL3 licensed firmware");
-  draw_nicefont(screen, "Pruss's Certamen Machine", 1, 1, textColor);
+  draw_nicefont(screen, "Pruss Certamen Machine", 1, 1, textColor);
   draw_nicefont(screen, "GPL3 licensed firmware", 1, 21, textColor);
   delay(2500);
   screen.fillScreen(backgroundColor);
@@ -243,6 +244,7 @@ void updateScreen() {
 }
 
 #elif defined(USE_LIQUID_CRYSTAL)
+
 void setupScreen() {
   pinMode(BACKLIGHT_PIN, HIGH);
   digitalWrite(BACKLIGHT_PIN, HIGH);
@@ -251,10 +253,15 @@ void setupScreen() {
 #endif
   lcd.begin(SCREEN_COLUMNS, SCREEN_LINES);
   lcd.setCursor(0, 0);
-  lcd.print("Pruss's Certamen");
+  lcd.print("Pruss Certamen");
   lcd.setCursor(0, 1);
   lcd.print("GPLv3 license");
-  delay(2500);
+  delay(2000);
+#ifdef EASTER_EGGS
+  if (LOW == digitalRead(clearPin)) {
+    easterEggs();
+  }
+#endif
   lcd.clear();
 }
 
