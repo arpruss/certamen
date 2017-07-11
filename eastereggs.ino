@@ -1,3 +1,5 @@
+#include <avr/wdt.h>
+
 const char ae[] PROGMEM = "arma uirumque cano Troiae qui primus ab oris / "
 "Italiam fato profugus Lauiniaque uenit / "
 "litora multum ille et terris iactatus et alto / "
@@ -28,7 +30,8 @@ char lastClearState = 0;
 void checkClear() {
   if (! (*clearPort & clearMask) ) {
     if (lastClearState) {
-      ((void(*)(void))0)();
+      wdt_enable(WDTO_15MS);
+      //((void(*)(void))0)();
     }
   }
   else {
@@ -77,14 +80,15 @@ void easterEgg1() {
 void easterEggs() {
   lcd.clear();
   lcd.setCursor(0, 0);
-
-  if (1 == digitalRead(certamenMode)) {
+  
+  if (1 == digitalRead(certamenModePin)) {
     lcd.print("Easter Egg #2");
     delay(20);
     easterEgg2();
   }
   else {
-    easterEgg1();
+    lcd.print("Easter Egg #1");
+    song();
   }
 }
 
