@@ -1,8 +1,7 @@
 /*
-Certamen Machine
-Copyright (C) 2017 Alexander R. Pruss
 The Synth
 Copyright (C) 2014-2017 Dzl/Illutron 2014 dzlsevilgeniuslair.blogspot.dk illutron.dk
+https://github.com/dzlonline/the_synth
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
