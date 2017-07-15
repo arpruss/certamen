@@ -4,7 +4,7 @@ includeMain = 1; // [1:yes, 0:no]
 includeScrewTemplate = 0; // [1:yes, 0:no]
 height = 40; 
 innerDiameter = 59.65;
-label = "C3";
+label = "C4";
 numberOfCablePorts = -1; // [-1:automatic, 0:none, 1:1, 2:2]
 font = "Arial Black:style=Bold";
 labelSize = 9;

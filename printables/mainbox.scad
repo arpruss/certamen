@@ -1,4 +1,3 @@
-
 use <roundedsquare.scad>;
 use <certamenbutton.scad>;
 use <hershey.scad>;
@@ -8,7 +7,7 @@ TOP = 1;
 BOTTOM = 2;
 WASHERS = 3;
 
-mode = WASHERS;
+mode = BOTTOM;
 
 screwLength = 9.61;
 
@@ -409,7 +408,7 @@ module pcbWasher() {
 }
 
 module washers() {
-    //for(i=[0:3]) translate([15*i,0,0]) screenWasher();
+    for(i=[0:3]) translate([15*i,0,0]) screenWasher();
     for(i=[0:3]) translate([15*i,15,0]) pcbWasher();
 }
 
