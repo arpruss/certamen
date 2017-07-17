@@ -7,7 +7,7 @@ TOP = 1;
 BOTTOM = 2;
 WASHERS = 3;
 
-mode = DEMO;
+mode = TOP;
 
 screwLength = 9.61;
 
