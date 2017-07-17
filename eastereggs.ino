@@ -1,7 +1,6 @@
 #include <avr/wdt.h>
 #include "synth.h"
 #include "notes.h"
-#include "song.h"
 
 const char ae[] PROGMEM = "arma uirumque cano Troiae qui primus ab oris / "
 "Italiam fato profugus Lauiniaque uenit / "
@@ -79,7 +78,7 @@ void easterEgg1() {
 
   edgar.setupVoice(0,SINE,60,ENVELOPE0,80,64);
   edgar.setupVoice(1,SINE,62,ENVELOPE0,100,64);
-  edgar.setupVoice(2,SINE,64,ENVELOPE2,110,64);
+  edgar.setupVoice(2,SINE,64,ENVELOPE0,110,64);
   edgar.setupVoice(3,SINE,67,ENVELOPE0,110,64);
 
   edgar.mTrigger(0,53+32);
@@ -117,7 +116,7 @@ void easterEgg1() {
   
   edgar.setupVoice(0,SINE,60,ENVELOPE0,80,64);
   edgar.setupVoice(1,SINE,62,ENVELOPE0,100,64);
-  edgar.setupVoice(2,SINE,64,ENVELOPE2,110,64);
+  edgar.setupVoice(2,SINE,64,ENVELOPE0,110,64);
   edgar.setupVoice(3,SINE,67,ENVELOPE0,110,64);
 
   uint8_t buttons[sizeof(playerPins)+1];
@@ -147,15 +146,13 @@ void easterEgg1() {
 
     for(uint8_t i=0; i<4; i++) {
         if (notes[i] != 0xFF) {
-          edgar.setLength(i, 128); 
-          if (notes[i] != curNotes[i]) {
-            edgar.mTrigger(i, 32+notes[i]);
-            curNotes[i] = notes[i];
-          }
+          edgar.setLength(i, 127); 
+          edgar.mTrigger(i, 32+notes[i]);
+          curNotes[i] = notes[i];
         }
         else {
           if (notes[i] != curNotes[i]) {
-            edgar.setLength(i, 0); 
+            edgar.setLength(i, 80); 
             curNotes[i] = 0xFF;
           }
         }          
