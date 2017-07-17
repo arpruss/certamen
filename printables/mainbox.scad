@@ -7,7 +7,7 @@ TOP = 1;
 BOTTOM = 2;
 WASHERS = 3;
 
-mode = BOTTOM;
+mode = DEMO;
 
 screwLength = 9.61;
 
@@ -21,6 +21,7 @@ labelSize = 9;
 label = "CERTAMEN";
 
 visualizeBoards = mode == DEMO;
+
 megaWidth = 53.34;
 megaLength = 102.33;
 megaHoles = [
@@ -72,6 +73,7 @@ speakerMountXStickout = 5;
 speakerMountThickness = 1.5;
 grilleSolidWidth = 2;
 grilleHoleWidth = 2.5;
+grilleReinforcement = 3.5;
 
 alignerThickness = 1+fitTolerance;
 alignerHeight = 4;
@@ -171,7 +173,10 @@ module contents(visualize=true) {
     cylinder(d=modeSwitchOuterDiameter+2*extraCutout,h=modeSwitchNeck);
         }
     if (!visualize) {
-        translate([speakerX,speakerY-nudge,speakerZ]) speakerGrille();
+        difference() {
+            translate([speakerX-nudge,speakerY,speakerZ]) speakerGrille();
+            translate([speakerX-2*nudge,speakerY-speakerDiameter,cutLine-grilleReinforcement/2]) cube([sideWallThickness*2,speakerDiameter*2,grilleReinforcement]);
+        }
     }
 }
 
