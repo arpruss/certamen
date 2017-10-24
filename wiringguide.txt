@@ -1,0 +1,63 @@
+SCREEN - ARDUINO
+
+VSS - GND
+VDD - +5V
+V0 - 2.2k resistor - GND
+RS  - 51
+RW  - GND
+E   - 50
+D0  - 49
+D1  - 48
+D2  - 47
+D3  - 46
+D4  - 45
+D5  - 44
+D6  - 43
+D7  - 42
+A   - +5V (on some screens may need 220ohm resistor)
+K   - GND
+
+------------------------------------------------------
+CERTAMEN CIRCUIT BOARD - ARDUINO
+
+Port A (orange wires, numbered via RJ45 pins)
+2 - 30
+4 - 31
+6 - 32
+8 - 33
+
+Port B (yellow wires, numbered via RJ45 pins)
+2 - 34
+4 - 35
+6 - 36
+8 - 37
+
+Port C (blue wires, numbered via RJ45 pins)
+2 - 38
+4 - 39
+6 - 40
+8 - 41
+
+Others
+1.1k resistor, blue wire - 9
+central black wire - GND
+orange wire (connected to wire to green button) - 28
+red wire (connected to wire to toggle switch) - 3
+
+------------------------------------------------------
+SPEAKER
+
+one yellow wire, soldered to 100ohm resistor on Certamen circuit board
+other yellow wire to Arduino +5V
+
+------------------------------------------------------
+GREEN BUTTON (CLEAR)
+one pin to a central black (ground) wire on Certamen circuit board
+other pin to long orange wire on Certamen circuit board, connected 
+on Certamen board to orange wire to Arduino pin 28
+
+------------------------------------------------------
+TOGGLE SWITCH (MODE)
+one pin to a central black (ground) wire on Certamen circuit board
+other pin to long red wire on Certamen circuit board, connected on 
+Certamen board to red wire to Arduino pin 3
