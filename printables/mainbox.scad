@@ -9,6 +9,8 @@ WASHERS = 3;
 
 mode = TOP;
 
+omitClearButtonHole = true;
+
 screwLength = 9.61;
 
 // side labels
@@ -166,6 +168,7 @@ module contents(visualize=true) {
     color([0,.4,0]) {
         translate([screenX-screenHeight/2-extraCutout,screenY-screenWidth/2-extraCutout,topZ-5]) cube([screenHeight+2*extraCutout,screenWidth+2*extraCutout,cutoutLength+5]);
     }
+    if (! omitClearButtonHole)
     color([0,.8,0]) 
         translate([clearX,clearY,topZ-nudge]) arcadeButtonCylinder();
     color([0,0,0.5])
