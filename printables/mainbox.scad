@@ -67,7 +67,7 @@ screenHeight = 24.04;
 screenDepth = 7; 
 
 screenScrewWellDepth = 7.97;
-speakerDiameter = 39.2;
+speakerDiameter = 40; // mine is 39.2
 speakerMountYStickout = 1.86; 
 speakerMountXStickout = 5; 
 speakerMountThickness = 1.5;
