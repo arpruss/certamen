@@ -9,7 +9,15 @@ WASHERS = 3;
 
 mode = TOP;
 
-omitClearButtonHole = true;
+use30MMArcadeButton = true;
+// the next three settings are only relevant if use30MMArcadeButton is false
+clearButtonNeckDiameter = 5.8;
+clearButtonNeckLength = 1.5;
+clearButtonOuterDiameter = 11.12;
+
+modeSwitchNeckDiameter = 5.8;
+modeSwitchNeckLength = 1.5;
+modeSwitchOuterDiameter = 11.12;
 
 screwLength = 9.61;
 
@@ -89,6 +97,8 @@ spaceNeededForWires = 40;
 
 boxHeight = underPCBs+max(spaceNeededForWires,speakerDiameter+2)+pcbThickness+topThickness+bottomThickness;
 
+
+
 nudge = 0.001;
 insideWidth = boardDivider+4*fitTolerance+megaWidth+cbWidth;
 insideLength = max(megaLength,cbLength) + 2*fitTolerance;
@@ -99,9 +109,6 @@ screenX = insideWidth/4;
 screenY = insideLength/2;
 clearX = 0.75*insideWidth;
 clearY = insideLength/4;
-modeSwitchNeckDiameter = 5.8;
-modeSwitchOuterDiameter = 11.12;
-modeSwitchNeck = 1.5;
 modeX = 0.75*insideWidth;
 modeY = 0.75*insideLength;
 labelX = (screenX - screenHeight/2)*0.5-labelSize/2;
@@ -132,6 +139,10 @@ ventSpacing=2;
 ventX=insideWidth*0.75;
 ventZ=topZ-ventHeight/2-1;
 
+module switchCylinder(neckDiameter, outerDiameter, neckLength, extraCutout) {
+    cylinder(d=neckDiameter+2*extraCutout,h=topThickness+1);
+    cylinder(d=outerDiameter+2*extraCutout,h=neckLength);
+}
 module cutouts(cutouts, length, extra) {
     for (c=cutouts) {
         x = c[0]-extra;
@@ -168,12 +179,11 @@ module contents(visualize=true) {
     color([0,.4,0]) {
         translate([screenX-screenHeight/2-extraCutout,screenY-screenWidth/2-extraCutout,topZ-5]) cube([screenHeight+2*extraCutout,screenWidth+2*extraCutout,cutoutLength+5]);
     }
-    if (! omitClearButtonHole)
     color([0,.8,0]) 
-        translate([clearX,clearY,topZ-nudge]) arcadeButtonCylinder();
+        translate([clearX,clearY,topZ-nudge]) if (use30MMArcadeButton) arcadeButtonCylinder();
+            else switchCylinder(clearButtonNeckDiameter,clearButtonOuterDiameter,clearButtonNeckLength,extraCutout); 
     color([0,0,0.5])
-        translate([modeX,modeY,topZ-nudge]) { cylinder(d=modeSwitchNeckDiameter+2*extraCutout,h=topThickness+1);
-    cylinder(d=modeSwitchOuterDiameter+2*extraCutout,h=modeSwitchNeck);
+        translate([modeX,modeY,topZ-nudge]) { switchCylinder(modeSwitchNeckDiameter,modeSwitchOuterDiameter,modeSwitchNeckLength,extraCutout);
         }
     if (!visualize) {
         difference() {
