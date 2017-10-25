@@ -1,0 +1,5133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.2"
+   x="0in"
+   y="0in"
+   width="5.7112007in"
+   height="5.1026087in"
+   viewBox="0 0 411.20622 367.38831"
+   id="svg8525"
+   sodipodi:docname="wiringguide_schem.svg"
+   inkscape:version="0.92.1 r15371">
+  <metadata
+     id="metadata8531">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8529" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="715"
+     id="namedview8527"
+     showgrid="false"
+     inkscape:zoom="0.8612387"
+     inkscape:cx="190.6"
+     inkscape:cy="283.2543"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8525"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <rect
+     style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.75118208;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect10268"
+     width="421.48651"
+     height="381.42786"
+     x="-5.2254262"
+     y="-6.201992" />
+  <rect
+     style="fill:#ffffff;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round"
+     id="rect6597"
+     width="71.100998"
+     y="23.492001"
+     x="130.4046"
+     height="308.70099" />
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="37.439999"
+     x2="216.00558"
+     y2="37.439999"
+     id="connector238pin" />
+  <text
+     font-size="3.5"
+     id="text6600"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="183.7543"
+     y="38.139999">D13 PWM</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="44.639999"
+     x2="216.00558"
+     y2="44.639999"
+     id="connector239pin" />
+  <text
+     font-size="3.5"
+     id="text6606"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="183.7543"
+     y="45.339199">D12 PWM</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="51.84"
+     x2="216.00558"
+     y2="51.84"
+     id="connector240pin" />
+  <text
+     font-size="3.5"
+     id="text6612"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="183.7543"
+     y="52.540398">D11 PWM</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="59.040001"
+     x2="216.00558"
+     y2="59.040001"
+     id="connector241pin" />
+  <text
+     font-size="3.5"
+     id="text6618"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="183.7543"
+     y="59.739597">D10 PWM</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="73.440002"
+     x2="216.00558"
+     y2="73.440002"
+     id="connector243pin" />
+  <text
+     font-size="3.5"
+     id="text6624"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="185.68199"
+     y="74.141006">D8 PWM</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="66.239998"
+     x2="216.00558"
+     y2="66.239998"
+     id="connector242pin" />
+  <text
+     font-size="3.5"
+     id="text6630"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="185.68199"
+     y="66.940804">D9 PWM</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="80.639999"
+     x2="216.00558"
+     y2="80.639999"
+     id="connector269pin" />
+  <text
+     font-size="3.5"
+     id="text6636"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="185.68199"
+     y="81.339203">D7 PWM</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="87.839996"
+     x2="216.00558"
+     y2="87.839996"
+     id="connector268pin" />
+  <text
+     font-size="3.5"
+     id="text6642"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="185.68199"
+     y="88.540405">D6 PWM</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="95.040001"
+     x2="216.00558"
+     y2="95.040001"
+     id="connector267pin" />
+  <text
+     font-size="3.5"
+     id="text6648"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="185.68199"
+     y="95.739601">D5 PWM</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="102.24001"
+     x2="216.00558"
+     y2="102.24001"
+     id="connector266pin" />
+  <text
+     font-size="3.5"
+     id="text6654"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="185.68199"
+     y="102.9408">D4 PWM</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="116.64"
+     x2="216.00558"
+     y2="116.64"
+     id="connector265pin" />
+  <text
+     font-size="3.5"
+     id="text6660"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="185.68199"
+     y="117.339">D3 PWM</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="109.44"
+     x2="216.00558"
+     y2="109.44"
+     id="connector264pin" />
+  <text
+     font-size="3.5"
+     id="text6666"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="185.68199"
+     y="110.14">D2 PWM</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="123.84"
+     x2="216.00558"
+     y2="123.84"
+     id="connector263pin" />
+  <text
+     font-size="3.5"
+     id="text6672"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="188.1781"
+     y="124.538">D1 TX0</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="131.04001"
+     x2="216.00558"
+     y2="131.04001"
+     id="connector262pin" />
+  <text
+     font-size="3.5"
+     id="text6678"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="187.9301"
+     y="131.74001">D0 RX0</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="145.44"
+     x2="216.00558"
+     y2="145.44"
+     id="connector53pin" />
+  <text
+     font-size="3.5"
+     id="text6684"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="185.8539"
+     y="146.14">D14/TX3</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="152.64"
+     x2="216.00558"
+     y2="152.64"
+     id="connector52pin" />
+  <text
+     font-size="3.5"
+     id="text6690"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="185.6059"
+     y="153.339">D15/RX3</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="159.84"
+     x2="216.00558"
+     y2="159.84"
+     id="connector51pin" />
+  <text
+     font-size="3.5"
+     id="text6696"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="176.78949"
+     y="160.53801">D16 PWM/TX2</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="167.03999"
+     x2="216.00558"
+     y2="167.03999"
+     id="connector50pin" />
+  <text
+     font-size="3.5"
+     id="text6702"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="176.5414"
+     y="167.74001">D17 PWM/RX2</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="174.24001"
+     x2="216.00558"
+     y2="174.24001"
+     id="connector49pin" />
+  <text
+     font-size="3.5"
+     id="text6708"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="185.8539"
+     y="174.939">D18/TX1</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="181.44"
+     x2="216.00558"
+     y2="181.44"
+     id="connector48pin" />
+  <text
+     font-size="3.5"
+     id="text6714"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="185.6059"
+     y="182.14">D19/RX1</text>
+  <line
+     style="fill:none"
+     x1="201.6046"
+     y1="188.64"
+     x2="216.00558"
+     y2="188.64"
+     id="connector47pin" />
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="188.64"
+     x2="216.00558"
+     y2="188.64"
+     id="connector235pin" />
+  <text
+     font-size="3.5"
+     id="text6722"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="192.7641"
+     y="189.339">S</text>
+  <text
+     font-size="3.5"
+     id="text6726"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="194.58049"
+     y="189.339">D</text>
+  <text
+     font-size="3.5"
+     id="text6730"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="196.9418"
+     y="189.339">A</text>
+  <line
+     style="fill:none"
+     x1="201.6046"
+     y1="195.84"
+     x2="216.00558"
+     y2="195.84"
+     id="connector46pin" />
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="195.84"
+     x2="216.00558"
+     y2="195.84"
+     id="connector234pin" />
+  <text
+     font-size="3.5"
+     id="text6738"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="193.4223"
+     y="196.53801">SCL</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="210.241"
+     x2="216.00558"
+     y2="210.241"
+     id="connector345pin" />
+  <text
+     font-size="3.5"
+     id="text6744"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="192.8188"
+     y="210.939">D22</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="217.44"
+     x2="216.00558"
+     y2="217.44"
+     id="connector346pin" />
+  <text
+     font-size="3.5"
+     id="text6750"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="192.8188"
+     y="218.14">D23</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="224.64"
+     x2="216.00558"
+     y2="224.64"
+     id="connector347pin" />
+  <text
+     font-size="3.5"
+     id="text6756"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="192.8188"
+     y="225.339">D24</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="231.84"
+     x2="216.00558"
+     y2="231.84"
+     id="connector348pin" />
+  <text
+     font-size="3.5"
+     id="text6762"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="192.8188"
+     y="232.53801">D25</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="239.039"
+     x2="216.00558"
+     y2="239.039"
+     id="connector349pin" />
+  <text
+     font-size="3.5"
+     id="text6768"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="192.8188"
+     y="239.74001">D26</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="246.241"
+     x2="216.00558"
+     y2="246.241"
+     id="connector350pin" />
+  <text
+     font-size="3.5"
+     id="text6774"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="193.9545"
+     y="246.939">D27</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="253.44099"
+     x2="216.00558"
+     y2="253.44099"
+     id="connector351pin" />
+  <text
+     font-size="3.5"
+     id="text6780"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="192.8188"
+     y="254.14">D28</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="260.64001"
+     x2="216.00558"
+     y2="260.64001"
+     id="connector352pin" />
+  <text
+     font-size="3.5"
+     id="text6786"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="192.8188"
+     y="261.341">D29</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="267.84003"
+     x2="216.00558"
+     y2="267.84003"
+     id="connector353pin" />
+  <text
+     font-size="3.5"
+     id="text6792"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="192.8188"
+     y="268.54001">D30</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="275.039"
+     x2="216.00558"
+     y2="275.039"
+     id="connector354pin" />
+  <text
+     font-size="3.5"
+     id="text6798"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="192.8188"
+     y="275.73999">D31</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="282.24103"
+     x2="216.00558"
+     y2="282.24103"
+     id="connector355pin" />
+  <text
+     font-size="3.5"
+     id="text6804"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="192.8188"
+     y="282.94101">D32</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="289.44101"
+     x2="216.00558"
+     y2="289.44101"
+     id="connector356pin" />
+  <text
+     font-size="3.5"
+     id="text6810"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="192.8188"
+     y="290.14001">D33</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="296.64001"
+     x2="216.00558"
+     y2="296.64001"
+     id="connector357pin" />
+  <text
+     font-size="3.5"
+     id="text6816"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="192.8188"
+     y="297.341">D34</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="303.84003"
+     x2="216.00558"
+     y2="303.84003"
+     id="connector358pin" />
+  <text
+     font-size="3.5"
+     id="text6822"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="192.8188"
+     y="304.54001">D35</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="311.04001"
+     x2="216.00558"
+     y2="311.04001"
+     id="connector359pin" />
+  <text
+     font-size="3.5"
+     id="text6828"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="192.8188"
+     y="311.73999">D36</text>
+  <line
+     style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="201.6046"
+     y1="318.24103"
+     x2="216.00558"
+     y2="318.24103"
+     id="connector360pin" />
+  <text
+     font-size="3.5"
+     id="text6834"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="192.8188"
+     y="318.94101">D37</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="37.439999"
+     x2="130.3046"
+     y2="37.439999"
+     id="connector256pin" />
+  <text
+     font-size="3.5"
+     id="text6840"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="38.139999">RESET</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="44.639999"
+     x2="130.3046"
+     y2="44.639999"
+     id="connector236pin" />
+  <text
+     font-size="3.5"
+     id="text6846"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="45.339199">AREF</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="51.84"
+     x2="130.3046"
+     y2="51.84"
+     id="connector254pin" />
+  <text
+     font-size="3.5"
+     id="text6852"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="52.540398">I</text>
+  <text
+     font-size="3.5"
+     id="text6856"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="132.8568"
+     y="52.540398">O</text>
+  <text
+     font-size="3.5"
+     id="text6860"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="135.4545"
+     y="52.540398">R</text>
+  <text
+     font-size="3.5"
+     id="text6864"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="137.519"
+     y="52.540398">E</text>
+  <text
+     font-size="3.5"
+     id="text6868"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="139.36609"
+     y="52.540398">F</text>
+  <line
+     style="fill:#000000"
+     x1="158.75459"
+     y1="8.9899998"
+     x2="158.75459"
+     y2="23.390001"
+     id="connector255pin" />
+  <line
+     style="fill:#000000"
+     x1="158.75459"
+     y1="8.9899998"
+     x2="158.75459"
+     y2="23.390001"
+     id="connector258pin" />
+  <line
+     style="fill:#000000"
+     x1="158.75459"
+     y1="8.9899998"
+     x2="158.75459"
+     y2="23.390001"
+     id="connector343pin" />
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="158.75459"
+     y1="8.9899998"
+     x2="158.75459"
+     y2="23.390001"
+     id="connector344pin" />
+  <text
+     font-size="3.5"
+     id="text6880"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     transform="rotate(-90.000003)"
+     x="-28.706909"
+     y="160.21179">5V</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="73.440002"
+     x2="130.3046"
+     y2="73.440002"
+     id="connector8pin" />
+  <text
+     font-size="3.5"
+     id="text6886"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="74.139999">A0</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="80.639999"
+     x2="130.3046"
+     y2="80.639999"
+     id="connector9pin" />
+  <text
+     font-size="3.5"
+     id="text6892"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="81.339203">A1</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="87.839996"
+     x2="130.3046"
+     y2="87.839996"
+     id="connector10pin" />
+  <text
+     font-size="3.5"
+     id="text6898"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="88.540405">A2</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="95.040001"
+     x2="130.3046"
+     y2="95.040001"
+     id="connector11pin" />
+  <text
+     font-size="3.5"
+     id="text6904"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="95.739601">A3</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="102.24001"
+     x2="130.3046"
+     y2="102.24001"
+     id="connector12pin" />
+  <text
+     font-size="3.5"
+     id="text6910"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="102.9408">A4</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="109.44"
+     x2="130.3046"
+     y2="109.44"
+     id="connector13pin" />
+  <text
+     font-size="3.5"
+     id="text6916"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="110.14">A5</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="116.64"
+     x2="130.3046"
+     y2="116.64"
+     id="connector14pin" />
+  <text
+     font-size="3.5"
+     id="text6922"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="117.339">A6</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="123.84"
+     x2="130.3046"
+     y2="123.84"
+     id="connector15pin" />
+  <text
+     font-size="3.5"
+     id="text6928"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="124.54">A7</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="131.04001"
+     x2="130.3046"
+     y2="131.04001"
+     id="connector0pin" />
+  <text
+     font-size="3.5"
+     id="text6934"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="131.74001">A8</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="138.24001"
+     x2="130.3046"
+     y2="138.24001"
+     id="connector1pin" />
+  <text
+     font-size="3.5"
+     id="text6940"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="138.94101">A9</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="145.44"
+     x2="130.3046"
+     y2="145.44"
+     id="connector2pin" />
+  <text
+     font-size="3.5"
+     id="text6946"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="146.14">A10</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="152.64"
+     x2="130.3046"
+     y2="152.64"
+     id="connector3pin" />
+  <text
+     font-size="3.5"
+     id="text6952"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="153.339">A11</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="159.84"
+     x2="130.3046"
+     y2="159.84"
+     id="connector4pin" />
+  <text
+     font-size="3.5"
+     id="text6958"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="160.54001">A12</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="167.03999"
+     x2="130.3046"
+     y2="167.03999"
+     id="connector5pin" />
+  <text
+     font-size="3.5"
+     id="text6964"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="167.74001">A13</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="174.24001"
+     x2="130.3046"
+     y2="174.24001"
+     id="connector6pin" />
+  <text
+     font-size="3.5"
+     id="text6970"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="174.94101">A14</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="181.44"
+     x2="130.3046"
+     y2="181.44"
+     id="connector7pin" />
+  <text
+     font-size="3.5"
+     id="text6976"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="182.14">A15</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="203.039"
+     x2="130.3046"
+     y2="203.039"
+     id="connector361pin" />
+  <text
+     font-size="3.5"
+     id="text6982"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="203.74001">D38</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="210.241"
+     x2="130.3046"
+     y2="210.241"
+     id="connector362pin" />
+  <text
+     font-size="3.5"
+     id="text6988"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="210.94101">D39</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="217.44"
+     x2="130.3046"
+     y2="217.44"
+     id="connector363pin" />
+  <text
+     font-size="3.5"
+     id="text6994"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="218.14">D40</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="224.64"
+     x2="130.3046"
+     y2="224.64"
+     id="connector364pin" />
+  <text
+     font-size="3.5"
+     id="text7000"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="225.339">D41</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="231.84"
+     x2="130.3046"
+     y2="231.84"
+     id="connector365pin" />
+  <text
+     font-size="3.5"
+     id="text7006"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="232.54001">D42</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="239.039"
+     x2="130.3046"
+     y2="239.039"
+     id="connector366pin" />
+  <text
+     font-size="3.5"
+     id="text7012"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="239.74001">D43</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="246.24001"
+     x2="130.3046"
+     y2="246.24001"
+     id="connector367pin" />
+  <text
+     font-size="3.5"
+     id="text7018"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="246.94">D44</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="253.44099"
+     x2="130.3046"
+     y2="253.44099"
+     id="connector368pin" />
+  <text
+     font-size="3.5"
+     id="text7024"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="254.14101">D45</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="260.64001"
+     x2="130.3046"
+     y2="260.64001"
+     id="connector369pin" />
+  <text
+     font-size="3.5"
+     id="text7030"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="261.34">D46</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="267.84003"
+     x2="130.3046"
+     y2="267.84003"
+     id="connector370pin" />
+  <text
+     font-size="3.5"
+     id="text7036"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="268.539">D47</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="275.04001"
+     x2="130.3046"
+     y2="275.04001"
+     id="connector371pin" />
+  <text
+     font-size="3.5"
+     id="text7042"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="275.741">D48</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="282.24002"
+     x2="130.3046"
+     y2="282.24002"
+     id="connector372pin" />
+  <text
+     font-size="3.5"
+     id="text7048"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="282.94">D49</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="289.44101"
+     x2="130.3046"
+     y2="289.44101"
+     id="connector373pin" />
+  <text
+     font-size="3.5"
+     id="text7054"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="290.14099">D50</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="296.64001"
+     x2="130.3046"
+     y2="296.64001"
+     id="connector374pin" />
+  <text
+     font-size="3.5"
+     id="text7060"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="297.34">D51</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="303.84003"
+     x2="130.3046"
+     y2="303.84003"
+     id="connector375pin" />
+  <text
+     font-size="3.5"
+     id="text7066"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="304.539">D52</text>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="115.90459"
+     y1="311.04001"
+     x2="130.3046"
+     y2="311.04001"
+     id="connector376pin" />
+  <text
+     font-size="3.5"
+     id="text7072"
+     style="font-size:3.5px;font-family:DroidSans;fill:#000000"
+     x="131.705"
+     y="311.741">D53</text>
+  <line
+     style="fill:#000000"
+     x1="158.75459"
+     y1="332.29102"
+     x2="158.75459"
+     y2="346.69202"
+     id="connector377pin" />
+  <line
+     style="fill:#000000"
+     x1="158.75459"
+     y1="332.29102"
+     x2="158.75459"
+     y2="346.69202"
+     id="connector260pin" />
+  <line
+     style="fill:#000000"
+     x1="158.75459"
+     y1="332.29102"
+     x2="158.75459"
+     y2="346.69202"
+     id="connector237pin" />
+  <line
+     style="fill:#000000"
+     x1="158.75459"
+     y1="332.29102"
+     x2="158.75459"
+     y2="346.69202"
+     id="connector259pin" />
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="158.75459"
+     y1="332.29102"
+     x2="158.75459"
+     y2="346.69202"
+     id="connector378pin" />
+  <g
+     id="g7094"
+     transform="translate(131.0415,117.243)"
+     style="fill:#000000">
+    <g
+       transform="rotate(-90)"
+       id="g7092"
+       style="fill:#000000">
+      <g
+         id="g7090"
+         style="fill:#000000">
+        <g
+           transform="translate(-213.649,28.4135)"
+           id="g7088"
+           style="fill:#000000">
+          <text
+             font-size="3.5"
+             id="text7086"
+             style="font-size:3.5px;font-family:DroidSans;fill:#000000">GND</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="151.5546"
+     y1="8.9899998"
+     x2="151.5546"
+     y2="23.390001"
+     id="connector257pin" />
+  <g
+     id="g7108"
+     transform="translate(128.5015,14.33736)"
+     style="fill:#000000">
+    <g
+       transform="rotate(-90)"
+       id="g7106"
+       style="fill:#000000">
+      <g
+         id="g7104"
+         style="fill:#000000">
+        <g
+           transform="translate(-16.2948,23.7523)"
+           id="g7102"
+           style="fill:#000000">
+          <text
+             font-size="3.5"
+             id="text7100"
+             style="font-size:3.5px;font-family:DroidSans;fill:#000000">3V3</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <line
+     style="fill:#000000;stroke:#787878;stroke-width:0.75;stroke-linecap:round"
+     x1="173.1546"
+     y1="8.9899998"
+     x2="173.1546"
+     y2="23.390001"
+     id="connector261pin" />
+  <g
+     id="g7122"
+     transform="translate(136.1215,14.33736)"
+     style="fill:#000000">
+    <g
+       transform="rotate(-90)"
+       id="g7120"
+       style="fill:#000000">
+      <g
+         id="g7118"
+         style="fill:#000000">
+        <g
+           transform="translate(-16.1776,37.7334)"
+           id="g7116"
+           style="fill:#000000">
+          <text
+             font-size="3.5"
+             id="text7114"
+             style="font-size:3.5px;font-family:DroidSans;fill:#000000">VIN</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <text
+     id="label"
+     font-size="4.25"
+     style="font-size:4.25px;font-family:DroidSans;fill:#000000"
+     x="158.7401"
+     y="162.02301">Arduino</text>
+  <text
+     id="label_1_"
+     font-size="4.25"
+     style="font-size:4.25px;font-family:DroidSans;fill:#000000"
+     x="161.18939"
+     y="166.556">Mega</text>
+  <text
+     id="label_2_"
+     font-size="4.25"
+     style="font-size:4.25px;font-family:DroidSans;fill:#000000"
+     x="161.7226"
+     y="171.089">2560</text>
+  <text
+     id="label_3_"
+     font-size="4.25"
+     style="font-size:4.25px;font-family:DroidSans;fill:#000000"
+     x="160.5468"
+     y="175.62401">(Rev3)</text>
+  <rect
+     style="fill:#ffffff;stroke:none;stroke-width:0"
+     id="rect7144"
+     y="260.64026"
+     width="35.999901"
+     class="interior rect"
+     x="266.75461"
+     height="64.800003" />
+  <line
+     style="stroke:#000000;stroke-width:0.89999801;stroke-linecap:round"
+     id="line7150"
+     x1="266.75461"
+     class="other"
+     y1="325.44028"
+     x2="302.75461"
+     y2="325.44028" />
+  <line
+     style="stroke:#000000;stroke-width:0.89999801;stroke-linecap:round"
+     id="line7152"
+     x1="302.75461"
+     class="other"
+     y1="325.44028"
+     x2="302.75461"
+     y2="260.64026" />
+  <line
+     style="stroke:#000000;stroke-width:0.89999801;stroke-linecap:round"
+     id="line7154"
+     x1="302.75461"
+     class="other"
+     y1="260.64026"
+     x2="266.75461"
+     y2="260.64026" />
+  <line
+     style="stroke:#000000;stroke-width:0.89999801;stroke-linecap:round"
+     id="line7156"
+     x1="266.75461"
+     class="other"
+     y1="260.64026"
+     x2="266.75461"
+     y2="325.44028" />
+  <line
+     style="stroke:#787878;stroke-width:0.69999802;stroke-linecap:round"
+     connectorname="1"
+     x1="252.3546"
+     class="pin"
+     y1="267.84027"
+     x2="266.75461"
+     y2="267.84027"
+     id="line7158" />
+  <g
+     style="fill:none;stroke:none;stroke-width:0"
+     y="7.56"
+     width="0.000283464"
+     class="terminal"
+     x="0.349999"
+     height="0.000283465"
+     id="g7160"
+     transform="translate(252.0046,260.28026)" />
+  <text
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#787878;stroke:none;stroke-width:0"
+     id="text7164"
+     y="268.54025"
+     class="text"
+     x="268.85458"
+     font-size="3.49999">1</text>
+  <line
+     style="stroke:#787878;stroke-width:0.69999802;stroke-linecap:round"
+     connectorname="2"
+     x1="252.3546"
+     class="pin"
+     y1="275.04025"
+     x2="266.75461"
+     y2="275.04025"
+     id="line7166" />
+  <g
+     style="fill:none;stroke:none;stroke-width:0"
+     y="14.76"
+     width="0.000283464"
+     class="terminal"
+     x="0.349999"
+     height="0.000283465"
+     id="g7168"
+     transform="translate(252.0046,260.28026)" />
+  <text
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#787878;stroke:none;stroke-width:0"
+     id="text7172"
+     y="275.74026"
+     class="text"
+     x="268.85458"
+     font-size="3.49999">2</text>
+  <line
+     style="stroke:#787878;stroke-width:0.69999802;stroke-linecap:round"
+     connectorname="3"
+     x1="252.3546"
+     class="pin"
+     y1="282.24026"
+     x2="266.75461"
+     y2="282.24026"
+     id="line7174" />
+  <g
+     style="fill:none;stroke:none;stroke-width:0"
+     y="21.96"
+     width="0.000283464"
+     class="terminal"
+     x="0.349999"
+     height="0.000283465"
+     id="g7176"
+     transform="translate(252.0046,260.28026)" />
+  <text
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#787878;stroke:none;stroke-width:0"
+     id="text7180"
+     y="282.94028"
+     class="text"
+     x="268.85458"
+     font-size="3.49999">3</text>
+  <line
+     style="stroke:#787878;stroke-width:0.69999802;stroke-linecap:round"
+     connectorname="4"
+     x1="252.3546"
+     class="pin"
+     y1="289.44028"
+     x2="266.75461"
+     y2="289.44028"
+     id="line7182" />
+  <g
+     style="fill:none;stroke:none;stroke-width:0"
+     y="29.16"
+     width="0.000283464"
+     class="terminal"
+     x="0.349999"
+     height="0.000283465"
+     id="g7184"
+     transform="translate(252.0046,260.28026)" />
+  <text
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#787878;stroke:none;stroke-width:0"
+     id="text7188"
+     y="290.14017"
+     class="text"
+     x="268.85458"
+     font-size="3.49999">4</text>
+  <line
+     style="stroke:#787878;stroke-width:0.69999802;stroke-linecap:round"
+     connectorname="8"
+     x1="252.3546"
+     class="pin"
+     y1="318.24026"
+     x2="266.75461"
+     y2="318.24026"
+     id="line7190" />
+  <g
+     style="fill:none;stroke:none;stroke-width:0"
+     y="57.96"
+     width="0.000283464"
+     class="terminal"
+     x="0.349999"
+     height="0.000283465"
+     id="g7192"
+     transform="translate(252.0046,260.28026)" />
+  <text
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#787878;stroke:none;stroke-width:0"
+     id="text7196"
+     y="318.94016"
+     class="text"
+     x="268.85458"
+     font-size="3.49999">8</text>
+  <line
+     style="stroke:#787878;stroke-width:0.69999802;stroke-linecap:round"
+     connectorname="7"
+     x1="252.3546"
+     class="pin"
+     y1="311.04025"
+     x2="266.75461"
+     y2="311.04025"
+     id="line7198" />
+  <g
+     style="fill:none;stroke:none;stroke-width:0"
+     y="50.76"
+     width="0.000283464"
+     class="terminal"
+     x="0.349999"
+     height="0.000283465"
+     id="g7200"
+     transform="translate(252.0046,260.28026)" />
+  <text
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#787878;stroke:none;stroke-width:0"
+     id="text7204"
+     y="311.74017"
+     class="text"
+     x="268.85458"
+     font-size="3.49999">7</text>
+  <line
+     style="stroke:#787878;stroke-width:0.69999802;stroke-linecap:round"
+     connectorname="6"
+     x1="252.3546"
+     class="pin"
+     y1="303.84027"
+     x2="266.75461"
+     y2="303.84027"
+     id="line7206" />
+  <g
+     style="fill:none;stroke:none;stroke-width:0"
+     y="43.56"
+     width="0.000283464"
+     class="terminal"
+     x="0.349999"
+     height="0.000283465"
+     id="g7208"
+     transform="translate(252.0046,260.28026)" />
+  <text
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#787878;stroke:none;stroke-width:0"
+     id="text7212"
+     y="304.54016"
+     class="text"
+     x="268.85458"
+     font-size="3.49999">6</text>
+  <line
+     style="stroke:#787878;stroke-width:0.69999802;stroke-linecap:round"
+     connectorname="5"
+     x1="252.3546"
+     class="pin"
+     y1="296.64026"
+     x2="266.75461"
+     y2="296.64026"
+     id="line7214" />
+  <g
+     style="fill:none;stroke:none;stroke-width:0"
+     y="36.36"
+     width="0.000283464"
+     class="terminal"
+     x="0.349999"
+     height="0.000283465"
+     id="g7216"
+     transform="translate(252.0046,260.28026)" />
+  <text
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#787878;stroke:none;stroke-width:0"
+     id="text7220"
+     y="297.34015"
+     class="text"
+     x="268.85458"
+     font-size="3.49999">5</text>
+  <g
+     partID="104310"
+     id="g7268"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(225.69,267.12)"
+       id="g7266">
+      <g
+         id="g7264">
+        <line
+           y2="8.9899902"
+           x2="5.7600002"
+           y1="7.5499902"
+           class="other"
+           x1="5.7600002"
+           id="line7228"
+           style="stroke:#000000;stroke-width:0.43200001;stroke-linecap:round" />
+        <line
+           y2="13.31"
+           x2="5.7600002"
+           y1="14.75"
+           class="other"
+           x1="5.7600002"
+           id="line7230"
+           style="stroke:#000000;stroke-width:0.43200001;stroke-linecap:round" />
+        <rect
+           height="1.4400001"
+           x="0"
+           class="other"
+           y="11.87"
+           width="11.52"
+           id="rect7232"
+           style="fill:#000000;stroke:none;stroke-width:0;stroke-linecap:round" />
+        <rect
+           height="1.4400001"
+           x="0"
+           class="other"
+           y="8.9899902"
+           width="11.52"
+           id="rect7234"
+           style="fill:#000000;stroke:none;stroke-width:0;stroke-linecap:round" />
+        <line
+           id="line7236"
+           y2="7.5499902"
+           x2="5.7600002"
+           y1="0.34999901"
+           class="pin"
+           x1="5.7600002"
+           connectorname="1"
+           style="stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+        <g
+           id="g7238"
+           height="0.000283465"
+           x="5.76"
+           class="terminal"
+           y="0.349999"
+           width="0.000283465"
+           style="fill:none;stroke:none;stroke-width:0" />
+        <g
+           transform="translate(4.70999,3.94999)"
+           id="g7248">
+          <g
+             id="g7246">
+            <g
+               transform="rotate(-90)"
+               id="g7244">
+              <g
+                 id="g7242">
+                <text
+                   font-size="2.5"
+                   x="0"
+                   class="text"
+                   y="0"
+                   id="text7240"
+                   style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">1</text>
+              </g>
+            </g>
+          </g>
+        </g>
+        <line
+           id="line7250"
+           y2="14.75"
+           x2="5.7600002"
+           y1="21.950001"
+           class="pin"
+           x1="5.7600002"
+           connectorname="2"
+           style="stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+        <g
+           id="g7252"
+           height="0.000283465"
+           x="5.76"
+           class="terminal"
+           y="21.95"
+           width="0.000283465"
+           style="fill:none;stroke:none;stroke-width:0" />
+        <g
+           transform="translate(4.70999,18.35)"
+           id="g7262">
+          <g
+             id="g7260">
+            <g
+               transform="rotate(-90)"
+               id="g7258">
+              <g
+                 id="g7256">
+                <text
+                   font-size="2.5"
+                   x="0"
+                   class="text"
+                   y="0"
+                   id="text7254"
+                   style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">2</text>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <rect
+     height="64.800003"
+     x="167.04027"
+     class="interior rect"
+     width="35.999901"
+     y="-345.95459"
+     id="rect7270"
+     style="fill:#ffffff;stroke:none;stroke-width:0"
+     transform="rotate(90)" />
+  <line
+     y2="203.04027"
+     x2="281.1546"
+     y1="167.04027"
+     class="other"
+     x1="281.1546"
+     id="line7276"
+     style="stroke:#000000;stroke-width:0.89999801;stroke-linecap:round" />
+  <line
+     y2="203.04027"
+     x2="345.95459"
+     y1="203.04027"
+     class="other"
+     x1="281.1546"
+     id="line7278"
+     style="stroke:#000000;stroke-width:0.89999801;stroke-linecap:round" />
+  <line
+     y2="167.04027"
+     x2="345.95459"
+     y1="203.04027"
+     class="other"
+     x1="345.95459"
+     id="line7280"
+     style="stroke:#000000;stroke-width:0.89999801;stroke-linecap:round" />
+  <line
+     y2="167.04027"
+     x2="281.1546"
+     y1="167.04027"
+     class="other"
+     x1="345.95459"
+     id="line7282"
+     style="stroke:#000000;stroke-width:0.89999801;stroke-linecap:round" />
+  <line
+     id="line7284"
+     y2="167.04027"
+     x2="338.75461"
+     y1="152.64026"
+     class="pin"
+     x1="338.75461"
+     connectorname="1"
+     style="stroke:#787878;stroke-width:0.69999802;stroke-linecap:round" />
+  <text
+     font-size="3.49999"
+     x="169.14026"
+     class="text"
+     y="-338.0546"
+     id="text7290"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#787878;stroke:none;stroke-width:0"
+     transform="rotate(90)">1</text>
+  <line
+     id="line7292"
+     y2="167.04027"
+     x2="331.5546"
+     y1="152.64026"
+     class="pin"
+     x1="331.5546"
+     connectorname="2"
+     style="stroke:#787878;stroke-width:0.69999802;stroke-linecap:round" />
+  <text
+     font-size="3.49999"
+     x="169.14026"
+     class="text"
+     y="-330.85458"
+     id="text7298"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#787878;stroke:none;stroke-width:0"
+     transform="rotate(90)">2</text>
+  <line
+     id="line7300"
+     y2="167.04027"
+     x2="324.35458"
+     y1="152.64026"
+     class="pin"
+     x1="324.35458"
+     connectorname="3"
+     style="stroke:#787878;stroke-width:0.69999802;stroke-linecap:round" />
+  <text
+     font-size="3.49999"
+     x="169.14026"
+     class="text"
+     y="-323.6546"
+     id="text7306"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#787878;stroke:none;stroke-width:0"
+     transform="rotate(90)">3</text>
+  <line
+     id="line7308"
+     y2="167.04027"
+     x2="317.1546"
+     y1="152.64026"
+     class="pin"
+     x1="317.1546"
+     connectorname="4"
+     style="stroke:#787878;stroke-width:0.69999802;stroke-linecap:round" />
+  <text
+     font-size="3.49999"
+     x="169.14026"
+     class="text"
+     y="-316.45468"
+     id="text7314"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#787878;stroke:none;stroke-width:0"
+     transform="rotate(90)">4</text>
+  <line
+     id="line7316"
+     y2="167.04027"
+     x2="288.35458"
+     y1="152.64026"
+     class="pin"
+     x1="288.35458"
+     connectorname="8"
+     style="stroke:#787878;stroke-width:0.69999802;stroke-linecap:round" />
+  <text
+     font-size="3.49999"
+     x="169.14026"
+     class="text"
+     y="-287.65469"
+     id="text7322"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#787878;stroke:none;stroke-width:0"
+     transform="rotate(90)">8</text>
+  <line
+     id="line7324"
+     y2="167.04027"
+     x2="295.5546"
+     y1="152.64026"
+     class="pin"
+     x1="295.5546"
+     connectorname="7"
+     style="stroke:#787878;stroke-width:0.69999802;stroke-linecap:round" />
+  <text
+     font-size="3.49999"
+     x="169.14026"
+     class="text"
+     y="-294.85471"
+     id="text7330"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#787878;stroke:none;stroke-width:0"
+     transform="rotate(90)">7</text>
+  <line
+     id="line7332"
+     y2="167.04027"
+     x2="302.75461"
+     y1="152.64026"
+     class="pin"
+     x1="302.75461"
+     connectorname="6"
+     style="stroke:#787878;stroke-width:0.69999802;stroke-linecap:round" />
+  <text
+     font-size="3.49999"
+     x="169.14026"
+     class="text"
+     y="-302.05469"
+     id="text7338"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#787878;stroke:none;stroke-width:0"
+     transform="rotate(90)">6</text>
+  <line
+     id="line7340"
+     y2="167.04027"
+     x2="309.95459"
+     y1="152.64026"
+     class="pin"
+     x1="309.95459"
+     connectorname="5"
+     style="stroke:#787878;stroke-width:0.69999802;stroke-linecap:round" />
+  <text
+     font-size="3.49999"
+     x="169.14026"
+     class="text"
+     y="-309.2547"
+     id="text7346"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#787878;stroke:none;stroke-width:0"
+     transform="rotate(90)">5</text>
+  <g
+     partID="106430"
+     id="g7378"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(404.585,140.33)"
+       id="g7376">
+      <g
+         transform="rotate(90)"
+         id="g7374">
+        <g
+           id="g7372">
+          <line
+             y2="7.5339999"
+             x2="4.7410002"
+             y1="9.3330002"
+             x1="4.7410002"
+             id="line7356"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999;stroke-linecap:round" />
+          <line
+             y2="9.3330002"
+             x2="1.142"
+             y1="21.934"
+             x1="4.7410002"
+             id="line7358"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999;stroke-linecap:round" />
+          <circle
+             r="0.36000001"
+             cx="4.7410002"
+             cy="21.934"
+             id="circle7360"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999" />
+          <circle
+             r="0.36000001"
+             cx="4.7410002"
+             cy="7.5339999"
+             id="circle7362"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999" />
+          <line
+             id="line7364"
+             y2="21.934"
+             x2="4.7410002"
+             y1="29.135"
+             x1="4.7410002"
+             style="fill:none;stroke:#555555;stroke-width:0.69999999;stroke-linecap:round" />
+          <g
+             id="g7366"
+             height="0.001"
+             x="4.74"
+             y="29.134"
+             width="0.002"
+             style="fill:none" />
+          <line
+             id="line7368"
+             y2="7.5339999"
+             x2="4.7410002"
+             y1="0.333"
+             x1="4.7410002"
+             style="fill:none;stroke:#555555;stroke-width:0.69999999;stroke-linecap:round" />
+          <g
+             id="g7370"
+             height="0.001"
+             x="4.741"
+             y="0.333"
+             width="0"
+             style="fill:none" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="106910"
+     id="g7402"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(404.585,125.93)"
+       id="g7400">
+      <g
+         transform="rotate(90)"
+         id="g7398">
+        <g
+           id="g7396">
+          <line
+             y2="7.5339999"
+             x2="4.7410002"
+             y1="9.3330002"
+             x1="4.7410002"
+             id="line7380"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999;stroke-linecap:round" />
+          <line
+             y2="9.3330002"
+             x2="1.142"
+             y1="21.934"
+             x1="4.7410002"
+             id="line7382"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999;stroke-linecap:round" />
+          <circle
+             r="0.36000001"
+             cx="4.7410002"
+             cy="21.934"
+             id="circle7384"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999" />
+          <circle
+             r="0.36000001"
+             cx="4.7410002"
+             cy="7.5339999"
+             id="circle7386"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999" />
+          <line
+             id="line7388"
+             y2="21.934"
+             x2="4.7410002"
+             y1="29.135"
+             x1="4.7410002"
+             style="fill:none;stroke:#555555;stroke-width:0.69999999;stroke-linecap:round" />
+          <g
+             id="g7390"
+             height="0.001"
+             x="4.74"
+             y="29.134"
+             width="0.002"
+             style="fill:none" />
+          <line
+             id="line7392"
+             y2="7.5339999"
+             x2="4.7410002"
+             y1="0.333"
+             x1="4.7410002"
+             style="fill:none;stroke:#555555;stroke-width:0.69999999;stroke-linecap:round" />
+          <g
+             id="g7394"
+             height="0.001"
+             x="4.741"
+             y="0.333"
+             width="0"
+             style="fill:none" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="107100"
+     id="g7426"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(404.585,111.53)"
+       id="g7424">
+      <g
+         transform="rotate(90)"
+         id="g7422">
+        <g
+           id="g7420">
+          <line
+             y2="7.5339999"
+             x2="4.7410002"
+             y1="9.3330002"
+             x1="4.7410002"
+             id="line7404"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999;stroke-linecap:round" />
+          <line
+             y2="9.3330002"
+             x2="1.142"
+             y1="21.934"
+             x1="4.7410002"
+             id="line7406"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999;stroke-linecap:round" />
+          <circle
+             r="0.36000001"
+             cx="4.7410002"
+             cy="21.934"
+             id="circle7408"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999" />
+          <circle
+             r="0.36000001"
+             cx="4.7410002"
+             cy="7.5339999"
+             id="circle7410"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999" />
+          <line
+             id="line7412"
+             y2="21.934"
+             x2="4.7410002"
+             y1="29.135"
+             x1="4.7410002"
+             style="fill:none;stroke:#555555;stroke-width:0.69999999;stroke-linecap:round" />
+          <g
+             id="g7414"
+             height="0.001"
+             x="4.74"
+             y="29.134"
+             width="0.002"
+             style="fill:none" />
+          <line
+             id="line7416"
+             y2="7.5339999"
+             x2="4.7410002"
+             y1="0.333"
+             x1="4.7410002"
+             style="fill:none;stroke:#555555;stroke-width:0.69999999;stroke-linecap:round" />
+          <g
+             id="g7418"
+             height="0.001"
+             x="4.741"
+             y="0.333"
+             width="0"
+             style="fill:none" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="107270"
+     id="g7450"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(404.585,97.1298)"
+       id="g7448">
+      <g
+         transform="rotate(90)"
+         id="g7446">
+        <g
+           id="g7444">
+          <line
+             y2="7.5339999"
+             x2="4.7410002"
+             y1="9.3330002"
+             x1="4.7410002"
+             id="line7428"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999;stroke-linecap:round" />
+          <line
+             y2="9.3330002"
+             x2="1.142"
+             y1="21.934"
+             x1="4.7410002"
+             id="line7430"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999;stroke-linecap:round" />
+          <circle
+             r="0.36000001"
+             cx="4.7410002"
+             cy="21.934"
+             id="circle7432"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999" />
+          <circle
+             r="0.36000001"
+             cx="4.7410002"
+             cy="7.5339999"
+             id="circle7434"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999" />
+          <line
+             id="line7436"
+             y2="21.934"
+             x2="4.7410002"
+             y1="29.135"
+             x1="4.7410002"
+             style="fill:none;stroke:#555555;stroke-width:0.69999999;stroke-linecap:round" />
+          <g
+             id="g7438"
+             height="0.001"
+             x="4.74"
+             y="29.134"
+             width="0.002"
+             style="fill:none" />
+          <line
+             id="line7440"
+             y2="7.5339999"
+             x2="4.7410002"
+             y1="0.333"
+             x1="4.7410002"
+             style="fill:none;stroke:#555555;stroke-width:0.69999999;stroke-linecap:round" />
+          <g
+             id="g7442"
+             height="0.001"
+             x="4.741"
+             y="0.333"
+             width="0"
+             style="fill:none" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="143210"
+     id="g7474"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(233.909,223.936)"
+       id="g7472">
+      <g
+         id="g7470">
+        <g
+           id="g7468">
+          <line
+             y2="7.5339999"
+             x2="4.7410002"
+             y1="9.3330002"
+             x1="4.7410002"
+             id="line7452"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999;stroke-linecap:round" />
+          <line
+             y2="9.3330002"
+             x2="1.142"
+             y1="21.934"
+             x1="4.7410002"
+             id="line7454"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999;stroke-linecap:round" />
+          <circle
+             r="0.36000001"
+             cx="4.7410002"
+             cy="21.934"
+             id="circle7456"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999" />
+          <circle
+             r="0.36000001"
+             cx="4.7410002"
+             cy="7.5339999"
+             id="circle7458"
+             style="fill:none;stroke:#000000;stroke-width:0.69999999" />
+          <line
+             id="line7460"
+             y2="21.934"
+             x2="4.7410002"
+             y1="29.135"
+             x1="4.7410002"
+             style="fill:none;stroke:#555555;stroke-width:0.69999999;stroke-linecap:round" />
+          <g
+             id="g7462"
+             height="0.001"
+             x="4.74"
+             y="29.134"
+             width="0.002"
+             style="fill:none" />
+          <line
+             id="line7464"
+             y2="7.5339999"
+             x2="4.7410002"
+             y1="0.333"
+             x1="4.7410002"
+             style="fill:none;stroke:#555555;stroke-width:0.69999999;stroke-linecap:round" />
+          <g
+             id="g7466"
+             height="0.001"
+             x="4.741"
+             y="0.333"
+             width="0"
+             style="fill:none" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <rect
+     height="121.5"
+     x="-50.304596"
+     class="interior rect"
+     y="-332.19028"
+     width="42.299999"
+     id="rect7476"
+     style="fill:#ffffff;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round"
+     transform="scale(-1)" />
+  <line
+     id="line7478"
+     y2="325.44028"
+     x2="50.404594"
+     y1="325.44028"
+     class="pin"
+     x1="64.804596"
+     style="fill:none;stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+  <text
+     font-size="2.5"
+     x="57.533806"
+     class="text"
+     y="328.314"
+     id="text7480"
+     style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">1</text>
+  <text
+     font-size="3.49999"
+     x="42.018291"
+     class="text"
+     y="327.28494"
+     id="text7482"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#000000;stroke:none;stroke-width:0">VSS</text>
+  <line
+     id="line7486"
+     y2="318.24026"
+     x2="50.404594"
+     y1="318.24026"
+     class="pin"
+     x1="64.804596"
+     style="fill:none;stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+  <text
+     font-size="2.5"
+     x="57.572868"
+     class="text"
+     y="321.14572"
+     id="text7488"
+     style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">2</text>
+  <text
+     font-size="3.49999"
+     x="41.375713"
+     class="text"
+     y="320.08493"
+     id="text7490"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#000000;stroke:none;stroke-width:0">VDD</text>
+  <line
+     id="line7494"
+     y2="311.04025"
+     x2="50.404594"
+     y1="311.04025"
+     class="pin"
+     x1="64.804596"
+     style="fill:none;stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+  <text
+     font-size="2.5"
+     x="57.591179"
+     class="text"
+     y="313.9079"
+     id="text7496"
+     style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">3</text>
+  <text
+     font-size="3.49999"
+     x="44.573215"
+     class="text"
+     y="312.88324"
+     id="text7498"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#000000;stroke:none;stroke-width:0">V0</text>
+  <line
+     id="line7502"
+     y2="303.84027"
+     x2="50.404594"
+     y1="303.84027"
+     class="pin"
+     x1="64.804596"
+     style="fill:none;stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+  <text
+     font-size="2.5"
+     x="57.633904"
+     class="text"
+     y="306.70789"
+     id="text7504"
+     style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">4</text>
+  <text
+     font-size="3.49999"
+     x="44.038303"
+     class="text"
+     y="305.68503"
+     id="text7506"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#000000;stroke:none;stroke-width:0">RS</text>
+  <line
+     id="line7510"
+     y2="296.64026"
+     x2="50.404594"
+     y1="296.64026"
+     class="pin"
+     x1="64.804596"
+     style="fill:none;stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+  <text
+     font-size="2.5"
+     x="57.555779"
+     class="text"
+     y="299.47006"
+     id="text7512"
+     style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">5</text>
+  <text
+     font-size="3.49999"
+     x="41.332989"
+     class="text"
+     y="298.08002"
+     id="text7514"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#000000;stroke:none;stroke-width:0">R/W</text>
+  <line
+     id="line7518"
+     y2="289.44028"
+     x2="50.404594"
+     y1="289.44028"
+     class="pin"
+     x1="64.804596"
+     style="fill:none;stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+  <text
+     font-size="2.5"
+     x="57.57531"
+     class="text"
+     y="292.30423"
+     id="text7520"
+     style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">6</text>
+  <text
+     font-size="3.49999"
+     x="46.644497"
+     class="text"
+     y="291.28503"
+     id="text7522"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#000000;stroke:none;stroke-width:0">E</text>
+  <line
+     id="line7526"
+     y2="282.24026"
+     x2="50.404594"
+     y1="282.24026"
+     class="pin"
+     x1="64.804596"
+     style="fill:none;stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+  <text
+     font-size="2.5"
+     x="57.57653"
+     class="text"
+     y="285.10788"
+     id="text7528"
+     style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">7</text>
+  <text
+     font-size="3.49999"
+     x="41.568829"
+     class="text"
+     y="284.08334"
+     id="text7530"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#000000;stroke:none;stroke-width:0">DB0</text>
+  <line
+     id="line7534"
+     y2="275.04025"
+     x2="50.404594"
+     y1="275.04025"
+     class="pin"
+     x1="64.804596"
+     style="fill:none;stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+  <text
+     font-size="2.5"
+     x="57.607048"
+     class="text"
+     y="277.9079"
+     id="text7536"
+     style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">8</text>
+  <text
+     font-size="3.49999"
+     x="41.710674"
+     class="text"
+     y="276.89359"
+     id="text7538"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#000000;stroke:none;stroke-width:0">DB1</text>
+  <line
+     id="line7542"
+     y2="267.84027"
+     x2="50.404594"
+     y1="267.84027"
+     class="pin"
+     x1="64.804596"
+     style="fill:none;stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+  <text
+     font-size="2.5"
+     x="57.633904"
+     class="text"
+     y="270.70911"
+     id="text7544"
+     style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">9</text>
+  <text
+     font-size="3.49999"
+     x="41.565411"
+     class="text"
+     y="269.73801"
+     id="text7546"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#000000;stroke:none;stroke-width:0">DB2</text>
+  <line
+     id="line7550"
+     y2="260.64026"
+     x2="50.404594"
+     y1="260.64026"
+     class="pin"
+     x1="64.804596"
+     style="fill:none;stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+  <text
+     font-size="2.5"
+     x="57.432487"
+     class="text"
+     y="263.50668"
+     id="text7552"
+     style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">10</text>
+  <text
+     font-size="3.49999"
+     x="41.601299"
+     class="text"
+     y="262.48505"
+     id="text7554"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#000000;stroke:none;stroke-width:0">DB3</text>
+  <line
+     id="line7558"
+     y2="253.44026"
+     x2="50.404594"
+     y1="253.44026"
+     class="pin"
+     x1="64.804596"
+     style="fill:none;stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+  <text
+     font-size="2.5"
+     x="57.533806"
+     class="text"
+     y="256.314"
+     id="text7560"
+     style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">11</text>
+  <text
+     font-size="3.49999"
+     x="41.507305"
+     class="text"
+     y="255.28503"
+     id="text7562"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#000000;stroke:none;stroke-width:0">DB4</text>
+  <line
+     id="line7566"
+     y2="246.24026"
+     x2="50.404594"
+     y1="246.24026"
+     class="pin"
+     x1="64.804596"
+     style="fill:none;stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+  <text
+     font-size="2.5"
+     x="57.430046"
+     class="text"
+     y="249.14574"
+     id="text7568"
+     style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">12</text>
+  <text
+     font-size="3.49999"
+     x="41.585918"
+     class="text"
+     y="248.03204"
+     id="text7570"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#000000;stroke:none;stroke-width:0">DB5</text>
+  <line
+     id="line7574"
+     y2="239.04027"
+     x2="50.404594"
+     y1="239.04027"
+     class="pin"
+     x1="64.804596"
+     style="fill:none;stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+  <text
+     font-size="2.5"
+     x="57.455681"
+     class="text"
+     y="241.90788"
+     id="text7576"
+     style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">13</text>
+  <text
+     font-size="3.49999"
+     x="41.527813"
+     class="text"
+     y="240.8799"
+     id="text7578"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#000000;stroke:none;stroke-width:0">DB6</text>
+  <line
+     id="line7582"
+     y2="231.84026"
+     x2="50.404594"
+     y1="231.84026"
+     class="pin"
+     x1="64.804596"
+     style="fill:none;stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+  <text
+     font-size="2.5"
+     x="57.388542"
+     class="text"
+     y="234.71399"
+     id="text7584"
+     style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">14</text>
+  <text
+     font-size="3.49999"
+     x="41.558575"
+     class="text"
+     y="233.68492"
+     id="text7586"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#000000;stroke:none;stroke-width:0">DB7</text>
+  <line
+     id="line7590"
+     y2="224.64026"
+     x2="50.404594"
+     y1="224.64026"
+     class="pin"
+     x1="64.804596"
+     style="fill:none;stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+  <text
+     font-size="2.5"
+     x="57.444695"
+     class="text"
+     y="227.47615"
+     id="text7592"
+     style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">15</text>
+  <text
+     font-size="3.49999"
+     x="39.294178"
+     class="text"
+     y="226.48494"
+     id="text7594"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#000000;stroke:none;stroke-width:0">LED+</text>
+  <line
+     id="line7598"
+     y2="217.44026"
+     x2="50.404594"
+     y1="217.44026"
+     class="pin"
+     x1="64.804596"
+     style="fill:none;stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+  <text
+     font-size="2.5"
+     x="57.403191"
+     class="text"
+     y="220.30423"
+     id="text7600"
+     style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">16</text>
+  <text
+     font-size="3.49999"
+     x="40.471661"
+     class="text"
+     y="219.28494"
+     id="text7602"
+     style="font-size:3.49998999px;font-family:'Droid Sans';text-anchor:start;fill:#000000;stroke:none;stroke-width:0">LED-</text>
+  <text
+     id="text7606"
+     font-size="4.25001"
+     x="28.843536"
+     class="text"
+     y="274.08014"
+     style="font-size:4.25001001px;font-family:'Droid Sans';text-anchor:middle;fill:#000000;stroke:none;stroke-width:0">1602 LCD</text>
+  <text
+     id="text7608"
+     font-size="4.25001"
+     x="28.843536"
+     class="text"
+     y="278.61383"
+     style="font-size:4.25001001px;font-family:'Droid Sans';text-anchor:middle;fill:#000000;stroke:none;stroke-width:0">screen</text>
+  <g
+     partID="110070"
+     id="g7654"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(97.7462,310.321)"
+       id="g7652">
+      <g
+         transform="rotate(90)"
+         id="g7650">
+        <g
+           id="g7648">
+          <line
+             y2="0.21600001"
+             x2="8.6300297"
+             y1="3.096"
+             class="other"
+             x1="7.5500202"
+             id="line7618"
+             style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+          <line
+             y2="5.9759998"
+             x2="10.43"
+             y1="0.21600001"
+             class="other"
+             x1="8.6300297"
+             id="line7620"
+             style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+          <line
+             y2="0.21600001"
+             x2="12.23"
+             y1="5.9759998"
+             class="other"
+             x1="10.43"
+             id="line7622"
+             style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+          <line
+             y2="5.9759998"
+             x2="14.03"
+             y1="0.21600001"
+             class="other"
+             x1="12.23"
+             id="line7624"
+             style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+          <line
+             y2="0.21600001"
+             x2="15.8301"
+             y1="5.9759998"
+             class="other"
+             x1="14.03"
+             id="line7626"
+             style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+          <line
+             y2="5.9759998"
+             x2="17.6301"
+             y1="0.21600001"
+             class="other"
+             x1="15.8301"
+             id="line7628"
+             style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+          <line
+             y2="0.21600001"
+             x2="19.430099"
+             y1="5.9759998"
+             class="other"
+             x1="17.6301"
+             id="line7630"
+             style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+          <line
+             y2="5.9759998"
+             x2="21.230101"
+             y1="0.21600001"
+             class="other"
+             x1="19.430099"
+             id="line7632"
+             style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+          <line
+             y2="3.096"
+             x2="21.9501"
+             y1="5.9759998"
+             class="other"
+             x1="21.230101"
+             id="line7634"
+             style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+          <line
+             id="line7636"
+             y2="3.096"
+             x2="21.9501"
+             y1="3.096"
+             class="pin"
+             x1="29.1502"
+             connectorname="2"
+             style="stroke:#787878;stroke-width:0.700001;stroke-linecap:round" />
+          <g
+             id="g7638"
+             height="0.000283465"
+             x="29.1502"
+             class="terminal"
+             y="3.096"
+             width="0.000283466"
+             style="fill:none;stroke:none;stroke-width:0" />
+          <text
+             font-size="2.50001"
+             x="25.5501"
+             class="text"
+             y="2.046"
+             id="text7640"
+             style="font-size:2.50001001px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">2</text>
+          <line
+             id="line7642"
+             y2="3.096"
+             x2="7.5500202"
+             y1="3.096"
+             class="pin"
+             x1="0.35000101"
+             connectorname="1"
+             style="stroke:#787878;stroke-width:0.700001;stroke-linecap:round" />
+          <g
+             id="g7644"
+             height="0.000283465"
+             x="0.350001"
+             class="terminal"
+             y="3.096"
+             width="0.000283466"
+             style="fill:none;stroke:none;stroke-width:0" />
+          <text
+             font-size="2.50001"
+             x="3.9500101"
+             class="text"
+             y="2.046"
+             id="text7646"
+             style="font-size:2.50001001px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">1</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="121170"
+     id="g7690"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(231.1,62.7746)"
+       id="g7688">
+      <g
+         id="g7686">
+        <line
+           y2="0.21600001"
+           x2="8.6300297"
+           y1="3.096"
+           class="other"
+           x1="7.5500202"
+           id="line7656"
+           style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+        <line
+           y2="5.9759998"
+           x2="10.43"
+           y1="0.21600001"
+           class="other"
+           x1="8.6300297"
+           id="line7658"
+           style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+        <line
+           y2="0.21600001"
+           x2="12.23"
+           y1="5.9759998"
+           class="other"
+           x1="10.43"
+           id="line7660"
+           style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+        <line
+           y2="5.9759998"
+           x2="14.03"
+           y1="0.21600001"
+           class="other"
+           x1="12.23"
+           id="line7662"
+           style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+        <line
+           y2="0.21600001"
+           x2="15.8301"
+           y1="5.9759998"
+           class="other"
+           x1="14.03"
+           id="line7664"
+           style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+        <line
+           y2="5.9759998"
+           x2="17.6301"
+           y1="0.21600001"
+           class="other"
+           x1="15.8301"
+           id="line7666"
+           style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+        <line
+           y2="0.21600001"
+           x2="19.430099"
+           y1="5.9759998"
+           class="other"
+           x1="17.6301"
+           id="line7668"
+           style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+        <line
+           y2="5.9759998"
+           x2="21.230101"
+           y1="0.21600001"
+           class="other"
+           x1="19.430099"
+           id="line7670"
+           style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+        <line
+           y2="3.096"
+           x2="21.9501"
+           y1="5.9759998"
+           class="other"
+           x1="21.230101"
+           id="line7672"
+           style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+        <line
+           id="line7674"
+           y2="3.096"
+           x2="21.9501"
+           y1="3.096"
+           class="pin"
+           x1="29.1502"
+           connectorname="2"
+           style="stroke:#787878;stroke-width:0.700001;stroke-linecap:round" />
+        <g
+           id="g7676"
+           height="0.000283465"
+           x="29.1502"
+           class="terminal"
+           y="3.096"
+           width="0.000283466"
+           style="fill:none;stroke:none;stroke-width:0" />
+        <text
+           font-size="2.50001"
+           x="25.5501"
+           class="text"
+           y="2.046"
+           id="text7678"
+           style="font-size:2.50001001px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">2</text>
+        <line
+           id="line7680"
+           y2="3.096"
+           x2="7.5500202"
+           y1="3.096"
+           class="pin"
+           x1="0.35000101"
+           connectorname="1"
+           style="stroke:#787878;stroke-width:0.700001;stroke-linecap:round" />
+        <g
+           id="g7682"
+           height="0.000283465"
+           x="0.350001"
+           class="terminal"
+           y="3.096"
+           width="0.000283466"
+           style="fill:none;stroke:none;stroke-width:0" />
+        <text
+           font-size="2.50001"
+           x="3.9500101"
+           class="text"
+           y="2.046"
+           id="text7684"
+           style="font-size:2.50001001px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">1</text>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="123080"
+     id="g7754"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(303.8,65.5206)"
+       id="g7752">
+      <g
+         transform="rotate(90)"
+         id="g7750">
+        <g
+           id="g7748">
+          <line
+             y2="10.43"
+             x2="8.9899902"
+             y1="7.5500202"
+             class="other"
+             x1="14.75"
+             id="line7692"
+             style="stroke:#000000;stroke-width:0.43200001;stroke-linecap:round" />
+          <line
+             y2="21.9501"
+             x2="14.75"
+             y1="19.070101"
+             class="other"
+             x1="12.59"
+             id="line7694"
+             style="stroke:#000000;stroke-width:0.43200001;stroke-linecap:round" />
+          <line
+             y2="21.9501"
+             x2="11.15"
+             y1="21.9501"
+             class="other"
+             x1="14.75"
+             id="line7696"
+             style="stroke:#000000;stroke-width:0.43200001;stroke-linecap:round" />
+          <line
+             y2="19.070101"
+             x2="12.59"
+             y1="21.9501"
+             class="other"
+             x1="11.15"
+             id="line7698"
+             style="stroke:#000000;stroke-width:0.43200001;stroke-linecap:round" />
+          <line
+             y2="18.7866"
+             x2="8.4230604"
+             y1="20.5327"
+             class="other"
+             x1="11.9153"
+             id="line7700"
+             style="stroke:#000000;stroke-width:0.43200001;stroke-linecap:round" />
+          <line
+             y2="21.590099"
+             x2="14.03"
+             y1="21.590099"
+             class="other"
+             x1="11.87"
+             id="line7702"
+             style="stroke:#000000;stroke-width:0.72000003;stroke-linecap:round" />
+          <line
+             y2="19.7901"
+             x2="12.59"
+             y1="21.590099"
+             class="other"
+             x1="14.03"
+             id="line7704"
+             style="stroke:#000000;stroke-width:0.72000003;stroke-linecap:round" />
+          <line
+             y2="21.230101"
+             x2="11.87"
+             y1="19.7901"
+             class="other"
+             x1="12.59"
+             id="line7706"
+             style="stroke:#000000;stroke-width:0.72000003;stroke-linecap:round" />
+          <line
+             y2="21.230101"
+             x2="12.95"
+             y1="21.230101"
+             class="other"
+             x1="11.87"
+             id="line7708"
+             style="stroke:#000000;stroke-width:0.72000003;stroke-linecap:round" />
+          <line
+             y2="20.510099"
+             x2="12.59"
+             y1="21.230101"
+             class="other"
+             x1="12.95"
+             id="line7710"
+             style="stroke:#000000;stroke-width:0.72000003;stroke-linecap:round" />
+          <rect
+             height="14.4001"
+             x="6.8299899"
+             class="other"
+             y="7.5500202"
+             width="2.1600001"
+             id="rect7712"
+             style="fill:#000000;stroke:none;stroke-width:0;stroke-linecap:round" />
+          <line
+             id="line7714"
+             y2="14.75"
+             x2="7.5499902"
+             y1="14.75"
+             class="pin"
+             x1="0.34999901"
+             connectorname="B"
+             style="stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+          <g
+             id="g7716"
+             height="0.000283466"
+             x="0.349999"
+             class="terminal"
+             y="14.75"
+             width="0.000283465"
+             style="fill:none;stroke:none;stroke-width:0" />
+          <text
+             font-size="2.5"
+             x="3.94999"
+             class="text"
+             y="13.7001"
+             id="text7718"
+             style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">1</text>
+          <line
+             id="line7720"
+             y2="21.9501"
+             x2="14.75"
+             y1="29.1502"
+             class="pin"
+             x1="14.75"
+             connectorname="E"
+             style="stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+          <g
+             id="g7722"
+             height="0.000283466"
+             x="14.75"
+             class="terminal"
+             y="29.1502"
+             width="0.000283465"
+             style="fill:none;stroke:none;stroke-width:0" />
+          <g
+             transform="translate(13.7,25.5501)"
+             id="g7732">
+            <g
+               id="g7730">
+              <g
+                 transform="rotate(-90)"
+                 id="g7728">
+                <g
+                   id="g7726">
+                  <text
+                     font-size="2.5"
+                     x="0"
+                     class="text"
+                     y="0"
+                     id="text7724"
+                     style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">2</text>
+                </g>
+              </g>
+            </g>
+          </g>
+          <line
+             id="line7734"
+             y2="7.5500202"
+             x2="14.75"
+             y1="0.35000101"
+             class="pin"
+             x1="14.75"
+             connectorname="C"
+             style="stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+          <g
+             id="g7736"
+             height="0.000283466"
+             x="14.75"
+             class="terminal"
+             y="0.350001"
+             width="0.000283465"
+             style="fill:none;stroke:none;stroke-width:0" />
+          <g
+             transform="translate(13.7,3.95001)"
+             id="g7746">
+            <g
+               id="g7744">
+              <g
+                 transform="rotate(-90)"
+                 id="g7742">
+                <g
+                   id="g7740">
+                  <text
+                     font-size="2.5"
+                     x="0"
+                     class="text"
+                     y="0"
+                     id="text7738"
+                     style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">3</text>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="123640"
+     id="g7790"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(317.5,77.1746)"
+       id="g7788">
+      <g
+         id="g7786">
+        <line
+           y2="0.21600001"
+           x2="8.6300297"
+           y1="3.096"
+           class="other"
+           x1="7.5500202"
+           id="line7756"
+           style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+        <line
+           y2="5.9759998"
+           x2="10.43"
+           y1="0.21600001"
+           class="other"
+           x1="8.6300297"
+           id="line7758"
+           style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+        <line
+           y2="0.21600001"
+           x2="12.23"
+           y1="5.9759998"
+           class="other"
+           x1="10.43"
+           id="line7760"
+           style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+        <line
+           y2="5.9759998"
+           x2="14.03"
+           y1="0.21600001"
+           class="other"
+           x1="12.23"
+           id="line7762"
+           style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+        <line
+           y2="0.21600001"
+           x2="15.8301"
+           y1="5.9759998"
+           class="other"
+           x1="14.03"
+           id="line7764"
+           style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+        <line
+           y2="5.9759998"
+           x2="17.6301"
+           y1="0.21600001"
+           class="other"
+           x1="15.8301"
+           id="line7766"
+           style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+        <line
+           y2="0.21600001"
+           x2="19.430099"
+           y1="5.9759998"
+           class="other"
+           x1="17.6301"
+           id="line7768"
+           style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+        <line
+           y2="5.9759998"
+           x2="21.230101"
+           y1="0.21600001"
+           class="other"
+           x1="19.430099"
+           id="line7770"
+           style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+        <line
+           y2="3.096"
+           x2="21.9501"
+           y1="5.9759998"
+           class="other"
+           x1="21.230101"
+           id="line7772"
+           style="stroke:#000000;stroke-width:0.43200201;stroke-linecap:round" />
+        <line
+           id="line7774"
+           y2="3.096"
+           x2="21.9501"
+           y1="3.096"
+           class="pin"
+           x1="29.1502"
+           connectorname="2"
+           style="stroke:#787878;stroke-width:0.700001;stroke-linecap:round" />
+        <g
+           id="g7776"
+           height="0.000283465"
+           x="29.1502"
+           class="terminal"
+           y="3.096"
+           width="0.000283466"
+           style="fill:none;stroke:none;stroke-width:0" />
+        <text
+           font-size="2.50001"
+           x="25.5501"
+           class="text"
+           y="2.046"
+           id="text7778"
+           style="font-size:2.50001001px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">2</text>
+        <line
+           id="line7780"
+           y2="3.096"
+           x2="7.5500202"
+           y1="3.096"
+           class="pin"
+           x1="0.35000101"
+           connectorname="1"
+           style="stroke:#787878;stroke-width:0.700001;stroke-linecap:round" />
+        <g
+           id="g7782"
+           height="0.000283465"
+           x="0.350001"
+           class="terminal"
+           y="3.096"
+           width="0.000283466"
+           style="fill:none;stroke:none;stroke-width:0" />
+        <text
+           font-size="2.50001"
+           x="3.9500101"
+           class="text"
+           y="2.046"
+           id="text7784"
+           style="font-size:2.50001001px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">1</text>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="124910"
+     id="g7803"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(260.249,79.7942)"
+       id="g7801">
+      <g
+         id="g7799">
+        <path
+           id="path7792"
+           d="m 7.201,7.575 v -7.2"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round" />
+        <g
+           id="g7794"
+           height="0.953"
+           x="6.728"
+           y="0"
+           width="0.945"
+           style="fill:none" />
+        <path
+           id="path4098"
+           d="M 0.5,7.711 H 13.9"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+        <path
+           id="path4100"
+           d="m 2.732,10.456 h 8.935"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+        <path
+           id="path4102"
+           d="M 9.431,13.175 H 4.967"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+      </g>
+    </g>
+  </g>
+  <g
+     partID="125780"
+     id="g7819"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(152.249,353.394)"
+       id="g7817">
+      <g
+         id="g7815">
+        <path
+           id="path7805"
+           d="m 7.201,7.575 v -7.2"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round" />
+        <g
+           id="g7807"
+           height="0.953"
+           x="6.728"
+           y="0"
+           width="0.945"
+           style="fill:none" />
+        <path
+           id="path7809"
+           d="M 0.5,7.711 H 13.9"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+        <path
+           id="path7811"
+           d="m 2.732,10.456 h 8.935"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+        <path
+           id="path7813"
+           d="M 9.431,13.175 H 4.967"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+      </g>
+    </g>
+  </g>
+  <g
+     partID="125960"
+     id="g7835"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(87.4495,353.394)"
+       id="g7833">
+      <g
+         id="g7831">
+        <path
+           id="path7821"
+           d="m 7.201,7.575 v -7.2"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round" />
+        <g
+           id="g7823"
+           height="0.953"
+           x="6.728"
+           y="0"
+           width="0.945"
+           style="fill:none" />
+        <path
+           id="path7825"
+           d="M 0.5,7.711 H 13.9"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+        <path
+           id="path7827"
+           d="m 2.732,10.456 h 8.935"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+        <path
+           id="path7829"
+           d="M 9.431,13.175 H 4.967"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+      </g>
+    </g>
+  </g>
+  <g
+     partID="126190"
+     id="g7851"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(73.0495,353.394)"
+       id="g7849">
+      <g
+         id="g7847">
+        <path
+           id="path7837"
+           d="m 7.201,7.575 v -7.2"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round" />
+        <g
+           id="g7839"
+           height="0.953"
+           x="6.728"
+           y="0"
+           width="0.945"
+           style="fill:none" />
+        <path
+           id="path7841"
+           d="M 0.5,7.711 H 13.9"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+        <path
+           id="path7843"
+           d="m 2.732,10.456 h 8.935"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+        <path
+           id="path7845"
+           d="M 9.431,13.175 H 4.967"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+      </g>
+    </g>
+  </g>
+  <g
+     partID="126670"
+     id="g7867"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(80.2495,202.194)"
+       id="g7865">
+      <g
+         id="g7863">
+        <path
+           id="path7853"
+           d="m 7.201,7.575 v -7.2"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round" />
+        <g
+           id="g7855"
+           height="0.953"
+           x="6.728"
+           y="0"
+           width="0.945"
+           style="fill:none" />
+        <path
+           id="path7857"
+           d="M 0.5,7.711 H 13.9"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+        <path
+           id="path7859"
+           d="m 2.732,10.456 h 8.935"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+        <path
+           id="path7861"
+           d="M 9.431,13.175 H 4.967"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+      </g>
+    </g>
+  </g>
+  <g
+     partID="148120"
+     id="g7883"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(58.6495,353.394)"
+       id="g7881">
+      <g
+         id="g7879">
+        <path
+           id="path7869"
+           d="m 7.201,7.575 v -7.2"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round" />
+        <g
+           id="g7871"
+           height="0.953"
+           x="6.728"
+           y="0"
+           width="0.945"
+           style="fill:none" />
+        <path
+           id="path7873"
+           d="M 0.5,7.711 H 13.9"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+        <path
+           id="path7875"
+           d="m 2.732,10.456 h 8.935"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+        <path
+           id="path7877"
+           d="M 9.431,13.175 H 4.967"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+      </g>
+    </g>
+  </g>
+  <g
+     partID="127440"
+     id="g7899"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(224.249,295.794)"
+       id="g7897">
+      <g
+         id="g7895">
+        <path
+           id="path7885"
+           d="m 7.201,7.575 v -7.2"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round" />
+        <g
+           id="g7887"
+           height="0.953"
+           x="6.728"
+           y="0"
+           width="0.945"
+           style="fill:none" />
+        <path
+           id="path7889"
+           d="M 0.5,7.711 H 13.9"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+        <path
+           id="path7891"
+           d="m 2.732,10.456 h 8.935"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+        <path
+           id="path7893"
+           d="M 9.431,13.175 H 4.967"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+      </g>
+    </g>
+  </g>
+  <g
+     partID="144710"
+     id="g7915"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(238.649,130.194)"
+       id="g7913">
+      <g
+         id="g7911">
+        <path
+           id="path7901"
+           d="m 7.201,7.575 v -7.2"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round" />
+        <g
+           id="g7903"
+           height="0.953"
+           x="6.728"
+           y="0"
+           width="0.945"
+           style="fill:none" />
+        <path
+           id="path7905"
+           d="M 0.5,7.711 H 13.9"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+        <path
+           id="path7907"
+           d="m 2.732,10.456 h 8.935"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+        <path
+           id="path7909"
+           d="M 9.431,13.175 H 4.967"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+      </g>
+    </g>
+  </g>
+  <g
+     partID="143370"
+     id="g7931"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(245.849,230.994)"
+       id="g7929">
+      <g
+         id="g7927">
+        <path
+           id="path7917"
+           d="m 7.201,7.575 v -7.2"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round" />
+        <g
+           id="g7919"
+           height="0.953"
+           x="6.728"
+           y="0"
+           width="0.945"
+           style="fill:none" />
+        <path
+           id="path7921"
+           d="M 0.5,7.711 H 13.9"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+        <path
+           id="path7923"
+           d="m 2.732,10.456 h 8.935"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+        <path
+           id="path7925"
+           d="M 9.431,13.175 H 4.967"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+      </g>
+    </g>
+  </g>
+  <g
+     partID="145490"
+     id="g7967"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(223.9,107.764)"
+       id="g7965">
+      <g
+         id="g7963">
+        <line
+           y2="4.9061999"
+           x2="14.75"
+           y1="8.5061903"
+           class="other"
+           x1="7.5499902"
+           id="line7933"
+           style="stroke:#000000;stroke-width:0.72000003;stroke-linecap:round" />
+        <line
+           y2="15.7062"
+           x2="16.549999"
+           y1="15.7062"
+           class="other"
+           x1="14.75"
+           id="line7935"
+           style="stroke:#000000;stroke-width:0.36000001;stroke-linecap:round" />
+        <line
+           y2="1.3062"
+           x2="16.549999"
+           y1="1.3062"
+           class="other"
+           x1="14.75"
+           id="line7937"
+           style="stroke:#000000;stroke-width:0.43200001;stroke-linecap:round" />
+        <circle
+           r="1.0182"
+           class="other"
+           cx="14.75"
+           cy="1.3062"
+           id="circle7939"
+           style="fill:none;stroke:#000000;stroke-width:0.57599998" />
+        <circle
+           r="1.0182"
+           class="other"
+           cx="14.75"
+           cy="15.7062"
+           id="circle7941"
+           style="fill:none;stroke:#000000;stroke-width:0.57599998" />
+        <circle
+           r="1.0182"
+           class="other"
+           cx="7.5499902"
+           cy="8.5061903"
+           id="circle7943"
+           style="fill:none;stroke:#000000;stroke-width:0.57599998" />
+        <line
+           id="line7945"
+           y2="8.5061903"
+           x2="7.5499902"
+           y1="8.5061903"
+           class="pin"
+           x1="0.34999901"
+           connectorname="P"
+           style="stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+        <g
+           id="g7947"
+           height="0.000283464"
+           x="0.349999"
+           class="terminal"
+           y="8.50619"
+           width="0.000283465"
+           style="fill:none;stroke:none;stroke-width:0" />
+        <text
+           font-size="2.5"
+           x="3.94999"
+           class="text"
+           y="7.4561801"
+           id="text7949"
+           style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">2</text>
+        <line
+           id="line7951"
+           y2="15.7062"
+           x2="14.75"
+           y1="15.7062"
+           class="pin"
+           x1="21.950001"
+           connectorname="S"
+           style="stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+        <g
+           id="g7953"
+           height="0.000283464"
+           x="21.95"
+           class="terminal"
+           y="15.7062"
+           width="0.000283465"
+           style="fill:none;stroke:none;stroke-width:0" />
+        <text
+           font-size="2.5"
+           x="18.35"
+           class="text"
+           y="14.6562"
+           id="text7955"
+           style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">3</text>
+        <line
+           id="line7957"
+           y2="1.3062"
+           x2="14.75"
+           y1="1.3062"
+           class="pin"
+           x1="21.950001"
+           connectorname="O"
+           style="stroke:#787878;stroke-width:0.69999897;stroke-linecap:round" />
+        <g
+           id="g7959"
+           height="0.000283464"
+           x="21.95"
+           class="terminal"
+           y="1.3062"
+           width="0.000283465"
+           style="fill:none;stroke:none;stroke-width:0" />
+        <text
+           font-size="2.5"
+           x="18.35"
+           class="text"
+           y="0.25620601"
+           id="text7961"
+           style="font-size:2.5px;font-family:'Droid Sans';text-anchor:middle;fill:#8c8c8c;stroke:none;stroke-width:0">1</text>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="146990"
+     id="g8005"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(360.702,36.7292)"
+       id="g8003">
+      <g
+         id="g8001">
+        <polygon
+           points="36.35,43.56 50.75,57.96 50.75,0.36 36.35,14.76 14.75,14.76 14.75,43.56 "
+           id="polygon7969"
+           style="fill:#ffffff;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round;stroke-linejoin:round" />
+        <g
+           transform="translate(16.8489,30.5173)"
+           id="g7973">
+          <text
+             id="text7971"
+             font-size="4.25"
+             style="font-size:4.25px;font-family:DroidSans">SPEAKER</text>
+        </g>
+        <line
+           id="line7975"
+           y2="21.959999"
+           x2="14.75"
+           y1="21.959999"
+           x1="0.34999999"
+           style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round" />
+        <g
+           id="g7977"
+           height="0.625"
+           x="0"
+           y="21.629"
+           width="0.695"
+           style="fill:none" />
+        <g
+           transform="translate(6.8601,20.9099)"
+           id="g7981">
+          <text
+             font-size="2.5"
+             id="text7979"
+             style="font-size:2.5px;font-family:DroidSans;fill:#8c8c8c">1</text>
+        </g>
+        <g
+           transform="translate(16.8489,22.6609)"
+           id="g7985">
+          <text
+             font-size="3.5"
+             id="text7983"
+             style="font-size:3.5px;font-family:DroidSans;fill:#787878">+</text>
+        </g>
+        <line
+           id="line7987"
+           y2="36.360001"
+           x2="14.75"
+           y1="36.360001"
+           x1="0.34999999"
+           style="fill:none;stroke:#787878;stroke-width:0.75;stroke-linecap:round" />
+        <g
+           id="g7989"
+           points="0,36.676,0.679,36.676,0.679,36.051,0,36.051"
+           style="fill:none" />
+        <g
+           transform="translate(6.8601,35.3083)"
+           id="g7993">
+          <text
+             font-size="2.5"
+             id="text7991"
+             style="font-size:2.5px;font-family:DroidSans;fill:#8c8c8c">2</text>
+        </g>
+        <g
+           transform="translate(16.8489,37.0593)"
+           id="g7997">
+          <text
+             font-size="3.5"
+             id="text7995"
+             style="font-size:3.5px;font-family:DroidSans;fill:#787878">-</text>
+        </g>
+        <line
+           y2="14.76"
+           x2="36.349998"
+           y1="43.560001"
+           x1="36.349998"
+           id="line7999"
+           style="fill:none;stroke:#000000;stroke-width:0.89999998;stroke-linecap:round" />
+      </g>
+    </g>
+  </g>
+  <g
+     partID="101930"
+     id="g8009"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="231.45"
+       y1="267.47"
+       x2="217.05"
+       y2="267.47198"
+       id="line8007"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <circle
+     cx="230.75459"
+     cy="267.83926"
+     r="1.4400001"
+     id="circle8011"
+     style="fill:#000000;stroke:none;stroke-width:0" />
+  <g
+     partID="104400"
+     id="g8015"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="253.05"
+       y1="267.47101"
+       x2="231.45"
+       y2="267.47"
+       id="line8013"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <circle
+     cx="230.75459"
+     cy="267.83926"
+     r="1.4400001"
+     id="circle8017"
+     style="fill:#000000;stroke:none;stroke-width:0" />
+  <g
+     partID="104930"
+     id="g8021"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="245.993"
+       y1="289.056"
+       x2="231.45"
+       y2="289.07001"
+       id="line8019"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <circle
+     cx="230.75459"
+     cy="289.43927"
+     r="1.4400001"
+     id="circle8023"
+     style="fill:#000000;stroke:none;stroke-width:0" />
+  <g
+     partID="104820"
+     id="g8027"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="245.993"
+       y1="274.61099"
+       x2="245.993"
+       y2="289.056"
+       id="line8025"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="104510"
+     id="g8031"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="253.05"
+       y1="274.67099"
+       x2="245.993"
+       y2="274.61099"
+       id="line8029"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="107440"
+     id="g8035"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="404.198"
+       y1="152.12801"
+       x2="339.45001"
+       y2="152.271"
+       id="line8033"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="106730"
+     id="g8039"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="404.25101"
+       y1="145.071"
+       x2="404.19699"
+       y2="152.12801"
+       id="line8037"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="107510"
+     id="g8043"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="332.27301"
+       y1="145.20599"
+       x2="332.25"
+       y2="152.271"
+       id="line8041"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="106800"
+     id="g8047"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="375.45001"
+       y1="145.071"
+       x2="332.27301"
+       y2="145.20599"
+       id="line8045"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="107810"
+     id="g8051"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="404.198"
+       y1="137.98399"
+       x2="325.04999"
+       y2="138.13699"
+       id="line8049"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="146820"
+     id="g8055"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="325.04999"
+       y1="138.13699"
+       x2="325.04999"
+       y2="152.271"
+       id="line8053"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="106940"
+     id="g8059"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="404.25201"
+       y1="130.67101"
+       x2="404.198"
+       y2="137.98399"
+       id="line8057"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="107740"
+     id="g8063"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="317.828"
+       y1="130.761"
+       x2="317.85101"
+       y2="152.271"
+       id="line8061"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="107010"
+     id="g8067"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="375.45001"
+       y1="130.67101"
+       x2="317.828"
+       y2="130.761"
+       id="line8065"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="107950"
+     id="g8071"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="310.60599"
+       y1="123.538"
+       x2="310.651"
+       y2="152.271"
+       id="line8069"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="107880"
+     id="g8075"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="404.198"
+       y1="123.538"
+       x2="310.60501"
+       y2="123.538"
+       id="line8073"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="107130"
+     id="g8079"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="404.25101"
+       y1="116.271"
+       x2="404.19699"
+       y2="123.538"
+       id="line8077"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="108020"
+     id="g8083"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="303.38199"
+       y1="116.316"
+       x2="303.45001"
+       y2="152.271"
+       id="line8081"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="107200"
+     id="g8087"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="375.45001"
+       y1="116.271"
+       x2="303.383"
+       y2="116.316"
+       id="line8085"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="108230"
+     id="g8091"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="404.198"
+       y1="109.093"
+       x2="296.16"
+       y2="109.093"
+       id="line8089"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="108160"
+     id="g8095"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="296.16"
+       y1="109.093"
+       x2="296.25"
+       y2="152.271"
+       id="line8093"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="107300"
+     id="g8099"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="404.25101"
+       y1="101.871"
+       x2="404.19699"
+       y2="109.093"
+       id="line8097"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="108090"
+     id="g8103"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="288.93799"
+       y1="101.871"
+       x2="289.04999"
+       y2="152.271"
+       id="line8101"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="107370"
+     id="g8107"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="375.45001"
+       y1="101.871"
+       x2="288.93799"
+       y2="101.871"
+       id="line8105"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="110100"
+     id="g8111"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="65.849998"
+       y1="310.67099"
+       x2="94.650002"
+       y2="310.67099"
+       id="line8109"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="115300"
+     id="g8115"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="87.663597"
+       y1="296.384"
+       x2="87.663597"
+       y2="303.42001"
+       id="line8113"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="113810"
+     id="g8119"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="87.663597"
+       y1="303.42001"
+       x2="65.849998"
+       y2="303.47101"
+       id="line8117"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="110320"
+     id="g8123"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="116.25"
+       y1="296.26999"
+       x2="87.663597"
+       y2="296.384"
+       id="line8121"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="111090"
+     id="g8127"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="116.25"
+       y1="267.47"
+       x2="65.849998"
+       y2="267.47101"
+       id="line8125"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="111160"
+     id="g8131"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="116.25"
+       y1="260.26999"
+       x2="65.849998"
+       y2="260.271"
+       id="line8129"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="111230"
+     id="g8135"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="116.25"
+       y1="253.07001"
+       x2="65.849998"
+       y2="253.071"
+       id="line8133"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="111300"
+     id="g8139"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="116.25"
+       y1="245.871"
+       x2="65.849998"
+       y2="245.871"
+       id="line8137"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="111370"
+     id="g8143"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="116.25"
+       y1="238.67101"
+       x2="65.849998"
+       y2="238.67101"
+       id="line8141"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="111440"
+     id="g8147"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="116.25"
+       y1="231.47099"
+       x2="65.849998"
+       y2="231.47099"
+       id="line8145"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="115580"
+     id="g8151"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="116.25"
+       y1="281.871"
+       x2="65.849998"
+       y2="281.871"
+       id="line8149"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="115650"
+     id="g8155"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="116.25"
+       y1="274.67099"
+       x2="65.849998"
+       y2="274.67099"
+       id="line8153"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="115720"
+     id="g8159"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="116.25"
+       y1="289.07001"
+       x2="65.849998"
+       y2="289.07101"
+       id="line8157"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="121200"
+     id="g8163"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="231.45"
+       y1="65.870697"
+       x2="217.05"
+       y2="65.870697"
+       id="line8161"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="123570"
+     id="g8167"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="289.04999"
+       y1="65.870796"
+       x2="260.25"
+       y2="65.870697"
+       id="line8165"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="123670"
+     id="g8171"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="317.85001"
+       y1="80.270699"
+       x2="303.45001"
+       y2="80.270699"
+       id="line8169"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="125130"
+     id="g8175"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="267.45001"
+       y1="80.270699"
+       x2="274.64999"
+       y2="80.270699"
+       id="line8173"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="125810"
+     id="g8179"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="159.45"
+       y1="353.871"
+       x2="159.45"
+       y2="346.672"
+       id="line8177"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="125980"
+     id="g8183"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="94.650002"
+       y1="353.871"
+       x2="94.650002"
+       y2="339.47101"
+       id="line8181"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="126210"
+     id="g8187"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="80.25"
+       y1="353.871"
+       x2="80.25"
+       y2="296.004"
+       id="line8185"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="126440"
+     id="g8191"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="80.25"
+       y1="296.004"
+       x2="65.849998"
+       y2="296.271"
+       id="line8189"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="126970"
+     id="g8195"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="65.849998"
+       y1="202.67101"
+       x2="65.849998"
+       y2="217.071"
+       id="line8193"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="126700"
+     id="g8199"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="87.449997"
+       y1="202.67101"
+       x2="65.849998"
+       y2="202.67101"
+       id="line8197"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="127470"
+     id="g8203"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="231.45"
+       y1="289.07001"
+       x2="231.45"
+       y2="296.271"
+       id="line8201"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <circle
+     cx="230.75459"
+     cy="289.43927"
+     r="1.4400001"
+     id="circle8205"
+     style="fill:#000000;stroke:none;stroke-width:0" />
+  <g
+     partID="143300"
+     id="g8209"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="238.64999"
+       y1="253.33701"
+       x2="217.05"
+       y2="253.07001"
+       id="line8207"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="143230"
+     id="g8213"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="238.64999"
+       y1="253.071"
+       x2="238.64999"
+       y2="253.33701"
+       id="line8211"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="144240"
+     id="g8217"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="253.05"
+       y1="224.004"
+       x2="238.64999"
+       y2="224.27"
+       id="line8215"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="143390"
+     id="g8221"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="253.05"
+       y1="231.47099"
+       x2="253.05"
+       y2="224.004"
+       id="line8219"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="145520"
+     id="g8225"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="224.25"
+       y1="116.271"
+       x2="217.05"
+       y2="116.271"
+       id="line8223"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="145590"
+     id="g8229"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="245.85001"
+       y1="130.67101"
+       x2="245.85001"
+       y2="123.471"
+       id="line8227"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="147240"
+     id="g8233"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="361.31699"
+       y1="80.537399"
+       x2="346.64999"
+       y2="80.270699"
+       id="line8231"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="147170"
+     id="g8237"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="361.04199"
+       y1="73.092697"
+       x2="361.31699"
+       y2="80.537399"
+       id="line8235"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="147530"
+     id="g8241"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="360.78299"
+       y1="1.07074"
+       x2="361.04999"
+       y2="58.6707"
+       id="line8239"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="147310"
+     id="g8245"
+     style="fill:#000000"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="159.45"
+       y1="8.2707396"
+       x2="159.45"
+       y2="1.07074"
+       id="line8243"
+       style="fill:#000000;stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="147420"
+     id="g8249"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="159.45"
+       y1="1.07074"
+       x2="360.78299"
+       y2="1.07074"
+       id="line8247"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <circle
+     cx="158.75459"
+     cy="1.4400001"
+     r="1.4400001"
+     id="circle8251"
+     style="fill:#000000;stroke:none;stroke-width:0" />
+  <g
+     partID="147790"
+     id="g8255"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="159.717"
+       y1="1.07074"
+       x2="102.117"
+       y2="1.07074"
+       id="line8253"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="148010"
+     id="g8259"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="102.117"
+       y1="224.537"
+       x2="65.849998"
+       y2="224.271"
+       id="line8257"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="147680"
+     id="g8263"
+     style="fill:#000000"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="159.45"
+       y1="8.2707396"
+       x2="159.717"
+       y2="1.07074"
+       id="line8261"
+       style="fill:#000000;stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="147900"
+     id="g8267"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="102.117"
+       y1="1.07074"
+       x2="102.117"
+       y2="224.537"
+       id="line8265"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="148200"
+     id="g8271"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="65.849998"
+       y1="353.871"
+       x2="65.849998"
+       y2="325.07101"
+       id="line8269"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="148930"
+     id="g8275"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="1.05"
+       y1="1.07074"
+       x2="1.05"
+       y2="346.67099"
+       id="line8273"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="148780"
+     id="g8279"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="73.050003"
+       y1="317.871"
+       x2="65.849998"
+       y2="317.871"
+       id="line8277"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="148630"
+     id="g8283"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="159.45"
+       y1="1.07074"
+       x2="1.05"
+       y2="1.07074"
+       id="line8281"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="149230"
+     id="g8287"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="73.050003"
+       y1="346.67099"
+       x2="73.050003"
+       y2="317.871"
+       id="line8285"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="149080"
+     id="g8291"
+     transform="translate(-0.69540321,0.36926007)">
+    <line
+       x1="1.05"
+       y1="346.67099"
+       x2="73.050003"
+       y2="346.67099"
+       id="line8289"
+       style="stroke:#404040;stroke-width:0.69999802;stroke-linecap:round" />
+  </g>
+  <g
+     partID="101880"
+     id="partLabel"
+     transform="rotate(90,288.71022,252.28148)">
+    <g
+       transform="translate(303.81,254.311)"
+       id="g8296">
+      <g
+         font-size="5"
+         font-style="normal"
+         font-weight="normal"
+         id="schematicLabel"
+         style="font-style:normal;font-weight:normal;font-size:5px;font-family:DroidSans;fill:#000000;fill-opacity:1;stroke:none">
+        <text
+           x="0"
+           y="3.75"
+           id="text8293">female RJ45, Team A</text>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="104310"
+     id="g8307"
+     transform="matrix(0.71936337,0,0,0.71936337,61.62658,84.826914)">
+    <g
+       transform="translate(237.21,255.92)"
+       id="g8305">
+      <g
+         font-size="5"
+         font-style="normal"
+         font-weight="normal"
+         id="g8303"
+         style="font-style:normal;font-weight:normal;font-size:5px;font-family:DroidSans;fill:#000000;fill-opacity:1;stroke:none">
+        <text
+           x="0"
+           y="3.75"
+           id="text8299">C1</text>
+        <text
+           x="0"
+           y="8.75"
+           id="text8301">100nF</text>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="105200"
+     id="g8317"
+     transform="rotate(-90,311.6724,224.18585)">
+    <g
+       transform="translate(352.008,202.73)"
+       id="g8315">
+      <g
+         transform="rotate(90)"
+         id="g8313">
+        <g
+           font-size="5"
+           font-style="normal"
+           font-weight="normal"
+           id="g8311"
+           style="font-style:normal;font-weight:normal;font-size:5px;font-family:DroidSans;fill:#000000;fill-opacity:1;stroke:none">
+          <text
+             x="0"
+             y="3.75"
+             id="text8309">male RJ45, Team A</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="106430"
+     id="g8327"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(410.185,146.946)"
+       id="g8325">
+      <g
+         transform="rotate(90)"
+         id="g8323">
+        <g
+           font-size="5"
+           font-style="normal"
+           font-weight="normal"
+           id="g8321"
+           style="font-style:normal;font-weight:normal;font-size:5px;font-family:DroidSans;fill:#000000;fill-opacity:1;stroke:none">
+          <text
+             x="0"
+             y="3.75"
+             id="text8319">A1</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="106910"
+     id="g8337"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(410.185,132.546)"
+       id="g8335">
+      <g
+         transform="rotate(90)"
+         id="g8333">
+        <g
+           font-size="5"
+           font-style="normal"
+           font-weight="normal"
+           id="g8331"
+           style="font-style:normal;font-weight:normal;font-size:5px;font-family:DroidSans;fill:#000000;fill-opacity:1;stroke:none">
+          <text
+             x="0"
+             y="3.75"
+             id="text8329">A2</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="107100"
+     id="g8347"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(410.185,118.146)"
+       id="g8345">
+      <g
+         transform="rotate(90)"
+         id="g8343">
+        <g
+           font-size="5"
+           font-style="normal"
+           font-weight="normal"
+           id="g8341"
+           style="font-style:normal;font-weight:normal;font-size:5px;font-family:DroidSans;fill:#000000;fill-opacity:1;stroke:none">
+          <text
+             x="0"
+             y="3.75"
+             id="text8339">A3</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="143210"
+     id="g8357"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(240.525,218.336)"
+       id="g8355">
+      <g
+         id="g8353">
+        <g
+           font-size="5"
+           font-style="normal"
+           font-weight="normal"
+           id="g8351"
+           style="font-style:normal;font-weight:normal;font-size:5px;font-family:DroidSans;fill:#000000;fill-opacity:1;stroke:none">
+          <text
+             x="0"
+             y="3.75"
+             id="text8349">Clear</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="107270"
+     id="g8367"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(410.185,103.746)"
+       id="g8365">
+      <g
+         transform="rotate(90)"
+         id="g8363">
+        <g
+           font-size="5"
+           font-style="normal"
+           font-weight="normal"
+           id="g8361"
+           style="font-style:normal;font-weight:normal;font-size:5px;font-family:DroidSans;fill:#000000;fill-opacity:1;stroke:none">
+          <text
+             x="0"
+             y="3.75"
+             id="text8359">A4</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="110070"
+     id="g8379"
+     transform="translate(-0.69540321,-21.182927)">
+    <g
+       transform="translate(108.946,339.82)"
+       id="g8377">
+      <g
+         transform="rotate(90)"
+         id="g8375">
+        <g
+           font-size="5"
+           font-style="normal"
+           font-weight="normal"
+           id="g8373"
+           style="font-style:normal;font-weight:normal;font-size:5px;font-family:DroidSans;fill:#000000;fill-opacity:1;stroke:none">
+          <text
+             x="0"
+             y="3.75"
+             id="text8369">R1</text>
+          <text
+             x="0"
+             y="8.75"
+             id="text8371">2.2kΩ</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="121170"
+     id="g8389"
+     transform="translate(-21.631814,0.36926007)">
+    <g
+       transform="translate(260.6,51.5746)"
+       id="g8387">
+      <g
+         font-size="5"
+         font-style="normal"
+         font-weight="normal"
+         id="g8385"
+         style="font-style:normal;font-weight:normal;font-size:5px;font-family:DroidSans;fill:#000000;fill-opacity:1;stroke:none">
+        <text
+           x="0"
+           y="3.75"
+           id="text8381">R2</text>
+        <text
+           x="0"
+           y="8.75"
+           id="text8383">1kΩ</text>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="123080"
+     id="g8399"
+     transform="rotate(-90,294.37325,96.940167)">
+    <g
+       transform="translate(309.4,80.9635)"
+       id="g8397">
+      <g
+         transform="rotate(90)"
+         id="g8395">
+        <g
+           font-size="5"
+           font-style="normal"
+           font-weight="normal"
+           id="g8393"
+           style="font-style:normal;font-weight:normal;font-size:5px;font-family:DroidSans;fill:#000000;fill-opacity:1;stroke:none">
+          <text
+             x="0"
+             y="3.75"
+             id="text8391">2N3904</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="123640"
+     id="g8409"
+     transform="translate(-22.863367,0.36926007)">
+    <g
+       transform="translate(347,65.9746)"
+       id="g8407">
+      <g
+         font-size="5"
+         font-style="normal"
+         font-weight="normal"
+         id="g8405"
+         style="font-style:normal;font-weight:normal;font-size:5px;font-family:DroidSans;fill:#000000;fill-opacity:1;stroke:none">
+        <text
+           x="0"
+           y="3.75"
+           id="text8401">R3</text>
+        <text
+           x="0"
+           y="8.75"
+           id="text8403">100Ω</text>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="145490"
+     id="g8417"
+     transform="translate(-0.69540321,0.36926007)">
+    <g
+       transform="translate(246.2,102.164)"
+       id="g8415">
+      <g
+         font-size="5"
+         font-style="normal"
+         font-weight="normal"
+         id="g8413"
+         style="font-style:normal;font-weight:normal;font-size:5px;font-family:DroidSans;fill:#000000;fill-opacity:1;stroke:none">
+        <text
+           x="0"
+           y="3.75"
+           id="text8411">Mode</text>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="109810"
+     id="g8475"
+     transform="matrix(0.56231554,0,0,0.56231554,174.11317,59.709431)">
+    <g
+       transform="translate(235.512,326.212)"
+       id="g8473">
+      <g
+         id="g8471">
+        <rect
+           height="157.60001"
+           x="2.8"
+           y="2.8"
+           width="160.371"
+           id="rect8419"
+           style="fill:#ffe9c8;stroke:#fabc4f;stroke-width:5.5999999" />
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8423"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="17.6"
+             id="text8421"
+             style="fill:#000000">Team A female RJ45:</text>
+        </g>
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8427"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="28.799999"
+             id="text8425"
+             style="fill:#000000">RJ45 1,3,5,7 to D30,D31,D32,D33</text>
+        </g>
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8431"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="40"
+             id="text8429"
+             style="fill:#000000">RJ45 2,4,6,8 to GND</text>
+        </g>
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8435"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="51.200001"
+             id="text8433"
+             style="fill:#000000">Team B female RJ45:</text>
+        </g>
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8439"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="62.400002"
+             id="text8437"
+             style="fill:#000000">RJ45 1,3,5,7 to D34,D35,D36,D37</text>
+        </g>
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8443"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="73.599998"
+             id="text8441"
+             style="fill:#000000">RJ45 2,4,6,8 to GND</text>
+        </g>
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8447"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="84.800003"
+             id="text8445"
+             style="fill:#000000">Team C female RJ45</text>
+        </g>
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8451"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="96"
+             id="text8449"
+             style="fill:#000000">RJ45 1,3,5,7 to D38,D39,D40,D41</text>
+        </g>
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8455"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="107.2"
+             id="text8453"
+             style="fill:#000000">RJ45 2,4,6,8 to GND</text>
+        </g>
+        <text
+           text-anchor="left"
+           font-size="8.8"
+           x="8.8000002"
+           y="118.4"
+           id="text8457"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none" />
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8461"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="129.60001"
+             id="text8459"
+             style="fill:#000000">100nF capacitors</text>
+        </g>
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8465"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="140.8"
+             id="text8463"
+             style="fill:#000000">between 1 and 2, 3 and 4, 5 and 6,</text>
+        </g>
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8469"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="152"
+             id="text8467"
+             style="fill:#000000">and 7 and 8 on all female RJ45s</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="109840"
+     id="g8495"
+     transform="matrix(0.60311261,0,0,0.60311261,138.21671,69.261804)">
+    <g
+       transform="translate(352.617,164.273)"
+       id="g8493">
+      <g
+         id="g8491">
+        <rect
+           height="45.599998"
+           x="2.8"
+           y="2.8"
+           width="54.337299"
+           id="rect8477"
+           style="fill:#ffe9c8;stroke:#fabc4f;stroke-width:5.5999999" />
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8481"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="17.6"
+             id="text8479"
+             style="fill:#000000">repeat for</text>
+        </g>
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8485"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="28.799999"
+             id="text8483"
+             style="fill:#000000">teams B</text>
+        </g>
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8489"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="40"
+             id="text8487"
+             style="fill:#000000">and C</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     partID="112480"
+     id="g8523"
+     transform="matrix(0.59840644,0,0,0.59840644,36.684223,61.968664)">
+    <g
+       transform="translate(16.7116,75.9541)"
+       id="g8521">
+      <g
+         id="g8519">
+        <rect
+           height="68"
+           x="2.8"
+           y="2.8"
+           width="78.133301"
+           id="rect8497"
+           style="fill:#ffe9c8;stroke:#fabc4f;stroke-width:5.5999999" />
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8501"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="17.6"
+             id="text8499"
+             style="fill:#000000">need 220R</text>
+        </g>
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8505"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="28.799999"
+             id="text8503"
+             style="fill:#000000">resistor</text>
+        </g>
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8509"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="40"
+             id="text8507"
+             style="fill:#000000">between LED+</text>
+        </g>
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8513"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="51.200001"
+             id="text8511"
+             style="fill:#000000">and 5V if screen</text>
+        </g>
+        <g
+           text-anchor="left"
+           font-size="8.8"
+           id="g8517"
+           style="font-size:8.80000019px;font-family:'Droid Sans';fill:#000000;stroke:none">
+          <text
+             x="8.8000002"
+             y="62.400002"
+             id="text8515"
+             style="fill:#000000">doesn't supply</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
