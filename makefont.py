@@ -24,7 +24,10 @@ if fontName not in FONTS:
     sys.exit(1)
 font = FONTS[fontName]
 
-charSet0 = sys.argv[2]
+if len(sys.argv) < 3:
+    charSet0 = " -~"
+else:
+    charSet0 = sys.argv[2]
 charSet = []
 i = 0
 while i < len(charSet0):
